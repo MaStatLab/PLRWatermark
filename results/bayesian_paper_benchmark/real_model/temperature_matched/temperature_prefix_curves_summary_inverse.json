@@ -1,0 +1,28 @@
+{
+  "level": 0.05,
+  "max_prefix": 200,
+  "models": [
+    "1p3B",
+    "2p7B"
+  ],
+  "rules": [
+    "bayes_shared_inv",
+    "h_neg",
+    "h_dif_star_0.1",
+    "h_dif_star_0.01",
+    "h_dif_star_0.001",
+    "trgof_s2_inv"
+  ],
+  "scheme": "inverse",
+  "summary_horizon": 100,
+  "temperatures": [
+    "0.1",
+    "0.2",
+    "0.3",
+    "0.4",
+    "0.5",
+    "0.6",
+    "0.7",
+    "1"
+  ]
+}

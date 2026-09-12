@@ -1,0 +1,19 @@
+{
+  "script": "code/build_prompts.py",
+  "model": "2p7B",
+  "tokenizer": "princeton-nlp/Sheared-LLaMA-2.7B",
+  "tokenizer_revision": "2f157a0306b75d37694ae05f6a4067220254d540",
+  "c4_repo": "allenai/c4",
+  "c4_revision": "1588ec454efa1a09f29cd18ddd04fe05fc8653a2",
+  "c4_file": "realnewslike/c4-train.00000-of-00512.json.gz",
+  "c4_sha256": "6666a680b0a34eb8756dcb5fd2b12f0078237f3502e8a513bd3e5b71bb92be00",
+  "prompt_tokens": 50,
+  "continuation_tokens": 200,
+  "buffer_tokens": 20,
+  "truncate_at": 2028,
+  "records_scanned": 3319,
+  "prompts": 2500,
+  "released_rows_verified": 500,
+  "output_sha256": "61343ccaa861c40618f67b07fdb8c9ef3b0e6dba9b31112387bc9b81b9f2d6f6",
+  "seconds": 3.5
+}

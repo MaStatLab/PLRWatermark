@@ -1,0 +1,414 @@
+{
+  "design": {
+    "delta_ceiling": 0.5,
+    "delta_floor": 0.05,
+    "live_tail_grid": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      12,
+      16,
+      24,
+      32,
+      64,
+      128,
+      256,
+      1024,
+      4096,
+      16384
+    ],
+    "note": "J is an effective equal-tail width; a real tail is not exactly equal, so a fitted J of one or two means the residual mass behaves as though carried by one or two coordinates.",
+    "scheme": "gumbel",
+    "seed": 240401261
+  },
+  "identifiability_check": {
+    "by_sample_size": {
+      "1083": {
+        "by_truth": [
+          {
+            "median_log_likelihood_gap_to_runner_up": 19.253106475092885,
+            "recovery_rate": 1.0,
+            "replicates": 200,
+            "true_live_tail": 1
+          },
+          {
+            "median_log_likelihood_gap_to_runner_up": 7.139380951511356,
+            "recovery_rate": 0.985,
+            "replicates": 200,
+            "true_live_tail": 2
+          },
+          {
+            "median_log_likelihood_gap_to_runner_up": 2.9766587349357394,
+            "recovery_rate": 0.895,
+            "replicates": 200,
+            "true_live_tail": 4
+          },
+          {
+            "median_log_likelihood_gap_to_runner_up": 4.831016016269132,
+            "recovery_rate": 0.95,
+            "replicates": 200,
+            "true_live_tail": 16
+          },
+          {
+            "median_log_likelihood_gap_to_runner_up": 49.24040424825921,
+            "recovery_rate": 1.0,
+            "replicates": 200,
+            "true_live_tail": 256
+          }
+        ],
+        "min_recovery_rate": 0.895,
+        "n": 1083,
+        "recovered_always": false,
+        "replicates": 200,
+        "worst_truth": 4
+      },
+      "8000": {
+        "by_truth": [
+          {
+            "median_log_likelihood_gap_to_runner_up": 132.2098659235204,
+            "recovery_rate": 1.0,
+            "replicates": 200,
+            "true_live_tail": 1
+          },
+          {
+            "median_log_likelihood_gap_to_runner_up": 50.86269820328732,
+            "recovery_rate": 1.0,
+            "replicates": 200,
+            "true_live_tail": 2
+          },
+          {
+            "median_log_likelihood_gap_to_runner_up": 28.609895171563267,
+            "recovery_rate": 1.0,
+            "replicates": 200,
+            "true_live_tail": 4
+          },
+          {
+            "median_log_likelihood_gap_to_runner_up": 44.00923799195971,
+            "recovery_rate": 1.0,
+            "replicates": 200,
+            "true_live_tail": 16
+          },
+          {
+            "median_log_likelihood_gap_to_runner_up": 356.77607939958943,
+            "recovery_rate": 1.0,
+            "replicates": 200,
+            "true_live_tail": 256
+          }
+        ],
+        "min_recovery_rate": 1.0,
+        "n": 8000,
+        "recovered_always": true,
+        "replicates": 200,
+        "worst_truth": 1
+      },
+      "989": {
+        "by_truth": [
+          {
+            "median_log_likelihood_gap_to_runner_up": 16.91294597007944,
+            "recovery_rate": 1.0,
+            "replicates": 200,
+            "true_live_tail": 1
+          },
+          {
+            "median_log_likelihood_gap_to_runner_up": 6.051724800966355,
+            "recovery_rate": 0.96,
+            "replicates": 200,
+            "true_live_tail": 2
+          },
+          {
+            "median_log_likelihood_gap_to_runner_up": 3.304089042393045,
+            "recovery_rate": 0.935,
+            "replicates": 200,
+            "true_live_tail": 4
+          },
+          {
+            "median_log_likelihood_gap_to_runner_up": 4.568642130827413,
+            "recovery_rate": 0.93,
+            "replicates": 200,
+            "true_live_tail": 16
+          },
+          {
+            "median_log_likelihood_gap_to_runner_up": 44.69372645460487,
+            "recovery_rate": 1.0,
+            "replicates": 200,
+            "true_live_tail": 256
+          }
+        ],
+        "min_recovery_rate": 0.93,
+        "n": 989,
+        "recovered_always": false,
+        "replicates": 200,
+        "worst_truth": 16
+      }
+    },
+    "note": "keyed by simulated sample size; the model-sized entries are the ones that speak to this data, the 8000 entry is the former default and is kept only for comparison"
+  },
+  "models": {
+    "1p3B": {
+      "address_cluster_bootstrap": {
+        "argmax_mode": 2,
+        "argmax_share": {
+          "1": 0.341,
+          "2": 0.6575,
+          "3": 0.0015
+        },
+        "n_addresses": 1083,
+        "n_documents": 385,
+        "replicates": 2000,
+        "resample": "document-cluster bootstrap over the first-use positions: documents are drawn with replacement and every retained position of a drawn document is taken, so within-document dependence is priced"
+      },
+      "all_positions": {
+        "estimate": 2,
+        "goodness_of_fit": {
+          "assumed_full_width": {
+            "ks_p_value": 1.1521180108348916e-122,
+            "ks_statistic": 0.13242932038085087,
+            "live_tail": 50271
+          },
+          "fitted": {
+            "ks_p_value": 0.0014044556538216973,
+            "ks_statistic": 0.021270428516110884,
+            "live_tail": 2
+          }
+        },
+        "log_likelihood_gap_to_runner_up": 15.55334627056061,
+        "n": 8003,
+        "profile_relative_to_maximum": {
+          "1": -15.55334627056061,
+          "1024": -2191.1705122467024,
+          "12": -703.5887815269191,
+          "128": -1837.2003095978323,
+          "16": -864.2274177915701,
+          "16384": -2316.3923577746946,
+          "2": 0.0,
+          "24": -1086.6900912317808,
+          "256": -2021.4054337790158,
+          "3": -77.71053954969784,
+          "32": -1237.406210487043,
+          "4": -168.5041702136648,
+          "4096": -2268.8171911451,
+          "6": -339.1448758366348,
+          "64": -1566.211862045193,
+          "8": -483.05039700843736
+        },
+        "runner_up": 1
+      },
+      "distinct_addresses": {
+        "estimate": 2,
+        "goodness_of_fit": {
+          "assumed_full_width": {
+            "ks_p_value": 1.2783047003642868e-25,
+            "ks_statistic": 0.16304440520170194,
+            "live_tail": 50271
+          },
+          "fitted": {
+            "ks_p_value": 0.16300042021592684,
+            "ks_statistic": 0.03389137858472557,
+            "live_tail": 2
+          }
+        },
+        "log_likelihood_gap_to_runner_up": 2.2244831687968087,
+        "n": 1083,
+        "profile_relative_to_maximum": {
+          "1": -2.2244831687968087,
+          "1024": -286.53696745231593,
+          "12": -81.62317446483397,
+          "128": -229.5306096979354,
+          "16": -101.9332656717141,
+          "16384": -313.87455543854065,
+          "2": 0.0,
+          "24": -131.71824355852362,
+          "256": -257.74752528093074,
+          "3": -9.198676825077314,
+          "32": -151.4587796850172,
+          "4": -20.044989899166282,
+          "4096": -300.111766448871,
+          "6": -39.73855818755936,
+          "64": -192.16760754476002,
+          "8": -55.93358269993118
+        },
+        "runner_up": 1
+      },
+      "distinct_values": {
+        "estimate": 1,
+        "goodness_of_fit": {
+          "assumed_full_width": {
+            "ks_p_value": 2.253836896128443e-121,
+            "ks_statistic": 0.14952471746650253,
+            "live_tail": 50271
+          },
+          "fitted": {
+            "ks_p_value": 0.01889358004388382,
+            "ks_statistic": 0.019346189694896987,
+            "live_tail": 1
+          }
+        },
+        "log_likelihood_gap_to_runner_up": 21.442900917372754,
+        "n": 6209,
+        "profile_relative_to_maximum": {
+          "1": 0.0,
+          "1024": -1638.0631926898536,
+          "12": -593.3403408942685,
+          "128": -1385.9287555649678,
+          "16": -712.6279561749285,
+          "16384": -1752.4011623235042,
+          "2": -21.442900917372754,
+          "24": -874.2344341328431,
+          "256": -1501.0650073495044,
+          "3": -97.43993122057691,
+          "32": -980.9629167164022,
+          "4": -175.9138143338182,
+          "4096": -1707.9029956244826,
+          "6": -314.158227317763,
+          "64": -1208.9458149631948,
+          "8": -426.1769240485737
+        },
+        "runner_up": 2
+      },
+      "fraction_pivot_values_distinct": 0.775834062226665,
+      "implied_second_largest_ntp_at_median_delta": 0.09564527869224548,
+      "inverse_limit_condition_log_v_times_p2": 1.0353796095845214,
+      "median_informative_delta": 0.19129055738449097,
+      "n_distinct_pivot_values": 6209,
+      "n_positions_informative": 8003,
+      "n_positions_total": 100000,
+      "n_prf_addresses": 2149,
+      "vocabulary_size": 50272
+    },
+    "2p7B": {
+      "address_cluster_bootstrap": {
+        "argmax_mode": 1,
+        "argmax_share": {
+          "1": 0.9425,
+          "2": 0.0575
+        },
+        "n_addresses": 989,
+        "n_documents": 368,
+        "replicates": 2000,
+        "resample": "document-cluster bootstrap over the first-use positions: documents are drawn with replacement and every retained position of a drawn document is taken, so within-document dependence is priced"
+      },
+      "all_positions": {
+        "estimate": 1,
+        "goodness_of_fit": {
+          "assumed_full_width": {
+            "ks_p_value": 2.0839255742309433e-158,
+            "ks_statistic": 0.145390101539008,
+            "live_tail": 31999
+          },
+          "fitted": {
+            "ks_p_value": 6.28577696412972e-05,
+            "ks_statistic": 0.02454516420991454,
+            "live_tail": 1
+          }
+        },
+        "log_likelihood_gap_to_runner_up": 40.99617676981029,
+        "n": 8582,
+        "profile_relative_to_maximum": {
+          "1": 0.0,
+          "1024": -2395.316212999275,
+          "12": -824.8427952570866,
+          "128": -1962.3863665009985,
+          "16": -984.3388289183387,
+          "16384": -2519.809500205536,
+          "2": -40.99617676981029,
+          "24": -1206.2952138333885,
+          "256": -2178.8415411253836,
+          "3": -152.20398850250933,
+          "32": -1357.653348128465,
+          "4": -263.1394212739905,
+          "4096": -2475.3216625053706,
+          "6": -452.6760793958314,
+          "64": -1686.8512575960253,
+          "8": -602.7333364597096
+        },
+        "runner_up": 2
+      },
+      "distinct_addresses": {
+        "estimate": 1,
+        "goodness_of_fit": {
+          "assumed_full_width": {
+            "ks_p_value": 2.6731609453435365e-20,
+            "ks_statistic": 0.1515078941176191,
+            "live_tail": 31999
+          },
+          "fitted": {
+            "ks_p_value": 0.03833738584847076,
+            "ks_statistic": 0.044537809812398965,
+            "live_tail": 1
+          }
+        },
+        "log_likelihood_gap_to_runner_up": 7.5046041602120965,
+        "n": 989,
+        "profile_relative_to_maximum": {
+          "1": 0.0,
+          "1024": -277.58869141491493,
+          "12": -100.459674576226,
+          "128": -223.0300196613123,
+          "16": -117.5556655399814,
+          "16384": -290.3508543249287,
+          "2": -7.5046041602120965,
+          "24": -141.57852670538995,
+          "256": -247.8820373431673,
+          "3": -21.384823751786712,
+          "32": -158.5286015392064,
+          "4": -34.98066260108514,
+          "4096": -288.27778885285795,
+          "6": -57.90744233984793,
+          "64": -194.33654760408734,
+          "8": -75.57028853745527
+        },
+        "runner_up": 2
+      },
+      "distinct_values": {
+        "estimate": 1,
+        "goodness_of_fit": {
+          "assumed_full_width": {
+            "ks_p_value": 3.907936380275059e-146,
+            "ks_statistic": 0.15842494575845512,
+            "live_tail": 31999
+          },
+          "fitted": {
+            "ks_p_value": 0.4918217262559519,
+            "ks_statistic": 0.010186497951024748,
+            "live_tail": 1
+          }
+        },
+        "log_likelihood_gap_to_runner_up": 59.04940187414684,
+        "n": 6664,
+        "profile_relative_to_maximum": {
+          "1": 0.0,
+          "1024": -1802.6911301070954,
+          "12": -678.2029725092581,
+          "128": -1514.7787567732516,
+          "16": -799.4393751589438,
+          "16384": -1899.4491487889081,
+          "2": -59.04940187414684,
+          "24": -970.0696037295162,
+          "256": -1650.9055632344607,
+          "3": -154.63608430682586,
+          "32": -1086.6049012800224,
+          "4": -244.69978625316492,
+          "4096": -1856.127246400475,
+          "6": -394.19992854534905,
+          "64": -1329.987093064843,
+          "8": -509.69589279020977
+        },
+        "runner_up": 2
+      },
+      "fraction_pivot_values_distinct": 0.7765089722675367,
+      "implied_second_largest_ntp_at_median_delta": 0.20201927423477173,
+      "inverse_limit_condition_log_v_times_p2": 2.0956451598243766,
+      "median_informative_delta": 0.20201927423477173,
+      "n_distinct_pivot_values": 6664,
+      "n_positions_informative": 8582,
+      "n_positions_total": 100000,
+      "n_prf_addresses": 2193,
+      "vocabulary_size": 32000
+    }
+  },
+  "question": "How many tail coordinates does the released watermarked output behave as though it has, against the V-1 assumed by the full-width equal-tail Bayesian Gumbel rules?",
+  "runtime_seconds": 4.223890042000001
+}

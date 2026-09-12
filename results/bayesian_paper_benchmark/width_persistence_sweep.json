@@ -1,0 +1,624 @@
+{
+  "description": "Does partial pooling of the TAIL WIDTH buy anything?",
+  "seed": 20260903,
+  "ladder": [
+    1,
+    4,
+    16,
+    64,
+    256
+  ],
+  "pooled_prior": {
+    "lambdas": [
+      0.0,
+      0.5,
+      1.5,
+      4.0,
+      "inf"
+    ],
+    "ladder": [
+      1,
+      4,
+      16,
+      64,
+      256
+    ],
+    "n_delta_nodes": 96,
+    "n_phi": 21,
+    "n_components": 2016
+  },
+  "config": {
+    "vocabulary_size": 1000,
+    "horizons": [
+      100,
+      300,
+      700
+    ],
+    "delta_support": [
+      0.001,
+      0.5
+    ],
+    "n_calibration": 10000,
+    "n_evaluation_null": 5000,
+    "n_evaluation_alternative": 5000
+  },
+  "regimes": {
+    "Q1": {
+      "rho": 1.0,
+      "continuous_copula_spearman": 0.9999999999999999,
+      "description": "rho = 1; the width is constant within a document",
+      "mean_width": 68.9488,
+      "mean_within_document_variance_log_width": 3.665748599164893e-31,
+      "between_document_variance_raw": 3.8418095578543583,
+      "between_document_variance_corrected": 3.8418095578543583,
+      "width_persistence": 1.0
+    },
+    "Q2": {
+      "rho": 0.95,
+      "continuous_copula_spearman": 0.8941303658161673,
+      "description": "rho = .95; the width rarely leaves its rung",
+      "mean_width": 67.65442514285715,
+      "mean_within_document_variance_log_width": 0.5569039629901972,
+      "between_document_variance_raw": 3.246253592589679,
+      "between_document_variance_corrected": 3.245458015499693,
+      "width_persistence": 0.8535373627917003
+    },
+    "Q3": {
+      "rho": 0.8,
+      "continuous_copula_spearman": 0.6220974961647495,
+      "description": "rho = .80; the width wanders one or two rungs",
+      "mean_width": 67.52605942857143,
+      "mean_within_document_variance_log_width": 1.5742943738983148,
+      "between_document_variance_raw": 2.3013493014416064,
+      "between_document_variance_corrected": 2.2991003094788947,
+      "width_persistence": 0.5935621069924925
+    },
+    "Q4": {
+      "rho": 0.6,
+      "continuous_copula_spearman": 0.3456586601825806,
+      "description": "rho = .60; the width wanders widely",
+      "mean_width": 68.75865914285714,
+      "mean_within_document_variance_log_width": 2.6007770123611205,
+      "between_document_variance_raw": 1.2445829635686152,
+      "between_document_variance_corrected": 1.2408675678366707,
+      "width_persistence": 0.3230042607879106
+    },
+    "Q5": {
+      "rho": 0.0,
+      "continuous_copula_spearman": 0.0,
+      "description": "rho = 0; the width is i.i.d. uniform on the ladder at every token",
+      "mean_width": 68.22503885714286,
+      "mean_within_document_variance_log_width": 3.844925624684106,
+      "between_document_variance_raw": 0.005478791788291389,
+      "between_document_variance_corrected": 0.0,
+      "width_persistence": 0.0
+    }
+  },
+  "type_i_error": {
+    "100": {
+      "bayes_shared": 0.0466,
+      "bayes_width": 0.0506,
+      "bayes_pooled_width": 0.052,
+      "h_gum_star_0.1": 0.053,
+      "h_gum_star_0.01": 0.0524,
+      "h_gum_star_0.005": 0.0532,
+      "h_ars": 0.055,
+      "h_log": 0.0458,
+      "h_ind_1_over_e": 0.0384
+    },
+    "300": {
+      "bayes_shared": 0.0488,
+      "bayes_width": 0.0436,
+      "bayes_pooled_width": 0.0418,
+      "h_gum_star_0.1": 0.0498,
+      "h_gum_star_0.01": 0.0412,
+      "h_gum_star_0.005": 0.0424,
+      "h_ars": 0.0504,
+      "h_log": 0.0488,
+      "h_ind_1_over_e": 0.048
+    },
+    "700": {
+      "bayes_shared": 0.049,
+      "bayes_width": 0.0404,
+      "bayes_pooled_width": 0.038,
+      "h_gum_star_0.1": 0.0478,
+      "h_gum_star_0.01": 0.0426,
+      "h_gum_star_0.005": 0.0434,
+      "h_ars": 0.047,
+      "h_log": 0.0462,
+      "h_ind_1_over_e": 0.0374
+    }
+  },
+  "type2_error": {
+    "100": {
+      "bayes_shared": {
+        "Q1": 0.1042,
+        "Q2": 0.1032,
+        "Q3": 0.0936,
+        "Q4": 0.0802,
+        "Q5": 0.0662
+      },
+      "bayes_width": {
+        "Q1": 0.0614,
+        "Q2": 0.0532,
+        "Q3": 0.0572,
+        "Q4": 0.0512,
+        "Q5": 0.044
+      },
+      "bayes_pooled_width": {
+        "Q1": 0.0616,
+        "Q2": 0.0526,
+        "Q3": 0.0544,
+        "Q4": 0.0484,
+        "Q5": 0.0402
+      },
+      "h_gum_star_0.1": {
+        "Q1": 0.0968,
+        "Q2": 0.0918,
+        "Q3": 0.1004,
+        "Q4": 0.1,
+        "Q5": 0.0954
+      },
+      "h_gum_star_0.01": {
+        "Q1": 0.1408,
+        "Q2": 0.1106,
+        "Q3": 0.0796,
+        "Q4": 0.0634,
+        "Q5": 0.0494
+      },
+      "h_gum_star_0.005": {
+        "Q1": 0.1814,
+        "Q2": 0.1492,
+        "Q3": 0.0992,
+        "Q4": 0.064,
+        "Q5": 0.0426
+      },
+      "h_ars": {
+        "Q1": 0.0716,
+        "Q2": 0.0648,
+        "Q3": 0.0698,
+        "Q4": 0.0688,
+        "Q5": 0.0596
+      },
+      "h_log": {
+        "Q1": 0.153,
+        "Q2": 0.1704,
+        "Q3": 0.1702,
+        "Q4": 0.1704,
+        "Q5": 0.1648
+      },
+      "h_ind_1_over_e": {
+        "Q1": 0.2192,
+        "Q2": 0.237,
+        "Q3": 0.2276,
+        "Q4": 0.2332,
+        "Q5": 0.2306
+      }
+    },
+    "300": {
+      "bayes_shared": {
+        "Q1": 0.0572,
+        "Q2": 0.0514,
+        "Q3": 0.0498,
+        "Q4": 0.0386,
+        "Q5": 0.027
+      },
+      "bayes_width": {
+        "Q1": 0.0222,
+        "Q2": 0.0178,
+        "Q3": 0.022,
+        "Q4": 0.0172,
+        "Q5": 0.0172
+      },
+      "bayes_pooled_width": {
+        "Q1": 0.0234,
+        "Q2": 0.0176,
+        "Q3": 0.0214,
+        "Q4": 0.0162,
+        "Q5": 0.0148
+      },
+      "h_gum_star_0.1": {
+        "Q1": 0.0508,
+        "Q2": 0.049,
+        "Q3": 0.0584,
+        "Q4": 0.0548,
+        "Q5": 0.0498
+      },
+      "h_gum_star_0.01": {
+        "Q1": 0.0448,
+        "Q2": 0.0318,
+        "Q3": 0.0308,
+        "Q4": 0.0226,
+        "Q5": 0.0228
+      },
+      "h_gum_star_0.005": {
+        "Q1": 0.089,
+        "Q2": 0.0582,
+        "Q3": 0.0374,
+        "Q4": 0.0214,
+        "Q5": 0.0192
+      },
+      "h_ars": {
+        "Q1": 0.034,
+        "Q2": 0.0284,
+        "Q3": 0.036,
+        "Q4": 0.0336,
+        "Q5": 0.0292
+      },
+      "h_log": {
+        "Q1": 0.0946,
+        "Q2": 0.0912,
+        "Q3": 0.098,
+        "Q4": 0.1004,
+        "Q5": 0.095
+      },
+      "h_ind_1_over_e": {
+        "Q1": 0.1256,
+        "Q2": 0.1274,
+        "Q3": 0.1274,
+        "Q4": 0.1364,
+        "Q5": 0.125
+      }
+    },
+    "700": {
+      "bayes_shared": {
+        "Q1": 0.0344,
+        "Q2": 0.0306,
+        "Q3": 0.0312,
+        "Q4": 0.0192,
+        "Q5": 0.0132
+      },
+      "bayes_width": {
+        "Q1": 0.0092,
+        "Q2": 0.0078,
+        "Q3": 0.0102,
+        "Q4": 0.0072,
+        "Q5": 0.0054
+      },
+      "bayes_pooled_width": {
+        "Q1": 0.0098,
+        "Q2": 0.0078,
+        "Q3": 0.0096,
+        "Q4": 0.0068,
+        "Q5": 0.0048
+      },
+      "h_gum_star_0.1": {
+        "Q1": 0.0336,
+        "Q2": 0.027,
+        "Q3": 0.0364,
+        "Q4": 0.0372,
+        "Q5": 0.0344
+      },
+      "h_gum_star_0.01": {
+        "Q1": 0.0152,
+        "Q2": 0.0112,
+        "Q3": 0.0162,
+        "Q4": 0.0134,
+        "Q5": 0.0116
+      },
+      "h_gum_star_0.005": {
+        "Q1": 0.0268,
+        "Q2": 0.0156,
+        "Q3": 0.015,
+        "Q4": 0.01,
+        "Q5": 0.0092
+      },
+      "h_ars": {
+        "Q1": 0.0172,
+        "Q2": 0.0156,
+        "Q3": 0.0208,
+        "Q4": 0.0188,
+        "Q5": 0.0156
+      },
+      "h_log": {
+        "Q1": 0.0624,
+        "Q2": 0.0544,
+        "Q3": 0.065,
+        "Q4": 0.0662,
+        "Q5": 0.0624
+      },
+      "h_ind_1_over_e": {
+        "Q1": 0.0844,
+        "Q2": 0.0818,
+        "Q3": 0.0882,
+        "Q4": 0.0872,
+        "Q5": 0.0884
+      }
+    }
+  },
+  "paired": {
+    "100": {
+      "bayes_pooled_width_vs_bayes_width": {
+        "Q1": {
+          "b_worse_only_miss": 13,
+          "c_better_only_miss": 14,
+          "difference": 0.0001999999999999988,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        },
+        "Q2": {
+          "b_worse_only_miss": 19,
+          "c_better_only_miss": 16,
+          "difference": -0.0005999999999999964,
+          "mcnemar_p": 0.7358788008568808,
+          "mcnemar_p_holm": 1.0
+        },
+        "Q3": {
+          "b_worse_only_miss": 18,
+          "c_better_only_miss": 4,
+          "difference": -0.002800000000000004,
+          "mcnemar_p": 0.004343509674072266,
+          "mcnemar_p_holm": 0.05646562576293945
+        },
+        "Q4": {
+          "b_worse_only_miss": 20,
+          "c_better_only_miss": 6,
+          "difference": -0.002800000000000004,
+          "mcnemar_p": 0.009355306625366211,
+          "mcnemar_p_holm": 0.11226367950439453
+        },
+        "Q5": {
+          "b_worse_only_miss": 21,
+          "c_better_only_miss": 2,
+          "difference": -0.003799999999999998,
+          "mcnemar_p": 6.604194641113281e-05,
+          "mcnemar_p_holm": 0.0009906291961669922
+        }
+      }
+    },
+    "300": {
+      "bayes_pooled_width_vs_bayes_width": {
+        "Q1": {
+          "b_worse_only_miss": 3,
+          "c_better_only_miss": 9,
+          "difference": 0.0011999999999999997,
+          "mcnemar_p": 0.14599609375,
+          "mcnemar_p_holm": 1.0
+        },
+        "Q2": {
+          "b_worse_only_miss": 7,
+          "c_better_only_miss": 6,
+          "difference": -0.0001999999999999988,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        },
+        "Q3": {
+          "b_worse_only_miss": 8,
+          "c_better_only_miss": 5,
+          "difference": -0.0005999999999999998,
+          "mcnemar_p": 0.5810546875,
+          "mcnemar_p_holm": 1.0
+        },
+        "Q4": {
+          "b_worse_only_miss": 6,
+          "c_better_only_miss": 1,
+          "difference": -0.0010000000000000009,
+          "mcnemar_p": 0.125,
+          "mcnemar_p_holm": 1.0
+        },
+        "Q5": {
+          "b_worse_only_miss": 12,
+          "c_better_only_miss": 0,
+          "difference": -0.0023999999999999994,
+          "mcnemar_p": 0.00048828125,
+          "mcnemar_p_holm": 0.0068359375
+        }
+      }
+    },
+    "700": {
+      "bayes_pooled_width_vs_bayes_width": {
+        "Q1": {
+          "b_worse_only_miss": 3,
+          "c_better_only_miss": 6,
+          "difference": 0.0005999999999999998,
+          "mcnemar_p": 0.5078125,
+          "mcnemar_p_holm": 1.0
+        },
+        "Q2": {
+          "b_worse_only_miss": 1,
+          "c_better_only_miss": 1,
+          "difference": 0.0,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        },
+        "Q3": {
+          "b_worse_only_miss": 4,
+          "c_better_only_miss": 1,
+          "difference": -0.0006000000000000016,
+          "mcnemar_p": 0.375,
+          "mcnemar_p_holm": 1.0
+        },
+        "Q4": {
+          "b_worse_only_miss": 2,
+          "c_better_only_miss": 0,
+          "difference": -0.0004000000000000002,
+          "mcnemar_p": 0.5,
+          "mcnemar_p_holm": 1.0
+        },
+        "Q5": {
+          "b_worse_only_miss": 3,
+          "c_better_only_miss": 0,
+          "difference": -0.0006000000000000007,
+          "mcnemar_p": 0.25,
+          "mcnemar_p_holm": 1.0
+        }
+      }
+    }
+  },
+  "paired_holm_family_size": 15,
+  "paired_holm_family": "One Holm step-down over the union of every (contrast, horizon, regime) cell reported here, not one family per contrast.  Post hoc: the Type II cells were computed and written before any paired test was added, so the family was not declared in advance.  It is comprehensive rather than prospective -- every cell of every contrast enters, none was chosen after seeing the estimates -- which controls the familywise rate over the reported set but does not make the analysis confirmatory.",
+  "paired_note": "Both rules score the same documents, so differences are paired. b and c are discordant counts and mcnemar_p is the two-sided exact test; marginal binomial standard errors do not apply.",
+  "runtime_seconds": 2489.2548902920003,
+  "document_indicators_file": "width_persistence_indicators.npz",
+  "document_indicators_note": "Boolean miss indicator per evaluation document, keyed '<regime>|<rule>|<horizon>'.  True means the rule failed to reject.",
+  "max_regret": {
+    "note": "Largest Type II excess over the best benchmark rule, across the generating regimes, matching the convention of the regime sweeps. Standard errors are a paired document bootstrap that recomputes the envelope on each draw; a maximum of differences is not a binomial proportion.",
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed_salt": 91730041,
+    "envelope_rules": [
+      "bayes_shared",
+      "bayes_width",
+      "bayes_pooled_width",
+      "h_gum_star_0.1",
+      "h_gum_star_0.01",
+      "h_gum_star_0.005",
+      "h_ars",
+      "h_log",
+      "h_ind_1_over_e"
+    ],
+    "by_horizon": {
+      "100": {
+        "bayes_shared": {
+          "max_regret": 0.0506,
+          "mc_se": 0.0031958189152812852,
+          "argmax_regime": "Q2"
+        },
+        "bayes_width": {
+          "max_regret": 0.003799999999999998,
+          "mc_se": 0.0007981667276092957,
+          "argmax_regime": "Q5"
+        },
+        "bayes_pooled_width": {
+          "max_regret": 0.0001999999999999988,
+          "mc_se": 0.0007129137977634547,
+          "argmax_regime": "Q1"
+        },
+        "h_gum_star_0.1": {
+          "max_regret": 0.0552,
+          "mc_se": 0.0029227708659365363,
+          "argmax_regime": "Q5"
+        },
+        "h_gum_star_0.01": {
+          "max_regret": 0.0794,
+          "mc_se": 0.0040668382678376,
+          "argmax_regime": "Q1"
+        },
+        "h_gum_star_0.005": {
+          "max_regret": 0.12,
+          "mc_se": 0.004755781614980305,
+          "argmax_regime": "Q1"
+        },
+        "h_ars": {
+          "max_regret": 0.0204,
+          "mc_se": 0.001885551071018951,
+          "argmax_regime": "Q4"
+        },
+        "h_log": {
+          "max_regret": 0.1246,
+          "mc_se": 0.003759960724838239,
+          "argmax_regime": "Q5"
+        },
+        "h_ind_1_over_e": {
+          "max_regret": 0.1904,
+          "mc_se": 0.004515451704098505,
+          "argmax_regime": "Q5"
+        }
+      },
+      "300": {
+        "bayes_shared": {
+          "max_regret": 0.035,
+          "mc_se": 0.002263917262332113,
+          "argmax_regime": "Q1"
+        },
+        "bayes_width": {
+          "max_regret": 0.0023999999999999994,
+          "mc_se": 0.000649765386527137,
+          "argmax_regime": "Q5"
+        },
+        "bayes_pooled_width": {
+          "max_regret": 0.0011999999999999997,
+          "mc_se": 0.0006372019877453259,
+          "argmax_regime": "Q1"
+        },
+        "h_gum_star_0.1": {
+          "max_regret": 0.0386,
+          "mc_se": 0.0021771010276149722,
+          "argmax_regime": "Q4"
+        },
+        "h_gum_star_0.01": {
+          "max_regret": 0.0226,
+          "mc_se": 0.0022417599657126373,
+          "argmax_regime": "Q1"
+        },
+        "h_gum_star_0.005": {
+          "max_regret": 0.0668,
+          "mc_se": 0.003652058668238799,
+          "argmax_regime": "Q1"
+        },
+        "h_ars": {
+          "max_regret": 0.0174,
+          "mc_se": 0.0016642523450288282,
+          "argmax_regime": "Q4"
+        },
+        "h_log": {
+          "max_regret": 0.0842,
+          "mc_se": 0.003410463901291286,
+          "argmax_regime": "Q4"
+        },
+        "h_ind_1_over_e": {
+          "max_regret": 0.1202,
+          "mc_se": 0.004368799962982777,
+          "argmax_regime": "Q4"
+        }
+      },
+      "700": {
+        "bayes_shared": {
+          "max_regret": 0.0252,
+          "mc_se": 0.001906484067793472,
+          "argmax_regime": "Q1"
+        },
+        "bayes_width": {
+          "max_regret": 0.0006000000000000016,
+          "mc_se": 0.0003268402090642012,
+          "argmax_regime": "Q3"
+        },
+        "bayes_pooled_width": {
+          "max_regret": 0.0005999999999999998,
+          "mc_se": 0.000502913562180928,
+          "argmax_regime": "Q1"
+        },
+        "h_gum_star_0.1": {
+          "max_regret": 0.030399999999999996,
+          "mc_se": 0.001982745417267396,
+          "argmax_regime": "Q4"
+        },
+        "h_gum_star_0.01": {
+          "max_regret": 0.0068,
+          "mc_se": 0.0009041361850520913,
+          "argmax_regime": "Q5"
+        },
+        "h_gum_star_0.005": {
+          "max_regret": 0.0176,
+          "mc_se": 0.002008355373347259,
+          "argmax_regime": "Q1"
+        },
+        "h_ars": {
+          "max_regret": 0.012,
+          "mc_se": 0.0012237748209561312,
+          "argmax_regime": "Q4"
+        },
+        "h_log": {
+          "max_regret": 0.059399999999999994,
+          "mc_se": 0.0026288960776899525,
+          "argmax_regime": "Q4"
+        },
+        "h_ind_1_over_e": {
+          "max_regret": 0.08360000000000001,
+          "mc_se": 0.0031730117793471752,
+          "argmax_regime": "Q5"
+        }
+      }
+    },
+    "pooled_over_horizons": {
+      "bayes_shared": 0.0031958189152812852,
+      "bayes_width": 0.0007780823517295808,
+      "bayes_pooled_width": 0.0005860994081707709,
+      "h_gum_star_0.1": 0.0029227708659365363,
+      "h_gum_star_0.01": 0.0040668382678376,
+      "h_gum_star_0.005": 0.004755781614980305,
+      "h_ars": 0.0018399235444237,
+      "h_log": 0.003759960724838239,
+      "h_ind_1_over_e": 0.004515451704098505
+    }
+  }
+}

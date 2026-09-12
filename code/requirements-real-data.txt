@@ -1,0 +1,3 @@
+# Released-output replay, prompt construction, and matched-arm regeneration.
+# Keep all versions in one file, including the upstream sampler's IPython import.
+-r requirements.txt

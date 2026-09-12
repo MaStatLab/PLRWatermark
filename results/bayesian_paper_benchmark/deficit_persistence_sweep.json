@@ -1,0 +1,815 @@
+{
+  "description": "Does partial pooling of the deficit buy anything?",
+  "seed": 20260902,
+  "config": {
+    "vocabulary_size": 1000,
+    "horizons": [
+      15,
+      30,
+      60
+    ],
+    "delta_support": [
+      0.001,
+      0.5
+    ],
+    "alpha_level": 0.05,
+    "n_calibration": 10000,
+    "n_evaluation_null": 5000,
+    "n_evaluation_alternative": 5000
+  },
+  "pooled_prior": {
+    "kappas": [
+      2.0,
+      8.0,
+      32.0,
+      128.0,
+      "inf"
+    ],
+    "mu_nodes": 12,
+    "beta_nodes": 64,
+    "n_components": 49,
+    "delta_support": [
+      0.001,
+      0.5
+    ],
+    "tokenwise_atom": [
+      0.5,
+      2.0
+    ]
+  },
+  "regimes": {
+    "P1": {
+      "rho": 1.0,
+      "description": "rho = 1; the deficit is constant within a document -- exactly the shared-deficit design",
+      "mean_delta": 0.25134672659372137,
+      "sd_delta": 0.14486499907046127,
+      "mean_within_document_variance": 3.248375858053028e-33,
+      "between_document_variance_raw": 0.02098999600199195,
+      "between_document_variance_corrected": 0.02098999600199195,
+      "population_icc": 0.9999999999999999,
+      "realized_icc": 1.0
+    },
+    "P2": {
+      "rho": 0.95,
+      "description": "rho = .95; ICC .894, strongly persistent",
+      "mean_delta": 0.25159883818787476,
+      "sd_delta": 0.14335409883645533,
+      "mean_within_document_variance": 0.002219677854849144,
+      "between_document_variance_raw": 0.018371320191990104,
+      "between_document_variance_corrected": 0.01833432556107595,
+      "population_icc": 0.8941303658161673,
+      "realized_icc": 0.8920075174683803
+    },
+    "P3": {
+      "rho": 0.8,
+      "description": "rho = .80; ICC .622, moderately persistent",
+      "mean_delta": 0.24915768766552412,
+      "sd_delta": 0.1443151303494352,
+      "mean_within_document_variance": 0.007818912852005746,
+      "between_document_variance_raw": 0.013140817950702804,
+      "between_document_variance_corrected": 0.013010502736502708,
+      "population_icc": 0.6220974961647495,
+      "realized_icc": 0.62462159253669
+    },
+    "P4": {
+      "rho": 0.6,
+      "description": "rho = .60; ICC .346, weakly persistent",
+      "mean_delta": 0.2502285616306914,
+      "sd_delta": 0.14363673706528698,
+      "mean_within_document_variance": 0.01369479068011031,
+      "between_document_variance_raw": 0.0071663325607919616,
+      "between_document_variance_corrected": 0.00693808604945679,
+      "population_icc": 0.3456586601825806,
+      "realized_icc": 0.3362636311161812
+    },
+    "P5": {
+      "rho": 0.3,
+      "description": "rho = .30; ICC .086, barely persistent",
+      "mean_delta": 0.25023461661938196,
+      "sd_delta": 0.14406981873288188,
+      "mean_within_document_variance": 0.01898128445289115,
+      "between_document_variance_raw": 0.0020915320770889963,
+      "between_document_variance_corrected": 0.0017751773362074772,
+      "population_icc": 0.0859727017216125,
+      "realized_icc": 0.08552408181339495
+    },
+    "P6": {
+      "rho": 0.0,
+      "description": "rho = 0; Delta_t i.i.d. uniform with no document-level component -- exactly the tokenwise design",
+      "mean_delta": 0.2508258862315746,
+      "sd_delta": 0.14391169239699675,
+      "mean_within_document_variance": 0.020706571708794412,
+      "between_document_variance_raw": 0.0003491138157657713,
+      "between_document_variance_corrected": 4.00428728586442e-06,
+      "population_icc": 0.0,
+      "realized_icc": 0.00019334504683125566
+    }
+  },
+  "type_i_error": {
+    "15": {
+      "bayes_shared": 0.0496,
+      "bayes_tokenwise": 0.0512,
+      "bayes_pooled": 0.0496,
+      "h_gum_star_0.1": 0.0486,
+      "h_gum_star_0.01": 0.0538,
+      "h_gum_star_0.005": 0.0532,
+      "h_ars": 0.0512,
+      "h_log": 0.0502,
+      "h_ind_1_over_e": 0.0464
+    },
+    "30": {
+      "bayes_shared": 0.05,
+      "bayes_tokenwise": 0.0516,
+      "bayes_pooled": 0.0494,
+      "h_gum_star_0.1": 0.053,
+      "h_gum_star_0.01": 0.0516,
+      "h_gum_star_0.005": 0.049,
+      "h_ars": 0.053,
+      "h_log": 0.0532,
+      "h_ind_1_over_e": 0.0392
+    },
+    "60": {
+      "bayes_shared": 0.0528,
+      "bayes_tokenwise": 0.0504,
+      "bayes_pooled": 0.052,
+      "h_gum_star_0.1": 0.051,
+      "h_gum_star_0.01": 0.0564,
+      "h_gum_star_0.005": 0.0516,
+      "h_ars": 0.0456,
+      "h_log": 0.05,
+      "h_ind_1_over_e": 0.034
+    }
+  },
+  "type2_error": {
+    "15": {
+      "bayes_shared": {
+        "P1": 0.1164,
+        "P2": 0.0994,
+        "P3": 0.0698,
+        "P4": 0.0378,
+        "P5": 0.0176,
+        "P6": 0.0134
+      },
+      "bayes_tokenwise": {
+        "P1": 0.1166,
+        "P2": 0.0992,
+        "P3": 0.0696,
+        "P4": 0.0374,
+        "P5": 0.0162,
+        "P6": 0.0122
+      },
+      "bayes_pooled": {
+        "P1": 0.1158,
+        "P2": 0.0992,
+        "P3": 0.0702,
+        "P4": 0.0378,
+        "P5": 0.0164,
+        "P6": 0.0128
+      },
+      "h_gum_star_0.1": {
+        "P1": 0.2636,
+        "P2": 0.2444,
+        "P3": 0.2172,
+        "P4": 0.1676,
+        "P5": 0.1214,
+        "P6": 0.109
+      },
+      "h_gum_star_0.01": {
+        "P1": 0.119,
+        "P2": 0.1,
+        "P3": 0.0706,
+        "P4": 0.0392,
+        "P5": 0.0176,
+        "P6": 0.0142
+      },
+      "h_gum_star_0.005": {
+        "P1": 0.1178,
+        "P2": 0.1,
+        "P3": 0.0704,
+        "P4": 0.0394,
+        "P5": 0.0172,
+        "P6": 0.0142
+      },
+      "h_ars": {
+        "P1": 0.1408,
+        "P2": 0.1266,
+        "P3": 0.1018,
+        "P4": 0.0632,
+        "P5": 0.0316,
+        "P6": 0.0258
+      },
+      "h_log": {
+        "P1": 0.414,
+        "P2": 0.4022,
+        "P3": 0.4048,
+        "P4": 0.3954,
+        "P5": 0.3802,
+        "P6": 0.3848
+      },
+      "h_ind_1_over_e": {
+        "P1": 0.5612,
+        "P2": 0.5638,
+        "P3": 0.5888,
+        "P4": 0.5976,
+        "P5": 0.6066,
+        "P6": 0.6146
+      }
+    },
+    "30": {
+      "bayes_shared": {
+        "P1": 0.0608,
+        "P2": 0.0442,
+        "P3": 0.0192,
+        "P4": 0.0072,
+        "P5": 0.0008,
+        "P6": 0.0002
+      },
+      "bayes_tokenwise": {
+        "P1": 0.0622,
+        "P2": 0.045,
+        "P3": 0.0202,
+        "P4": 0.006,
+        "P5": 0.0008,
+        "P6": 0.0
+      },
+      "bayes_pooled": {
+        "P1": 0.0606,
+        "P2": 0.0444,
+        "P3": 0.0196,
+        "P4": 0.0064,
+        "P5": 0.0008,
+        "P6": 0.0002
+      },
+      "h_gum_star_0.1": {
+        "P1": 0.1778,
+        "P2": 0.1492,
+        "P3": 0.1148,
+        "P4": 0.0676,
+        "P5": 0.019,
+        "P6": 0.0088
+      },
+      "h_gum_star_0.01": {
+        "P1": 0.0988,
+        "P2": 0.0686,
+        "P3": 0.0392,
+        "P4": 0.0154,
+        "P5": 0.0012,
+        "P6": 0.0008
+      },
+      "h_gum_star_0.005": {
+        "P1": 0.0628,
+        "P2": 0.0434,
+        "P3": 0.0204,
+        "P4": 0.0062,
+        "P5": 0.0008,
+        "P6": 0.0002
+      },
+      "h_ars": {
+        "P1": 0.0924,
+        "P2": 0.0704,
+        "P3": 0.0378,
+        "P4": 0.0176,
+        "P5": 0.0016,
+        "P6": 0.0006
+      },
+      "h_log": {
+        "P1": 0.2924,
+        "P2": 0.271,
+        "P3": 0.2596,
+        "P4": 0.218,
+        "P5": 0.1598,
+        "P6": 0.1478
+      },
+      "h_ind_1_over_e": {
+        "P1": 0.4368,
+        "P2": 0.4238,
+        "P3": 0.4288,
+        "P4": 0.423,
+        "P5": 0.4052,
+        "P6": 0.4086
+      }
+    },
+    "60": {
+      "bayes_shared": {
+        "P1": 0.0296,
+        "P2": 0.0168,
+        "P3": 0.0054,
+        "P4": 0.0008,
+        "P5": 0.0,
+        "P6": 0.0
+      },
+      "bayes_tokenwise": {
+        "P1": 0.0328,
+        "P2": 0.0204,
+        "P3": 0.0064,
+        "P4": 0.0008,
+        "P5": 0.0,
+        "P6": 0.0
+      },
+      "bayes_pooled": {
+        "P1": 0.0304,
+        "P2": 0.0174,
+        "P3": 0.0054,
+        "P4": 0.0008,
+        "P5": 0.0,
+        "P6": 0.0
+      },
+      "h_gum_star_0.1": {
+        "P1": 0.1206,
+        "P2": 0.1012,
+        "P3": 0.058,
+        "P4": 0.0158,
+        "P5": 0.0012,
+        "P6": 0.0002
+      },
+      "h_gum_star_0.01": {
+        "P1": 0.0528,
+        "P2": 0.0364,
+        "P3": 0.0132,
+        "P4": 0.0012,
+        "P5": 0.0,
+        "P6": 0.0
+      },
+      "h_gum_star_0.005": {
+        "P1": 0.048,
+        "P2": 0.034,
+        "P3": 0.0124,
+        "P4": 0.001,
+        "P5": 0.0,
+        "P6": 0.0
+      },
+      "h_ars": {
+        "P1": 0.0574,
+        "P2": 0.0404,
+        "P3": 0.0164,
+        "P4": 0.002,
+        "P5": 0.0,
+        "P6": 0.0
+      },
+      "h_log": {
+        "P1": 0.2122,
+        "P2": 0.1918,
+        "P3": 0.1556,
+        "P4": 0.103,
+        "P5": 0.0434,
+        "P6": 0.0232
+      },
+      "h_ind_1_over_e": {
+        "P1": 0.312,
+        "P2": 0.286,
+        "P3": 0.2748,
+        "P4": 0.2298,
+        "P5": 0.174,
+        "P6": 0.1532
+      }
+    }
+  },
+  "paired": {
+    "15": {
+      "bayes_pooled_vs_bayes_shared": {
+        "P1": {
+          "b_worse_only_miss": 5,
+          "c_better_only_miss": 2,
+          "difference": -0.0006000000000000033,
+          "mcnemar_p": 0.453125,
+          "mcnemar_p_holm": 1.0
+        },
+        "P2": {
+          "b_worse_only_miss": 5,
+          "c_better_only_miss": 4,
+          "difference": -0.00020000000000000573,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        },
+        "P3": {
+          "b_worse_only_miss": 1,
+          "c_better_only_miss": 3,
+          "difference": 0.0003999999999999976,
+          "mcnemar_p": 0.625,
+          "mcnemar_p_holm": 1.0
+        },
+        "P4": {
+          "b_worse_only_miss": 6,
+          "c_better_only_miss": 6,
+          "difference": 0.0,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        },
+        "P5": {
+          "b_worse_only_miss": 7,
+          "c_better_only_miss": 1,
+          "difference": -0.0011999999999999997,
+          "mcnemar_p": 0.0703125,
+          "mcnemar_p_holm": 1.0
+        },
+        "P6": {
+          "b_worse_only_miss": 4,
+          "c_better_only_miss": 1,
+          "difference": -0.0005999999999999998,
+          "mcnemar_p": 0.375,
+          "mcnemar_p_holm": 1.0
+        }
+      },
+      "bayes_pooled_vs_bayes_tokenwise": {
+        "P1": {
+          "b_worse_only_miss": 9,
+          "c_better_only_miss": 5,
+          "difference": -0.0007999999999999952,
+          "mcnemar_p": 0.4239501953125,
+          "mcnemar_p_holm": 1.0
+        },
+        "P2": {
+          "b_worse_only_miss": 4,
+          "c_better_only_miss": 4,
+          "difference": 0.0,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        },
+        "P3": {
+          "b_worse_only_miss": 5,
+          "c_better_only_miss": 8,
+          "difference": 0.0006000000000000033,
+          "mcnemar_p": 0.5810546875,
+          "mcnemar_p_holm": 1.0
+        },
+        "P4": {
+          "b_worse_only_miss": 5,
+          "c_better_only_miss": 7,
+          "difference": 0.0003999999999999976,
+          "mcnemar_p": 0.7744140625,
+          "mcnemar_p_holm": 1.0
+        },
+        "P5": {
+          "b_worse_only_miss": 3,
+          "c_better_only_miss": 4,
+          "difference": 0.00020000000000000226,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        },
+        "P6": {
+          "b_worse_only_miss": 1,
+          "c_better_only_miss": 4,
+          "difference": 0.0005999999999999998,
+          "mcnemar_p": 0.375,
+          "mcnemar_p_holm": 1.0
+        }
+      }
+    },
+    "30": {
+      "bayes_pooled_vs_bayes_shared": {
+        "P1": {
+          "b_worse_only_miss": 3,
+          "c_better_only_miss": 2,
+          "difference": -0.0001999999999999988,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        },
+        "P2": {
+          "b_worse_only_miss": 1,
+          "c_better_only_miss": 2,
+          "difference": 0.0001999999999999988,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        },
+        "P3": {
+          "b_worse_only_miss": 0,
+          "c_better_only_miss": 2,
+          "difference": 0.00040000000000000105,
+          "mcnemar_p": 0.5,
+          "mcnemar_p_holm": 1.0
+        },
+        "P4": {
+          "b_worse_only_miss": 4,
+          "c_better_only_miss": 0,
+          "difference": -0.0007999999999999995,
+          "mcnemar_p": 0.125,
+          "mcnemar_p_holm": 1.0
+        },
+        "P5": {
+          "b_worse_only_miss": 1,
+          "c_better_only_miss": 1,
+          "difference": 0.0,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        },
+        "P6": {
+          "b_worse_only_miss": 0,
+          "c_better_only_miss": 0,
+          "difference": 0.0,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        }
+      },
+      "bayes_pooled_vs_bayes_tokenwise": {
+        "P1": {
+          "b_worse_only_miss": 11,
+          "c_better_only_miss": 3,
+          "difference": -0.0015999999999999973,
+          "mcnemar_p": 0.057373046875,
+          "mcnemar_p_holm": 1.0
+        },
+        "P2": {
+          "b_worse_only_miss": 6,
+          "c_better_only_miss": 3,
+          "difference": -0.0005999999999999964,
+          "mcnemar_p": 0.5078125,
+          "mcnemar_p_holm": 1.0
+        },
+        "P3": {
+          "b_worse_only_miss": 5,
+          "c_better_only_miss": 2,
+          "difference": -0.0005999999999999998,
+          "mcnemar_p": 0.453125,
+          "mcnemar_p_holm": 1.0
+        },
+        "P4": {
+          "b_worse_only_miss": 0,
+          "c_better_only_miss": 2,
+          "difference": 0.0004000000000000002,
+          "mcnemar_p": 0.5,
+          "mcnemar_p_holm": 1.0
+        },
+        "P5": {
+          "b_worse_only_miss": 0,
+          "c_better_only_miss": 0,
+          "difference": 0.0,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        },
+        "P6": {
+          "b_worse_only_miss": 0,
+          "c_better_only_miss": 1,
+          "difference": 0.0002,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        }
+      }
+    },
+    "60": {
+      "bayes_pooled_vs_bayes_shared": {
+        "P1": {
+          "b_worse_only_miss": 0,
+          "c_better_only_miss": 4,
+          "difference": 0.0007999999999999986,
+          "mcnemar_p": 0.125,
+          "mcnemar_p_holm": 1.0
+        },
+        "P2": {
+          "b_worse_only_miss": 1,
+          "c_better_only_miss": 4,
+          "difference": 0.0005999999999999998,
+          "mcnemar_p": 0.375,
+          "mcnemar_p_holm": 1.0
+        },
+        "P3": {
+          "b_worse_only_miss": 1,
+          "c_better_only_miss": 1,
+          "difference": 0.0,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        },
+        "P4": {
+          "b_worse_only_miss": 0,
+          "c_better_only_miss": 0,
+          "difference": 0.0,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        },
+        "P5": {
+          "b_worse_only_miss": 0,
+          "c_better_only_miss": 0,
+          "difference": 0.0,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        },
+        "P6": {
+          "b_worse_only_miss": 0,
+          "c_better_only_miss": 0,
+          "difference": 0.0,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        }
+      },
+      "bayes_pooled_vs_bayes_tokenwise": {
+        "P1": {
+          "b_worse_only_miss": 14,
+          "c_better_only_miss": 2,
+          "difference": -0.002400000000000003,
+          "mcnemar_p": 0.004180908203125,
+          "mcnemar_p_holm": 0.146331787109375
+        },
+        "P2": {
+          "b_worse_only_miss": 16,
+          "c_better_only_miss": 1,
+          "difference": -0.0030000000000000027,
+          "mcnemar_p": 0.000274658203125,
+          "mcnemar_p_holm": 0.0098876953125
+        },
+        "P3": {
+          "b_worse_only_miss": 7,
+          "c_better_only_miss": 2,
+          "difference": -0.001,
+          "mcnemar_p": 0.1796875,
+          "mcnemar_p_holm": 1.0
+        },
+        "P4": {
+          "b_worse_only_miss": 0,
+          "c_better_only_miss": 0,
+          "difference": 0.0,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        },
+        "P5": {
+          "b_worse_only_miss": 0,
+          "c_better_only_miss": 0,
+          "difference": 0.0,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        },
+        "P6": {
+          "b_worse_only_miss": 0,
+          "c_better_only_miss": 0,
+          "difference": 0.0,
+          "mcnemar_p": 1.0,
+          "mcnemar_p_holm": 1.0
+        }
+      }
+    }
+  },
+  "paired_holm_family_size": 36,
+  "paired_holm_family": "One Holm step-down over the union of every (contrast, horizon, regime) cell reported here, not one family per contrast.  Post hoc: the Type II cells were computed and written before any paired test was added, so the family was not declared in advance.  It is comprehensive rather than prospective -- every cell of every contrast enters, none was chosen after seeing the estimates -- which controls the familywise rate over the reported set but does not make the analysis confirmatory.",
+  "paired_note": "Both rules score the same documents, so differences are paired. b and c are discordant counts and mcnemar_p is the two-sided exact test; marginal binomial standard errors do not apply to these differences.",
+  "runtime_seconds": 77.084493666,
+  "document_indicators_file": "deficit_persistence_indicators.npz",
+  "document_indicators_note": "Boolean miss indicator per evaluation document, keyed '<regime>|<rule>|<horizon>'.  True means the rule failed to reject.",
+  "max_regret": {
+    "note": "Largest Type II excess over the best benchmark rule, across the generating regimes, matching the convention of the regime sweeps. Standard errors are a paired document bootstrap that recomputes the envelope on each draw; a maximum of differences is not a binomial proportion.",
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed_salt": 91730041,
+    "envelope_rules": [
+      "bayes_shared",
+      "bayes_tokenwise",
+      "bayes_pooled",
+      "h_gum_star_0.1",
+      "h_gum_star_0.01",
+      "h_gum_star_0.005",
+      "h_ars",
+      "h_log",
+      "h_ind_1_over_e"
+    ],
+    "by_horizon": {
+      "15": {
+        "bayes_shared": {
+          "max_regret": 0.001400000000000002,
+          "mc_se": 0.0005679869228884438,
+          "argmax_regime": "P5"
+        },
+        "bayes_tokenwise": {
+          "max_regret": 0.0007999999999999952,
+          "mc_se": 0.0005897277756937614,
+          "argmax_regime": "P1"
+        },
+        "bayes_pooled": {
+          "max_regret": 0.0006000000000000033,
+          "mc_se": 0.0005568474113433266,
+          "argmax_regime": "P3"
+        },
+        "h_gum_star_0.1": {
+          "max_regret": 0.1478,
+          "mc_se": 0.003980089797655164,
+          "argmax_regime": "P1"
+        },
+        "h_gum_star_0.01": {
+          "max_regret": 0.0031999999999999945,
+          "mc_se": 0.0009866197947080051,
+          "argmax_regime": "P1"
+        },
+        "h_gum_star_0.005": {
+          "max_regret": 0.0020000000000000018,
+          "mc_se": 0.0007915157348905202,
+          "argmax_regime": "P1"
+        },
+        "h_ars": {
+          "max_regret": 0.032200000000000006,
+          "mc_se": 0.0024906596902922093,
+          "argmax_regime": "P3"
+        },
+        "h_log": {
+          "max_regret": 0.3726,
+          "mc_se": 0.0061050639351956345,
+          "argmax_regime": "P6"
+        },
+        "h_ind_1_over_e": {
+          "max_regret": 0.6024,
+          "mc_se": 0.006419852736985657,
+          "argmax_regime": "P6"
+        }
+      },
+      "30": {
+        "bayes_shared": {
+          "max_regret": 0.0011999999999999997,
+          "mc_se": 0.0005431781671428167,
+          "argmax_regime": "P4"
+        },
+        "bayes_tokenwise": {
+          "max_regret": 0.0015999999999999973,
+          "mc_se": 0.000610648840171664,
+          "argmax_regime": "P1"
+        },
+        "bayes_pooled": {
+          "max_regret": 0.0010000000000000009,
+          "mc_se": 0.0006330860833997984,
+          "argmax_regime": "P2"
+        },
+        "h_gum_star_0.1": {
+          "max_regret": 0.11720000000000001,
+          "mc_se": 0.004512483711286099,
+          "argmax_regime": "P1"
+        },
+        "h_gum_star_0.01": {
+          "max_regret": 0.0382,
+          "mc_se": 0.0029737622670634755,
+          "argmax_regime": "P1"
+        },
+        "h_gum_star_0.005": {
+          "max_regret": 0.0021999999999999936,
+          "mc_se": 0.0009119406383443694,
+          "argmax_regime": "P1"
+        },
+        "h_ars": {
+          "max_regret": 0.031799999999999995,
+          "mc_se": 0.002524051120129805,
+          "argmax_regime": "P1"
+        },
+        "h_log": {
+          "max_regret": 0.2404,
+          "mc_se": 0.005405322216494792,
+          "argmax_regime": "P3"
+        },
+        "h_ind_1_over_e": {
+          "max_regret": 0.417,
+          "mc_se": 0.005566901798830194,
+          "argmax_regime": "P4"
+        }
+      },
+      "60": {
+        "bayes_shared": {
+          "max_regret": 0.0,
+          "mc_se": 0.0001927963309106457,
+          "argmax_regime": null
+        },
+        "bayes_tokenwise": {
+          "max_regret": 0.0036000000000000025,
+          "mc_se": 0.0007597308441005505,
+          "argmax_regime": "P2"
+        },
+        "bayes_pooled": {
+          "max_regret": 0.0007999999999999986,
+          "mc_se": 0.00036844499705916516,
+          "argmax_regime": "P1"
+        },
+        "h_gum_star_0.1": {
+          "max_regret": 0.091,
+          "mc_se": 0.0037424615695153952,
+          "argmax_regime": "P1"
+        },
+        "h_gum_star_0.01": {
+          "max_regret": 0.0232,
+          "mc_se": 0.002067477514179013,
+          "argmax_regime": "P1"
+        },
+        "h_gum_star_0.005": {
+          "max_regret": 0.0184,
+          "mc_se": 0.001712682878212035,
+          "argmax_regime": "P1"
+        },
+        "h_ars": {
+          "max_regret": 0.0278,
+          "mc_se": 0.0022674889775104873,
+          "argmax_regime": "P1"
+        },
+        "h_log": {
+          "max_regret": 0.18259999999999998,
+          "mc_se": 0.0050009750284937355,
+          "argmax_regime": "P1"
+        },
+        "h_ind_1_over_e": {
+          "max_regret": 0.2824,
+          "mc_se": 0.005869035606424162,
+          "argmax_regime": "P1"
+        }
+      }
+    },
+    "pooled_over_horizons": {
+      "bayes_shared": 0.0005322975392909219,
+      "bayes_tokenwise": 0.0007428078632869199,
+      "bayes_pooled": 0.000560086322225572,
+      "h_gum_star_0.1": 0.003980089797655164,
+      "h_gum_star_0.01": 0.0029737622670634755,
+      "h_gum_star_0.005": 0.001712682878212035,
+      "h_ars": 0.0021340345854287154,
+      "h_log": 0.0061050639351956345,
+      "h_ind_1_over_e": 0.006419852736985657
+    }
+  }
+}

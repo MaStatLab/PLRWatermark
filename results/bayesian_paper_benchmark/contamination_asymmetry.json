@@ -1,0 +1,318 @@
+{
+  "question": "Why is the Gumbel shared Bayes rule insensitive to the rho model at contamination rates that destroy its inverse counterpart?",
+  "design": {
+    "vocabulary_size": 1000,
+    "horizon": 700,
+    "delta_grid": "96 Gauss-Legendre nodes on (0.001, 0.5)",
+    "quadrature_nodes": 4000,
+    "n_documents_per_cell": 300,
+    "evidence_threshold": 20.0,
+    "seed": 240401251
+  },
+  "gumbel_breakeven": [
+    {
+      "delta": 0.005,
+      "kl_component_vs_null": 0.02472597978310985,
+      "kl_null_vs_component": 0.0048975210210053955,
+      "breakeven_rho": 0.8346744683084506
+    },
+    {
+      "delta": 0.05,
+      "kl_component_vs_null": 0.24951188079491002,
+      "kl_null_vs_component": 0.05135562139762824,
+      "breakeven_rho": 0.8293081804336464
+    },
+    {
+      "delta": 0.1,
+      "kl_component_vs_null": 0.5040283764221797,
+      "kl_null_vs_component": 0.10855937840964008,
+      "breakeven_rho": 0.8227855885897621
+    },
+    {
+      "delta": 0.2,
+      "kl_component_vs_null": 1.0280749284290438,
+      "kl_null_vs_component": 0.24489715198063983,
+      "breakeven_rho": 0.8076178136587066
+    },
+    {
+      "delta": 0.35,
+      "kl_component_vs_null": 1.8516769778349211,
+      "kl_null_vs_component": 0.5295324580748946,
+      "breakeven_rho": 0.7776203763981095
+    },
+    {
+      "delta": 0.5,
+      "kl_component_vs_null": 2.7203125999793434,
+      "kl_null_vs_component": 0.9872432498874378,
+      "breakeven_rho": 0.7337212735654647
+    }
+  ],
+  "gumbel_breakeven_note": "A fixed-Delta clean rule accumulates positive drift while rho_star < D1/(D1+D0). The reverse divergence is finite because this density has integrable log-density endpoints; positivity alone would not establish integrability.",
+  "gumbel_drift_sweep": [
+    {
+      "rho_star": 0.0,
+      "mean_log_bayes_factor": 897.9355732536467,
+      "median_log_bayes_factor": 880.4105502697971,
+      "fraction_above_threshold": 1.0
+    },
+    {
+      "rho_star": 0.4,
+      "mean_log_bayes_factor": 464.3062931347618,
+      "median_log_bayes_factor": 444.67584097651434,
+      "fraction_above_threshold": 1.0
+    },
+    {
+      "rho_star": 0.6,
+      "mean_log_bayes_factor": 270.1674139918156,
+      "median_log_bayes_factor": 270.8622173613945,
+      "fraction_above_threshold": 0.9633333333333334
+    },
+    {
+      "rho_star": 0.7,
+      "mean_log_bayes_factor": 176.05936100822277,
+      "median_log_bayes_factor": 181.7362312238032,
+      "fraction_above_threshold": 0.9766666666666667
+    },
+    {
+      "rho_star": 0.8,
+      "mean_log_bayes_factor": 85.39379241474033,
+      "median_log_bayes_factor": 80.12167958768491,
+      "fraction_above_threshold": 0.94
+    },
+    {
+      "rho_star": 0.9,
+      "mean_log_bayes_factor": 22.75647549256934,
+      "median_log_bayes_factor": 18.977544641347677,
+      "fraction_above_threshold": 0.8066666666666666
+    },
+    {
+      "rho_star": 1.0,
+      "mean_log_bayes_factor": -6.479085689006471,
+      "median_log_bayes_factor": -6.548945431344525,
+      "fraction_above_threshold": 0.0
+    }
+  ],
+  "inverse_support_ceiling": [
+    {
+      "rho_star": 0.0,
+      "median_delta_ceiling": 0.2693616947228524,
+      "mean_delta_ceiling": 0.27247682729907313,
+      "median_surviving_prior_mass": 0.5325333666031159,
+      "mean_surviving_prior_mass": 0.5432949023739895
+    },
+    {
+      "rho_star": 0.1,
+      "median_delta_ceiling": 0.09232180265955436,
+      "mean_delta_ceiling": 0.09485018144270799,
+      "median_surviving_prior_mass": 0.18417190348633417,
+      "mean_surviving_prior_mass": 0.18834733084277072
+    },
+    {
+      "rho_star": 0.25,
+      "median_delta_ceiling": 0.06050802868685923,
+      "mean_delta_ceiling": 0.06570449557959478,
+      "median_surviving_prior_mass": 0.11493913944131437,
+      "mean_surviving_prior_mass": 0.12992824588839202
+    },
+    {
+      "rho_star": 0.4,
+      "median_delta_ceiling": 0.05146757323266765,
+      "mean_delta_ceiling": 0.054084850402553605,
+      "median_surviving_prior_mass": 0.10476074086414772,
+      "mean_surviving_prior_mass": 0.10601623385274274
+    },
+    {
+      "rho_star": 0.6,
+      "median_delta_ceiling": 0.04179260279058261,
+      "mean_delta_ceiling": 0.04322930568678389,
+      "median_surviving_prior_mass": 0.08567086048036944,
+      "mean_surviving_prior_mass": 0.08462552063572741
+    }
+  ],
+  "inverse_support_note": "The limiting inverse alternative is supported on (0, 1-Delta), so every component with Delta > 1 - max(d) has zero likelihood.  The reverse divergence is infinite and no break-even rate exists.",
+  "paired_clean_vs_robust": [
+    {
+      "scheme": "gumbel",
+      "rho_star": 0.0,
+      "clean_rejects": 4993,
+      "robust_rejects": 4993,
+      "clean_only": 0,
+      "robust_only": 0,
+      "exact_mcnemar_p": 1.0,
+      "degenerate_reference_distribution": true
+    },
+    {
+      "scheme": "gumbel",
+      "rho_star": 0.1,
+      "clean_rejects": 4992,
+      "robust_rejects": 4992,
+      "clean_only": 0,
+      "robust_only": 0,
+      "exact_mcnemar_p": 1.0,
+      "degenerate_reference_distribution": true
+    },
+    {
+      "scheme": "gumbel",
+      "rho_star": 0.25,
+      "clean_rejects": 4990,
+      "robust_rejects": 4990,
+      "clean_only": 0,
+      "robust_only": 0,
+      "exact_mcnemar_p": 1.0,
+      "degenerate_reference_distribution": true
+    },
+    {
+      "scheme": "gumbel",
+      "rho_star": 0.4,
+      "clean_rejects": 4986,
+      "robust_rejects": 4986,
+      "clean_only": 0,
+      "robust_only": 0,
+      "exact_mcnemar_p": 1.0,
+      "degenerate_reference_distribution": true
+    },
+    {
+      "scheme": "gumbel",
+      "rho_star": 0.6,
+      "clean_rejects": 4975,
+      "robust_rejects": 4972,
+      "clean_only": 4,
+      "robust_only": 1,
+      "exact_mcnemar_p": 0.375,
+      "degenerate_reference_distribution": false
+    },
+    {
+      "scheme": "inverse",
+      "rho_star": 0.0,
+      "clean_rejects": 4774,
+      "robust_rejects": 4761,
+      "clean_only": 25,
+      "robust_only": 12,
+      "exact_mcnemar_p": 0.04703102743951604,
+      "degenerate_reference_distribution": false
+    },
+    {
+      "scheme": "inverse",
+      "rho_star": 0.1,
+      "clean_rejects": 4630,
+      "robust_rejects": 4724,
+      "clean_only": 22,
+      "robust_only": 116,
+      "exact_mcnemar_p": 1.2786465900402677e-16,
+      "degenerate_reference_distribution": false
+    },
+    {
+      "scheme": "inverse",
+      "rho_star": 0.25,
+      "clean_rejects": 4293,
+      "robust_rejects": 4631,
+      "clean_only": 23,
+      "robust_only": 361,
+      "exact_mcnemar_p": 2.945491414497873e-79,
+      "degenerate_reference_distribution": false
+    },
+    {
+      "scheme": "inverse",
+      "rho_star": 0.4,
+      "clean_rejects": 3890,
+      "robust_rejects": 4507,
+      "clean_only": 29,
+      "robust_only": 646,
+      "exact_mcnemar_p": 9.203624993182919e-153,
+      "degenerate_reference_distribution": false
+    },
+    {
+      "scheme": "inverse",
+      "rho_star": 0.6,
+      "clean_rejects": 2959,
+      "robust_rejects": 4122,
+      "clean_only": 31,
+      "robust_only": 1194,
+      "exact_mcnemar_p": 1.5909148597659296e-307,
+      "degenerate_reference_distribution": false
+    }
+  ],
+  "effective_horizon_match": [
+    {
+      "scheme": "gumbel",
+      "rho_star": 0.0,
+      "contaminated_type2_error": 0.0013999999999999568,
+      "surviving_horizon": 700,
+      "clean_type2_error_at_surviving_horizon": 0.0013999999999999568,
+      "excess_over_surviving_horizon": 0.0
+    },
+    {
+      "scheme": "gumbel",
+      "rho_star": 0.1,
+      "contaminated_type2_error": 0.0016000000000000458,
+      "surviving_horizon": 630,
+      "clean_type2_error_at_surviving_horizon": 0.0016000000000000458,
+      "excess_over_surviving_horizon": 0.0
+    },
+    {
+      "scheme": "gumbel",
+      "rho_star": 0.25,
+      "contaminated_type2_error": 0.0020000000000000018,
+      "surviving_horizon": 525,
+      "clean_type2_error_at_surviving_horizon": 0.0023999999999999577,
+      "excess_over_surviving_horizon": -0.00039999999999995595
+    },
+    {
+      "scheme": "gumbel",
+      "rho_star": 0.4,
+      "contaminated_type2_error": 0.0028000000000000247,
+      "surviving_horizon": 420,
+      "clean_type2_error_at_surviving_horizon": 0.0026000000000000467,
+      "excess_over_surviving_horizon": 0.00019999999999997797
+    },
+    {
+      "scheme": "gumbel",
+      "rho_star": 0.6,
+      "contaminated_type2_error": 0.0050000000000000044,
+      "surviving_horizon": 280,
+      "clean_type2_error_at_surviving_horizon": 0.006000000000000005,
+      "excess_over_surviving_horizon": -0.0010000000000000009
+    },
+    {
+      "scheme": "inverse",
+      "rho_star": 0.0,
+      "contaminated_type2_error": 0.04520000000000002,
+      "surviving_horizon": 700,
+      "clean_type2_error_at_surviving_horizon": 0.04500000000000004,
+      "excess_over_surviving_horizon": 0.00019999999999997797
+    },
+    {
+      "scheme": "inverse",
+      "rho_star": 0.1,
+      "contaminated_type2_error": 0.07399999999999995,
+      "surviving_horizon": 630,
+      "clean_type2_error_at_surviving_horizon": 0.047599999999999976,
+      "excess_over_surviving_horizon": 0.02639999999999998
+    },
+    {
+      "scheme": "inverse",
+      "rho_star": 0.25,
+      "contaminated_type2_error": 0.14139999999999997,
+      "surviving_horizon": 525,
+      "clean_type2_error_at_surviving_horizon": 0.053200000000000025,
+      "excess_over_surviving_horizon": 0.08819999999999995
+    },
+    {
+      "scheme": "inverse",
+      "rho_star": 0.4,
+      "contaminated_type2_error": 0.22199999999999998,
+      "surviving_horizon": 420,
+      "clean_type2_error_at_surviving_horizon": 0.06120000000000003,
+      "excess_over_surviving_horizon": 0.16079999999999994
+    },
+    {
+      "scheme": "inverse",
+      "rho_star": 0.6,
+      "contaminated_type2_error": 0.4082,
+      "surviving_horizon": 280,
+      "clean_type2_error_at_surviving_horizon": 0.08420000000000005,
+      "excess_over_surviving_horizon": 0.32399999999999995
+    }
+  ],
+  "effective_horizon_note": "Compares the clean-rho rule under contamination with the same rule on (1-rho_star)n uncontaminated tokens, using the independent clean benchmark.  A small excess means the replaced tokens cost little beyond their own information."
+}

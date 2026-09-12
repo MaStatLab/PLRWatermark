@@ -1,0 +1,20 @@
+{
+  "description": "Mean posterior mass on the union tail's Dirichlet (shape) block.",
+  "generator": "equal tail, so the shape block at full width is correct",
+  "prior_weight_on_shape_block": 0.5,
+  "documents": 2000,
+  "vocabulary_size": 1000,
+  "seed": 20260902,
+  "cells": {
+    "delta=0.005": {
+      "50": 0.4425824306322027,
+      "100": 0.5233502150212441,
+      "200": 0.6452130706422856
+    },
+    "delta=0.1": {
+      "50": 0.9157930676567034,
+      "100": 0.9610614522194976,
+      "200": 0.9892193547639051
+    }
+  }
+}

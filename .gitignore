@@ -1,0 +1,36 @@
+# Local environments, caches, and third-party downloads are not research records.
+.DS_Store
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.cache/
+third_party/
+tmp/
+results/bayesian_paper_benchmark/real_model/upstream_assets/
+
+# Keep only the technical report's intended source files and final PDF.
+manuscript/*
+output/*
+!output/pdf/
+output/pdf/*
+*.tex
+*.bbl
+*.bib
+bayesian_pivot_watermark_gumbel.pdf
+predictive_likelihood_ratios_arxiv.pdf
+!manuscript/bayesian_pivot_watermark_gumbel.tex
+!manuscript/bayesian_pivot_watermark_gumbel.bbl
+!manuscript/references.bib
+!output/pdf/bayesian_pivot_watermark_gumbel.pdf
+
+# TeX intermediates from optional local author checks.
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.blg

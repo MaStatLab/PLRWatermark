@@ -1,0 +1,63 @@
+{
+  "commit": "05b7ffda9279fc9e645f38807e4a0e2dbcff4330",
+  "files": {
+    "real data/results_data/1p3B-gumbel-c4-m200-T500-skipgram_prf-15485863-temp0.1-null.json": {
+      "sha256": "69a30754b789b09e9eea62de371d4bf3122ef09050feaa43e4d7efdedccc9ee6",
+      "url": "https://github.com/lx10077/WatermarkFramework/blob/05b7ffda9279fc9e645f38807e4a0e2dbcff4330/real%20data/results_data/1p3B-gumbel-c4-m200-T500-skipgram_prf-15485863-temp0.1-null.json"
+    },
+    "real data/results_data/1p3B-gumbel-c4-m200-T500-skipgram_prf-15485863-temp0.1-result.json": {
+      "sha256": "ac8fe621e94a749e4a1846363e9e87577e33fe7ce9ad6696cd56f94b6dac78c4",
+      "url": "https://github.com/lx10077/WatermarkFramework/blob/05b7ffda9279fc9e645f38807e4a0e2dbcff4330/real%20data/results_data/1p3B-gumbel-c4-m200-T500-skipgram_prf-15485863-temp0.1-result.json"
+    },
+    "real data/results_data/1p3B-gumbel-c4-m200-T500-skipgram_prf-15485863-temp0.1.pkl": {
+      "sha256": "760f50b4fa185f17679144dd2d51418865f4a5cf925557bf4978ba0dca6ebcb7",
+      "url": "https://github.com/lx10077/WatermarkFramework/blob/05b7ffda9279fc9e645f38807e4a0e2dbcff4330/real%20data/results_data/1p3B-gumbel-c4-m200-T500-skipgram_prf-15485863-temp0.1.pkl"
+    },
+    "real data/results_data/1p3B-raw-m200-T500.pkl": {
+      "sha256": "d70b40fe31b053e7bf7eb73efe29795125d6c8075a00144ba3017cb3b8ba862a",
+      "url": "https://github.com/lx10077/WatermarkFramework/blob/05b7ffda9279fc9e645f38807e4a0e2dbcff4330/real%20data/results_data/1p3B-raw-m200-T500.pkl"
+    },
+    "real data/results_data/1p3B-transform-c4-m200-T500-skipgram_prf-15485863-temp0.1-null.json": {
+      "sha256": "dcdd9b27329bab2f8744ce5329c37f95843f98ea3b30cf8a1c239124aafac570",
+      "url": "https://github.com/lx10077/WatermarkFramework/blob/05b7ffda9279fc9e645f38807e4a0e2dbcff4330/real%20data/results_data/1p3B-transform-c4-m200-T500-skipgram_prf-15485863-temp0.1-null.json"
+    },
+    "real data/results_data/1p3B-transform-c4-m200-T500-skipgram_prf-15485863-temp0.1-result.json": {
+      "sha256": "60a476d27f413b438d5bcbe4a5369f16de7876ea402ee8949c38a4bc007f97a3",
+      "url": "https://github.com/lx10077/WatermarkFramework/blob/05b7ffda9279fc9e645f38807e4a0e2dbcff4330/real%20data/results_data/1p3B-transform-c4-m200-T500-skipgram_prf-15485863-temp0.1-result.json"
+    },
+    "real data/results_data/1p3B-transform-c4-m200-T500-skipgram_prf-15485863-temp0.1.pkl": {
+      "sha256": "6bcb8fa45365f6fae6ff5521efd41faeb3c73204c0d00996505d1bec9cccfa13",
+      "url": "https://github.com/lx10077/WatermarkFramework/blob/05b7ffda9279fc9e645f38807e4a0e2dbcff4330/real%20data/results_data/1p3B-transform-c4-m200-T500-skipgram_prf-15485863-temp0.1.pkl"
+    },
+    "real data/results_data/2p7B-gumbel-c4-m200-T500-skipgram_prf-15485863-temp0.1-null.json": {
+      "sha256": "333854585eee5b35a5aa3e243471defc4d3473d18520d1921517d965638184a6",
+      "url": "https://github.com/lx10077/WatermarkFramework/blob/05b7ffda9279fc9e645f38807e4a0e2dbcff4330/real%20data/results_data/2p7B-gumbel-c4-m200-T500-skipgram_prf-15485863-temp0.1-null.json"
+    },
+    "real data/results_data/2p7B-gumbel-c4-m200-T500-skipgram_prf-15485863-temp0.1-result.json": {
+      "sha256": "fc84392a7b6072c2e07a4ceee54c9d3fabf63e1ef939827a167d143c8d2dd4fa",
+      "url": "https://github.com/lx10077/WatermarkFramework/blob/05b7ffda9279fc9e645f38807e4a0e2dbcff4330/real%20data/results_data/2p7B-gumbel-c4-m200-T500-skipgram_prf-15485863-temp0.1-result.json"
+    },
+    "real data/results_data/2p7B-gumbel-c4-m200-T500-skipgram_prf-15485863-temp0.1.pkl": {
+      "sha256": "0b33c4eeca1b3a1e6f41c001113896dadeedb238799bc8922d70883551f7fb67",
+      "url": "https://github.com/lx10077/WatermarkFramework/blob/05b7ffda9279fc9e645f38807e4a0e2dbcff4330/real%20data/results_data/2p7B-gumbel-c4-m200-T500-skipgram_prf-15485863-temp0.1.pkl"
+    },
+    "real data/results_data/2p7B-raw-m200-T500.pkl": {
+      "sha256": "d04f82b584d973cc4346e65e7a6d5529741d57754ee161ab35b3a78e90962d82",
+      "url": "https://github.com/lx10077/WatermarkFramework/blob/05b7ffda9279fc9e645f38807e4a0e2dbcff4330/real%20data/results_data/2p7B-raw-m200-T500.pkl"
+    },
+    "real data/results_data/2p7B-transform-c4-m200-T500-skipgram_prf-15485863-temp0.1-null.json": {
+      "sha256": "5f8263e37954fde3d55e4667b13e349e0e212f0636669d9c9c32df1e81f22da2",
+      "url": "https://github.com/lx10077/WatermarkFramework/blob/05b7ffda9279fc9e645f38807e4a0e2dbcff4330/real%20data/results_data/2p7B-transform-c4-m200-T500-skipgram_prf-15485863-temp0.1-null.json"
+    },
+    "real data/results_data/2p7B-transform-c4-m200-T500-skipgram_prf-15485863-temp0.1-result.json": {
+      "sha256": "b3cc78c7fd0db667bb190c2b955eb56092b864df6e10f83c0a4e3f769236a5f1",
+      "url": "https://github.com/lx10077/WatermarkFramework/blob/05b7ffda9279fc9e645f38807e4a0e2dbcff4330/real%20data/results_data/2p7B-transform-c4-m200-T500-skipgram_prf-15485863-temp0.1-result.json"
+    },
+    "real data/results_data/2p7B-transform-c4-m200-T500-skipgram_prf-15485863-temp0.1.pkl": {
+      "sha256": "80fa7a6d81ebfdf2d37efc077917cdca660e62ced6b527cb92ec66f8bf1a5136",
+      "url": "https://github.com/lx10077/WatermarkFramework/blob/05b7ffda9279fc9e645f38807e4a0e2dbcff4330/real%20data/results_data/2p7B-transform-c4-m200-T500-skipgram_prf-15485863-temp0.1.pkl"
+    }
+  },
+  "redistributed": false,
+  "repository": "https://github.com/lx10077/WatermarkFramework"
+}

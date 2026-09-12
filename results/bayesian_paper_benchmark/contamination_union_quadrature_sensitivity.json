@@ -1,0 +1,561 @@
+{
+  "n_paired_paths": 300,
+  "node_counts": [
+    48,
+    96,
+    192
+  ],
+  "reference_nodes": 192,
+  "seed": 240401247,
+  "config": {
+    "vocabulary_size": 1000,
+    "horizons": [
+      100,
+      300,
+      700
+    ],
+    "generating_delta_support": [
+      0.001,
+      0.5
+    ],
+    "prior_support": [
+      0.001,
+      0.5
+    ],
+    "rho_prior_grid": [
+      0.0,
+      0.1,
+      0.25,
+      0.4,
+      0.6
+    ],
+    "rho_prior_weights": [
+      0.5,
+      0.125,
+      0.125,
+      0.125,
+      0.125
+    ],
+    "dirichlet_alpha_grid": [
+      "0.1",
+      "1",
+      "10",
+      "100",
+      "1000",
+      "inf"
+    ],
+    "dirichlet_c_nodes": 200001,
+    "batch_size": 100
+  },
+  "coverage": {
+    "quantity": "log Bayes factors on paired alternative/replacement paths, not Type II decisions",
+    "gumbel_methods": [
+      "bayes_shared_robust",
+      "bayes_shared_dirichlet_robust",
+      "bayes_shared_uniontail_robust"
+    ],
+    "inverse_methods": [
+      "bayes_shared_robust"
+    ],
+    "generating_replacement_rates": [
+      0.0,
+      0.4
+    ],
+    "horizons": [
+      100,
+      300,
+      700
+    ],
+    "tokenwise_union": "not evaluated in the contamination benchmark; see the clean checker",
+    "certified_uniform_error_bound": false,
+    "cells_checked": 48
+  },
+  "cells": [
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.0,
+      "horizon": 100,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 1.1722979243344867e-05,
+      "mean_abs_log_bf_difference": 2.8858527364820453e-07,
+      "median_abs_log_bf_difference": 2.842170943040401e-14
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.0,
+      "horizon": 300,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 9.513959993512344e-05,
+      "mean_abs_log_bf_difference": 1.5757630957047298e-06,
+      "median_abs_log_bf_difference": 1.184616849059239e-10
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.0,
+      "horizon": 700,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 0.001990171255243922,
+      "mean_abs_log_bf_difference": 0.00016092160759562546,
+      "median_abs_log_bf_difference": 1.6130564631566813e-05
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.0,
+      "horizon": 100,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 1.545358951915432e-09,
+      "mean_abs_log_bf_difference": 2.2577200849601318e-11,
+      "median_abs_log_bf_difference": 1.4210854715202004e-14
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.0,
+      "horizon": 300,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 5.337556174822566e-09,
+      "mean_abs_log_bf_difference": 6.867763246987124e-11,
+      "median_abs_log_bf_difference": 5.684341886080802e-14
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.0,
+      "horizon": 700,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 4.4086156947287236e-08,
+      "mean_abs_log_bf_difference": 6.667224165350187e-10,
+      "median_abs_log_bf_difference": 2.2737367544323206e-13
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_dirichlet_robust",
+      "rho_true": 0.0,
+      "horizon": 100,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 8.307379916416835e-06,
+      "mean_abs_log_bf_difference": 1.9908350618121536e-07,
+      "median_abs_log_bf_difference": 9.714739235278103e-09
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_dirichlet_robust",
+      "rho_true": 0.0,
+      "horizon": 300,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 7.366073092995862e-05,
+      "mean_abs_log_bf_difference": 1.1445197385266207e-06,
+      "median_abs_log_bf_difference": 2.8014227382300305e-08
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_dirichlet_robust",
+      "rho_true": 0.0,
+      "horizon": 700,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 0.001838562787185083,
+      "mean_abs_log_bf_difference": 0.0001305938942009514,
+      "median_abs_log_bf_difference": 1.5483205629607255e-05
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_dirichlet_robust",
+      "rho_true": 0.0,
+      "horizon": 100,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 4.940702069688996e-08,
+      "mean_abs_log_bf_difference": 9.238982272563589e-09,
+      "median_abs_log_bf_difference": 6.894666171319841e-09
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_dirichlet_robust",
+      "rho_true": 0.0,
+      "horizon": 300,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 1.1936083410546416e-07,
+      "mean_abs_log_bf_difference": 2.0779242356402015e-08,
+      "median_abs_log_bf_difference": 1.4603557474401896e-08
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_dirichlet_robust",
+      "rho_true": 0.0,
+      "horizon": 700,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 2.905978817580035e-07,
+      "mean_abs_log_bf_difference": 3.94509569427252e-08,
+      "median_abs_log_bf_difference": 2.393358045083005e-08
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_uniontail_robust",
+      "rho_true": 0.0,
+      "horizon": 100,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 8.33399735178375e-06,
+      "mean_abs_log_bf_difference": 1.9929803121302807e-07,
+      "median_abs_log_bf_difference": 9.937842548879416e-09
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_uniontail_robust",
+      "rho_true": 0.0,
+      "horizon": 300,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 7.214759460438813e-05,
+      "mean_abs_log_bf_difference": 1.1044707125111111e-06,
+      "median_abs_log_bf_difference": 2.7929253576530755e-08
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_uniontail_robust",
+      "rho_true": 0.0,
+      "horizon": 700,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 0.0018385627197119447,
+      "mean_abs_log_bf_difference": 0.00013052989917076966,
+      "median_abs_log_bf_difference": 1.5483205629607255e-05
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_uniontail_robust",
+      "rho_true": 0.0,
+      "horizon": 100,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 4.940699227518053e-08,
+      "mean_abs_log_bf_difference": 9.180277598848837e-09,
+      "median_abs_log_bf_difference": 6.799361074172339e-09
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_uniontail_robust",
+      "rho_true": 0.0,
+      "horizon": 300,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 1.1936083410546416e-07,
+      "mean_abs_log_bf_difference": 2.0769131907627525e-08,
+      "median_abs_log_bf_difference": 1.4603557474401896e-08
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_uniontail_robust",
+      "rho_true": 0.0,
+      "horizon": 700,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 2.905978817580035e-07,
+      "mean_abs_log_bf_difference": 3.9439828564506265e-08,
+      "median_abs_log_bf_difference": 2.393358045083005e-08
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.4,
+      "horizon": 100,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 1.9419640482798428e-05,
+      "mean_abs_log_bf_difference": 3.0512570610152777e-07,
+      "median_abs_log_bf_difference": 2.842170943040401e-14
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.4,
+      "horizon": 300,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 9.849365568648238e-05,
+      "mean_abs_log_bf_difference": 2.2425483486136302e-06,
+      "median_abs_log_bf_difference": 1.4019008176546777e-10
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.4,
+      "horizon": 700,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 0.0017637204567257925,
+      "mean_abs_log_bf_difference": 5.996479848421406e-05,
+      "median_abs_log_bf_difference": 1.6466663055325625e-07
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.4,
+      "horizon": 100,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 1.4384347046814128e-09,
+      "mean_abs_log_bf_difference": 2.262198576611733e-11,
+      "median_abs_log_bf_difference": 1.4210854715202004e-14
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.4,
+      "horizon": 300,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 1.1631128060685114e-08,
+      "mean_abs_log_bf_difference": 1.3049955930692175e-10,
+      "median_abs_log_bf_difference": 2.842170943040401e-14
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.4,
+      "horizon": 700,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 8.567371168055615e-08,
+      "mean_abs_log_bf_difference": 8.823935656228817e-10,
+      "median_abs_log_bf_difference": 1.1368683772161603e-13
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_dirichlet_robust",
+      "rho_true": 0.4,
+      "horizon": 100,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 1.3849929976661457e-05,
+      "mean_abs_log_bf_difference": 2.0121983538068377e-07,
+      "median_abs_log_bf_difference": 8.289362085633911e-09
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_dirichlet_robust",
+      "rho_true": 0.4,
+      "horizon": 300,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 7.111285828997893e-05,
+      "mean_abs_log_bf_difference": 1.5227141887352856e-06,
+      "median_abs_log_bf_difference": 1.695316598215868e-08
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_dirichlet_robust",
+      "rho_true": 0.4,
+      "horizon": 700,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 0.001435986311456361,
+      "mean_abs_log_bf_difference": 4.307438371065508e-05,
+      "median_abs_log_bf_difference": 7.877000314238103e-07
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_dirichlet_robust",
+      "rho_true": 0.4,
+      "horizon": 100,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 4.174448520188889e-08,
+      "mean_abs_log_bf_difference": 7.998140671242973e-09,
+      "median_abs_log_bf_difference": 5.612973197344218e-09
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_dirichlet_robust",
+      "rho_true": 0.4,
+      "horizon": 300,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 6.639839966737782e-08,
+      "mean_abs_log_bf_difference": 1.456226707515403e-08,
+      "median_abs_log_bf_difference": 1.0699920949264197e-08
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_dirichlet_robust",
+      "rho_true": 0.4,
+      "horizon": 700,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 1.9195056211174233e-07,
+      "mean_abs_log_bf_difference": 2.6252397947364632e-08,
+      "median_abs_log_bf_difference": 1.8648592003955855e-08
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_uniontail_robust",
+      "rho_true": 0.4,
+      "horizon": 100,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 1.1343190363888311e-05,
+      "mean_abs_log_bf_difference": 2.2825902241822385e-07,
+      "median_abs_log_bf_difference": 8.648534333133284e-09
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_uniontail_robust",
+      "rho_true": 0.4,
+      "horizon": 300,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 7.080242369283951e-05,
+      "mean_abs_log_bf_difference": 1.5234139537678716e-06,
+      "median_abs_log_bf_difference": 1.7524953932479548e-08
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_uniontail_robust",
+      "rho_true": 0.4,
+      "horizon": 700,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 0.0014334005322780285,
+      "mean_abs_log_bf_difference": 4.7392522235547575e-05,
+      "median_abs_log_bf_difference": 8.906656603357987e-07
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_uniontail_robust",
+      "rho_true": 0.4,
+      "horizon": 100,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 4.1744328882487025e-08,
+      "mean_abs_log_bf_difference": 7.577935135690457e-09,
+      "median_abs_log_bf_difference": 4.933476738244735e-09
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_uniontail_robust",
+      "rho_true": 0.4,
+      "horizon": 300,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 6.639839966737782e-08,
+      "mean_abs_log_bf_difference": 1.4381475281766143e-08,
+      "median_abs_log_bf_difference": 1.0512358983305603e-08
+    },
+    {
+      "scheme": "gumbel",
+      "rule": "bayes_shared_uniontail_robust",
+      "rho_true": 0.4,
+      "horizon": 700,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 1.919504484249046e-07,
+      "mean_abs_log_bf_difference": 2.6230633921227783e-08,
+      "median_abs_log_bf_difference": 1.8406524304737104e-08
+    },
+    {
+      "scheme": "inverse",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.0,
+      "horizon": 100,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 0.01164923434713927,
+      "mean_abs_log_bf_difference": 0.0011579435394326466,
+      "median_abs_log_bf_difference": 0.00040745012154874694
+    },
+    {
+      "scheme": "inverse",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.0,
+      "horizon": 300,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 0.07215719458936576,
+      "mean_abs_log_bf_difference": 0.0058288446393822925,
+      "median_abs_log_bf_difference": 0.0011285373457721182
+    },
+    {
+      "scheme": "inverse",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.0,
+      "horizon": 700,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 0.5232094674482823,
+      "mean_abs_log_bf_difference": 0.019851489306367896,
+      "median_abs_log_bf_difference": 0.0028854539907623433
+    },
+    {
+      "scheme": "inverse",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.0,
+      "horizon": 100,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 0.005093706800117559,
+      "mean_abs_log_bf_difference": 0.0003757517787350813,
+      "median_abs_log_bf_difference": 0.00011211408057354433
+    },
+    {
+      "scheme": "inverse",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.0,
+      "horizon": 300,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 0.02877855322170575,
+      "mean_abs_log_bf_difference": 0.0015267089239718054,
+      "median_abs_log_bf_difference": 0.0002759572351389572
+    },
+    {
+      "scheme": "inverse",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.0,
+      "horizon": 700,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 0.09847318874014377,
+      "mean_abs_log_bf_difference": 0.004523165523751394,
+      "median_abs_log_bf_difference": 0.0005884966241054279
+    },
+    {
+      "scheme": "inverse",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.4,
+      "horizon": 100,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 0.01266114627640924,
+      "mean_abs_log_bf_difference": 0.0009581103224297113,
+      "median_abs_log_bf_difference": 0.0006005953791750063
+    },
+    {
+      "scheme": "inverse",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.4,
+      "horizon": 300,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 0.010829995775435641,
+      "mean_abs_log_bf_difference": 0.0016602659966404745,
+      "median_abs_log_bf_difference": 0.0010850743104060534
+    },
+    {
+      "scheme": "inverse",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.4,
+      "horizon": 700,
+      "nodes": 48,
+      "max_abs_log_bf_difference": 0.021367863855217273,
+      "mean_abs_log_bf_difference": 0.002717847308987963,
+      "median_abs_log_bf_difference": 0.001891474575514085
+    },
+    {
+      "scheme": "inverse",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.4,
+      "horizon": 100,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 0.0021216823019596376,
+      "mean_abs_log_bf_difference": 0.00025848150611265555,
+      "median_abs_log_bf_difference": 0.0001722488619613216
+    },
+    {
+      "scheme": "inverse",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.4,
+      "horizon": 300,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 0.005284515767282727,
+      "mean_abs_log_bf_difference": 0.0004117279450293143,
+      "median_abs_log_bf_difference": 0.00023318590865728517
+    },
+    {
+      "scheme": "inverse",
+      "rule": "bayes_shared_robust",
+      "rho_true": 0.4,
+      "horizon": 700,
+      "nodes": 96,
+      "max_abs_log_bf_difference": 0.010789860741462931,
+      "mean_abs_log_bf_difference": 0.0007279985894321372,
+      "median_abs_log_bf_difference": 0.00046828864097481215
+    }
+  ],
+  "max_abs_log_bf_difference_from_reference_by_nodes": {
+    "48": 0.5232094674482823,
+    "96": 0.09847318874014377
+  },
+  "overall_max_abs_log_bf_difference_48_vs_192": 0.5232094674482823,
+  "runtime_seconds": 172.48977637500502
+}

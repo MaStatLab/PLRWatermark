@@ -1,0 +1,19 @@
+{
+  "script": "code/build_prompts.py",
+  "model": "1p3B",
+  "tokenizer": "facebook/opt-1.3b",
+  "tokenizer_revision": "3f5c25d0bc631cb57ac65913f76e22c2dfb61d62",
+  "c4_repo": "allenai/c4",
+  "c4_revision": "1588ec454efa1a09f29cd18ddd04fe05fc8653a2",
+  "c4_file": "realnewslike/c4-train.00000-of-00512.json.gz",
+  "c4_sha256": "6666a680b0a34eb8756dcb5fd2b12f0078237f3502e8a513bd3e5b71bb92be00",
+  "prompt_tokens": 50,
+  "continuation_tokens": 200,
+  "buffer_tokens": 20,
+  "truncate_at": 2028,
+  "records_scanned": 3504,
+  "prompts": 2500,
+  "released_rows_verified": 500,
+  "output_sha256": "e925519aadd0a2c15ab032a9497d5429a0b5610971e4be6676ca923be5ec5825",
+  "seconds": 4.1
+}

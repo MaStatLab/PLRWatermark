@@ -1,0 +1,37 @@
+{
+  "context_width": 4,
+  "interpretation": "the pair (W_{t-4}, W_t) determines the pivot in every group; the seed token alone does not, so a repeated context reuses a seed without reproducing a pivot",
+  "models": {
+    "1p3B": {
+      "documents": 500,
+      "documents_where_distinct_pivots_equal_distinct_pairs": 495,
+      "horizon": 200,
+      "label": "OPT-1.3B",
+      "pair_groups": 38104,
+      "pair_groups_with_unequal_pivots": 0,
+      "seed_groups": 24182,
+      "seed_groups_with_unequal_pivots": 7477,
+      "unwatermarked_distinct_pivots_mean": 196.934,
+      "watermarked_distinct_pairs_mean": 76.208,
+      "watermarked_distinct_pivots_mean": 76.198,
+      "watermarked_distinct_pivots_median": 69.0,
+      "watermarked_distinct_seed_tokens_mean": 48.364
+    },
+    "2p7B": {
+      "documents": 500,
+      "documents_where_distinct_pivots_equal_distinct_pairs": 500,
+      "horizon": 200,
+      "label": "Sheared-LLaMA-2.7B",
+      "pair_groups": 42984,
+      "pair_groups_with_unequal_pivots": 0,
+      "seed_groups": 26243,
+      "seed_groups_with_unequal_pivots": 8699,
+      "unwatermarked_distinct_pivots_mean": 196.754,
+      "watermarked_distinct_pairs_mean": 85.968,
+      "watermarked_distinct_pivots_mean": 85.968,
+      "watermarked_distinct_pivots_median": 79.0,
+      "watermarked_distinct_seed_tokens_mean": 52.486
+    }
+  },
+  "runtime_seconds": 27.735
+}

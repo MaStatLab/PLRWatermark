@@ -1,0 +1,12 @@
+# Analysis, checkers and figures.  The checked-in artifacts reproduce under
+# these versions.
+numpy==2.0.2
+scipy==1.13.1
+matplotlib==3.9.4
+
+# Verified released-tensor loading, CPU key replay, and model regeneration.
+torch==2.8.0
+# Tokenizer/model loading for prompt construction and matched regeneration.
+transformers==4.56.1
+# Imported by the pinned upstream real-data sampler; supports Python >=3.9.
+ipython==8.18.1

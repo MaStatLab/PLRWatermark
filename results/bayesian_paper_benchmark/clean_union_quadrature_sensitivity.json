@@ -1,0 +1,1599 @@
+{
+  "description": "Paired quadrature sensitivity of the clean benchmark: node count affects only the Bayes quadrature grids, so all runs share pivots.",
+  "node_counts": [
+    48,
+    96,
+    192
+  ],
+  "reference_nodes": 192,
+  "horizons": [
+    100,
+    300,
+    700
+  ],
+  "methods": [
+    "bayes_shared",
+    "bayes_tokenwise",
+    "bayes_shared_dirichlet",
+    "bayes_tokenwise_dirichlet",
+    "bayes_shared_uniontail",
+    "bayes_tokenwise_uniontail"
+  ],
+  "coverage": {
+    "quantity": "Type II decisions after node-specific null calibration",
+    "cells_checked": 66,
+    "gumbel_cells_checked": 48,
+    "actual_method_decision_rule_pairs": [
+      [
+        "gumbel",
+        "bayes_shared",
+        "anytime_bf_ge_1_over_alpha"
+      ],
+      [
+        "gumbel",
+        "bayes_shared",
+        "fixed_horizon_mc_calibrated"
+      ],
+      [
+        "gumbel",
+        "bayes_shared_dirichlet",
+        "anytime_bf_ge_1_over_alpha"
+      ],
+      [
+        "gumbel",
+        "bayes_shared_dirichlet",
+        "fixed_horizon_mc_calibrated"
+      ],
+      [
+        "gumbel",
+        "bayes_shared_uniontail",
+        "anytime_bf_ge_1_over_alpha"
+      ],
+      [
+        "gumbel",
+        "bayes_shared_uniontail",
+        "fixed_horizon_mc_calibrated"
+      ],
+      [
+        "gumbel",
+        "bayes_tokenwise",
+        "anytime_bf_ge_1_over_alpha"
+      ],
+      [
+        "gumbel",
+        "bayes_tokenwise",
+        "fixed_horizon_mc_calibrated"
+      ],
+      [
+        "gumbel",
+        "bayes_tokenwise_dirichlet",
+        "anytime_bf_ge_1_over_alpha"
+      ],
+      [
+        "gumbel",
+        "bayes_tokenwise_dirichlet",
+        "fixed_horizon_mc_calibrated"
+      ],
+      [
+        "gumbel",
+        "bayes_tokenwise_uniontail",
+        "fixed_horizon_mc_calibrated"
+      ],
+      [
+        "inverse",
+        "bayes_shared",
+        "anytime_bf_ge_1_over_alpha"
+      ],
+      [
+        "inverse",
+        "bayes_shared",
+        "fixed_horizon_mc_calibrated"
+      ],
+      [
+        "inverse",
+        "bayes_tokenwise",
+        "anytime_bf_ge_1_over_alpha"
+      ],
+      [
+        "inverse",
+        "bayes_tokenwise",
+        "fixed_horizon_mc_calibrated"
+      ]
+    ],
+    "union_tokenwise_state": "document-shared branch state; token-specific parameters within branch",
+    "excluded": "method/scenario/decision-rule combinations not evaluated by the clean benchmark",
+    "certified_uniform_error_bound": false
+  },
+  "config": {
+    "vocabulary_size": 1000,
+    "max_horizon": 700,
+    "alpha": 0.05,
+    "delta_low": 0.001,
+    "delta_high": 0.5,
+    "prior_low": 0.001,
+    "prior_high": 0.5,
+    "allow_large_delta": false,
+    "n_calibration": 300,
+    "n_evaluation_null": 300,
+    "n_evaluation_alternative": 300,
+    "batch_size": 100,
+    "seed": 240401245,
+    "bayes_quadrature_nodes": 96,
+    "gumbel_lookup_size": 80001,
+    "gumbel_lookup_logit_limit": 30.0,
+    "dirichlet_c_nodes": 200001
+  },
+  "four_decimal_tolerance": 5e-05,
+  "cells": [
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise_dirichlet",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise_dirichlet",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise_dirichlet",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise_dirichlet",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise_dirichlet",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise_dirichlet",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise_uniontail",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise_uniontail",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise_uniontail",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "inverse",
+      "method": "bayes_tokenwise",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.043333333333333335,
+        "96": 0.043333333333333335,
+        "192": 0.043333333333333335
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "inverse",
+      "method": "bayes_tokenwise",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "inverse",
+      "method": "bayes_tokenwise",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "inverse",
+      "method": "bayes_tokenwise",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.0033333333333332993,
+        "96": 0.0033333333333332993,
+        "192": 0.0033333333333332993
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "inverse",
+      "method": "bayes_tokenwise",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "paper_text_iid_delta_equal_tail",
+      "scheme": "inverse",
+      "method": "bayes_tokenwise",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_shared",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.040000000000000036,
+        "96": 0.040000000000000036,
+        "192": 0.040000000000000036
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_shared",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.00666666666666671,
+        "96": 0.00666666666666671,
+        "192": 0.00666666666666671
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_shared",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.0033333333333332993,
+        "96": 0.0033333333333332993,
+        "192": 0.0033333333333332993
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_shared",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.013333333333333308,
+        "96": 0.013333333333333308,
+        "192": 0.013333333333333308
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_shared",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_shared",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_shared_dirichlet",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.040000000000000036,
+        "96": 0.040000000000000036,
+        "192": 0.040000000000000036
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_shared_dirichlet",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.00666666666666671,
+        "96": 0.00666666666666671,
+        "192": 0.00666666666666671
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_shared_dirichlet",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.0033333333333332993,
+        "96": 0.0033333333333332993,
+        "192": 0.0033333333333332993
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_shared_dirichlet",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.013333333333333308,
+        "96": 0.013333333333333308,
+        "192": 0.013333333333333308
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_shared_dirichlet",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.0033333333333332993,
+        "96": 0.0033333333333332993,
+        "192": 0.0033333333333332993
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_shared_dirichlet",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_shared_uniontail",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.043333333333333335,
+        "96": 0.043333333333333335,
+        "192": 0.043333333333333335
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_shared_uniontail",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.00666666666666671,
+        "96": 0.00666666666666671,
+        "192": 0.00666666666666671
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_shared_uniontail",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.0033333333333332993,
+        "96": 0.0033333333333332993,
+        "192": 0.0033333333333332993
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_shared_uniontail",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.013333333333333308,
+        "96": 0.013333333333333308,
+        "192": 0.013333333333333308
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_shared_uniontail",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.0033333333333332993,
+        "96": 0.0033333333333332993,
+        "192": 0.0033333333333332993
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_shared_uniontail",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.07999999999999996,
+        "96": 0.07999999999999996,
+        "192": 0.07999999999999996
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.06333333333333335,
+        "96": 0.06333333333333335,
+        "192": 0.06333333333333335
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.06000000000000005,
+        "96": 0.06000000000000005,
+        "192": 0.06000000000000005
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.020000000000000018,
+        "96": 0.020000000000000018,
+        "192": 0.020000000000000018
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.0033333333333332993,
+        "96": 0.0033333333333332993,
+        "192": 0.0033333333333332993
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.0033333333333332993,
+        "96": 0.0033333333333332993,
+        "192": 0.0033333333333332993
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise_dirichlet",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.07999999999999996,
+        "96": 0.07999999999999996,
+        "192": 0.07999999999999996
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise_dirichlet",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.06333333333333335,
+        "96": 0.06333333333333335,
+        "192": 0.06333333333333335
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise_dirichlet",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.06000000000000005,
+        "96": 0.06000000000000005,
+        "192": 0.06000000000000005
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise_dirichlet",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.023333333333333317,
+        "96": 0.023333333333333317,
+        "192": 0.023333333333333317
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise_dirichlet",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.0033333333333332993,
+        "96": 0.0033333333333332993,
+        "192": 0.0033333333333332993
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise_dirichlet",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.0033333333333332993,
+        "96": 0.0033333333333332993,
+        "192": 0.0033333333333332993
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise_uniontail",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.043333333333333335,
+        "96": 0.043333333333333335,
+        "192": 0.043333333333333335
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise_uniontail",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.013333333333333308,
+        "96": 0.013333333333333308,
+        "192": 0.013333333333333308
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "gumbel",
+      "method": "bayes_tokenwise_uniontail",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.00666666666666671,
+        "96": 0.00666666666666671,
+        "192": 0.00666666666666671
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "inverse",
+      "method": "bayes_shared",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.22333333333333338,
+        "96": 0.22333333333333338,
+        "192": 0.22333333333333338
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "inverse",
+      "method": "bayes_shared",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.14,
+        "96": 0.14,
+        "192": 0.14
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "inverse",
+      "method": "bayes_shared",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.07666666666666666,
+        "96": 0.07666666666666666,
+        "192": 0.07666666666666666
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "inverse",
+      "method": "bayes_shared",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.15333333333333332,
+        "96": 0.15333333333333332,
+        "192": 0.15333333333333332
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "inverse",
+      "method": "bayes_shared",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.06666666666666665,
+        "96": 0.06666666666666665,
+        "192": 0.06666666666666665
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "inverse",
+      "method": "bayes_shared",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.030000000000000027,
+        "96": 0.030000000000000027,
+        "192": 0.030000000000000027
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "inverse",
+      "method": "bayes_tokenwise",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.22666666666666668,
+        "96": 0.22666666666666668,
+        "192": 0.22666666666666668
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "inverse",
+      "method": "bayes_tokenwise",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.19333333333333336,
+        "96": 0.19333333333333336,
+        "192": 0.19333333333333336
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "inverse",
+      "method": "bayes_tokenwise",
+      "decision_rule": "anytime_bf_ge_1_over_alpha",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.18000000000000005,
+        "96": 0.18000000000000005,
+        "192": 0.18000000000000005
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "inverse",
+      "method": "bayes_tokenwise",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 100,
+      "type2_error_by_nodes": {
+        "48": 0.18000000000000005,
+        "96": 0.18000000000000005,
+        "192": 0.18000000000000005
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "inverse",
+      "method": "bayes_tokenwise",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 300,
+      "type2_error_by_nodes": {
+        "48": 0.07999999999999996,
+        "96": 0.07999999999999996,
+        "192": 0.07999999999999996
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    },
+    {
+      "scenario": "shared_delta_equal_tail_sensitivity",
+      "scheme": "inverse",
+      "method": "bayes_tokenwise",
+      "decision_rule": "fixed_horizon_mc_calibrated",
+      "horizon": 700,
+      "type2_error_by_nodes": {
+        "48": 0.050000000000000044,
+        "96": 0.050000000000000044,
+        "192": 0.050000000000000044
+      },
+      "abs_difference_from_reference_by_nodes": {
+        "48": 0.0,
+        "96": 0.0,
+        "192": 0.0
+      },
+      "abs_difference_48_vs_192": 0.0,
+      "abs_difference_96_vs_192": 0.0,
+      "max_abs_difference_across_nodes": 0.0,
+      "within_four_decimal_tolerance": true,
+      "identical_to_four_decimals": true
+    }
+  ],
+  "fixed_horizon_max_abs_difference": 0.0,
+  "fixed_horizon_worst_cell": {
+    "scenario": "paper_text_iid_delta_equal_tail",
+    "scheme": "gumbel",
+    "method": "bayes_tokenwise",
+    "horizon": 100
+  },
+  "overall_max_abs_difference": 0.0,
+  "overall_worst_cell": {
+    "scenario": "paper_text_iid_delta_equal_tail",
+    "scheme": "gumbel",
+    "method": "bayes_tokenwise",
+    "decision_rule": "anytime_bf_ge_1_over_alpha",
+    "horizon": 100
+  },
+  "claim_identical_to_four_decimals_fixed_horizon": true,
+  "claim_identical_to_four_decimals_all_rules": true,
+  "runtime_seconds": 133.27618783409707
+}

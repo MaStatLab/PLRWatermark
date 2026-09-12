@@ -1,0 +1,3963 @@
+{
+  "question": "Is the robust shared Bayes rule's advantage due to averaging over the frozen prior pi_rho, or would a single fixed rho_0 point mass do as well?",
+  "design": "Every detector shares the same Delta ~ Unif(delta_low, delta_high) with the same Gauss-Legendre nodes, the same shared-Delta hierarchy, the same paired clean/null-replacement/mask paths, and its own 5% null calibration reused across the rho_true sweep. Only pi_rho differs.",
+  "robust_rho_prior": {
+    "support": [
+      0.0,
+      0.1,
+      0.25,
+      0.4,
+      0.6
+    ],
+    "weights": [
+      0.5,
+      0.125,
+      0.125,
+      0.125,
+      0.125
+    ],
+    "mean": 0.16875,
+    "frozen_before_simulation": true
+  },
+  "point_masses": [
+    0.1,
+    0.15,
+    0.25,
+    0.4,
+    0.5,
+    0.6
+  ],
+  "point_mass_methods": [
+    "bayes_shared_rho0_0.1",
+    "bayes_shared_rho0_0.15",
+    "bayes_shared_rho0_0.25",
+    "bayes_shared_rho0_0.4",
+    "bayes_shared_rho0_0.5",
+    "bayes_shared_rho0_0.6"
+  ],
+  "prespecified_paper_score": {
+    "gumbel": "h_gum_star_0.005",
+    "inverse": "h_dif_star_0.01"
+  },
+  "monte_carlo": {
+    "n_evaluation_alternative": 5000,
+    "n_evaluation_null": 5000,
+    "paired": "All methods and rho_true levels within a scheme reuse the same documents, so differences are paired and their standard error is smaller than the independent-sample sqrt(p(1-p)/n)."
+  },
+  "type_ii_tables": [
+    {
+      "scheme": "gumbel",
+      "horizon": 100,
+      "rho_true_grid": [
+        0.0,
+        0.1,
+        0.25,
+        0.4,
+        0.6,
+        1.0
+      ],
+      "rows": [
+        {
+          "method": "bayes_shared_robust",
+          "role": "mixture prior over rho (manuscript robust rule)",
+          "type_ii_error": [
+            0.018000000000000016,
+            0.019000000000000017,
+            0.022199999999999998,
+            0.02859999999999996,
+            0.04379999999999995,
+            0.9538
+          ],
+          "type_i_error": 0.0502
+        },
+        {
+          "method": "bayes_shared_rho0_0.1",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.01759999999999995,
+            0.01859999999999995,
+            0.021599999999999953,
+            0.028200000000000003,
+            0.04459999999999997,
+            0.9526
+          ],
+          "type_i_error": 0.0514
+        },
+        {
+          "method": "bayes_shared_rho0_0.15",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.01759999999999995,
+            0.01859999999999995,
+            0.021599999999999953,
+            0.02839999999999998,
+            0.04420000000000002,
+            0.954
+          ],
+          "type_i_error": 0.0516
+        },
+        {
+          "method": "bayes_shared_rho0_0.25",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.01759999999999995,
+            0.01880000000000004,
+            0.02200000000000002,
+            0.028200000000000003,
+            0.04400000000000004,
+            0.954
+          ],
+          "type_i_error": 0.0524
+        },
+        {
+          "method": "bayes_shared_rho0_0.4",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.018000000000000016,
+            0.019000000000000017,
+            0.022199999999999998,
+            0.02859999999999996,
+            0.04400000000000004,
+            0.953
+          ],
+          "type_i_error": 0.0514
+        },
+        {
+          "method": "bayes_shared_rho0_0.5",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.018199999999999994,
+            0.019399999999999973,
+            0.022399999999999975,
+            0.029000000000000026,
+            0.043399999999999994,
+            0.9542
+          ],
+          "type_i_error": 0.0494
+        },
+        {
+          "method": "bayes_shared_rho0_0.6",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.018199999999999994,
+            0.020000000000000018,
+            0.02300000000000002,
+            0.029000000000000026,
+            0.04279999999999995,
+            0.9538
+          ],
+          "type_i_error": 0.0492
+        },
+        {
+          "method": "bayes_shared_clean",
+          "role": "point mass at rho=0 (manuscript clean rule)",
+          "type_ii_error": [
+            0.01759999999999995,
+            0.01859999999999995,
+            0.021599999999999953,
+            0.02839999999999998,
+            0.04459999999999997,
+            0.9506
+          ],
+          "type_i_error": 0.0518
+        },
+        {
+          "method": "h_gum_star_0.005",
+          "role": "prespecified reference score",
+          "type_ii_error": [
+            0.02839999999999998,
+            0.031399999999999983,
+            0.03839999999999999,
+            0.0464,
+            0.07240000000000002,
+            0.9522
+          ],
+          "type_i_error": 0.0502
+        },
+        {
+          "method": "trgof_s2",
+          "role": "Tr-GoF robust competitor, Higher Criticism index s=2",
+          "type_ii_error": [
+            0.06940000000000002,
+            0.07699999999999996,
+            0.09219999999999995,
+            0.12660000000000005,
+            0.19140000000000001,
+            0.9514
+          ],
+          "type_i_error": 0.0538
+        },
+        {
+          "method": "bayes_shared_dirichlet_clean",
+          "role": "point mass at rho=0, mixture prior over the Dirichlet tail concentration alpha",
+          "type_ii_error": [
+            0.018199999999999994,
+            0.020000000000000018,
+            0.02300000000000002,
+            0.029000000000000026,
+            0.04259999999999997,
+            0.9548
+          ],
+          "type_i_error": 0.0518
+        },
+        {
+          "method": "bayes_shared_dirichlet_robust",
+          "role": "mixture prior over rho and over the Dirichlet tail concentration alpha",
+          "type_ii_error": [
+            0.018199999999999994,
+            0.020000000000000018,
+            0.02300000000000002,
+            0.029000000000000026,
+            0.04259999999999997,
+            0.9532
+          ],
+          "type_i_error": 0.0518
+        },
+        {
+          "method": "bayes_shared_uniontail_clean",
+          "role": "point mass at rho=0, mixture prior over the number of live tail coordinates J",
+          "type_ii_error": [
+            0.01759999999999995,
+            0.01980000000000004,
+            0.022800000000000042,
+            0.030200000000000005,
+            0.04600000000000004,
+            0.9536
+          ],
+          "type_i_error": 0.049
+        },
+        {
+          "method": "bayes_shared_uniontail_robust",
+          "role": "mixture prior over rho and over the number of live tail coordinates J",
+          "type_ii_error": [
+            0.01739999999999997,
+            0.01980000000000004,
+            0.022800000000000042,
+            0.030200000000000005,
+            0.046599999999999975,
+            0.9508
+          ],
+          "type_i_error": 0.0484
+        }
+      ]
+    },
+    {
+      "scheme": "gumbel",
+      "horizon": 300,
+      "rho_true_grid": [
+        0.0,
+        0.1,
+        0.25,
+        0.4,
+        0.6,
+        1.0
+      ],
+      "rows": [
+        {
+          "method": "bayes_shared_robust",
+          "role": "mixture prior over rho (manuscript robust rule)",
+          "type_ii_error": [
+            0.0040000000000000036,
+            0.0048000000000000265,
+            0.00539999999999996,
+            0.007399999999999962,
+            0.01200000000000001,
+            0.9554
+          ],
+          "type_i_error": 0.047
+        },
+        {
+          "method": "bayes_shared_rho0_0.1",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.0038000000000000256,
+            0.0046000000000000485,
+            0.00539999999999996,
+            0.007399999999999962,
+            0.01200000000000001,
+            0.9524
+          ],
+          "type_i_error": 0.0508
+        },
+        {
+          "method": "bayes_shared_rho0_0.15",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.0038000000000000256,
+            0.0046000000000000485,
+            0.00539999999999996,
+            0.007399999999999962,
+            0.01200000000000001,
+            0.9524
+          ],
+          "type_i_error": 0.0514
+        },
+        {
+          "method": "bayes_shared_rho0_0.25",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.0038000000000000256,
+            0.0048000000000000265,
+            0.00539999999999996,
+            0.007399999999999962,
+            0.011800000000000033,
+            0.9538
+          ],
+          "type_i_error": 0.0498
+        },
+        {
+          "method": "bayes_shared_rho0_0.4",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.0040000000000000036,
+            0.0048000000000000265,
+            0.00539999999999996,
+            0.007399999999999962,
+            0.011800000000000033,
+            0.9538
+          ],
+          "type_i_error": 0.0486
+        },
+        {
+          "method": "bayes_shared_rho0_0.5",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.0040000000000000036,
+            0.0048000000000000265,
+            0.00539999999999996,
+            0.007399999999999962,
+            0.012199999999999989,
+            0.9556
+          ],
+          "type_i_error": 0.046
+        },
+        {
+          "method": "bayes_shared_rho0_0.6",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.0040000000000000036,
+            0.0048000000000000265,
+            0.00539999999999996,
+            0.007399999999999962,
+            0.01200000000000001,
+            0.9544
+          ],
+          "type_i_error": 0.0468
+        },
+        {
+          "method": "bayes_shared_clean",
+          "role": "point mass at rho=0 (manuscript clean rule)",
+          "type_ii_error": [
+            0.0036000000000000476,
+            0.0046000000000000485,
+            0.00539999999999996,
+            0.007600000000000051,
+            0.01200000000000001,
+            0.9528
+          ],
+          "type_i_error": 0.05
+        },
+        {
+          "method": "h_gum_star_0.005",
+          "role": "prespecified reference score",
+          "type_ii_error": [
+            0.011399999999999966,
+            0.012199999999999989,
+            0.016599999999999948,
+            0.02100000000000002,
+            0.03380000000000005,
+            0.9492
+          ],
+          "type_i_error": 0.0512
+        },
+        {
+          "method": "trgof_s2",
+          "role": "Tr-GoF robust competitor, Higher Criticism index s=2",
+          "type_ii_error": [
+            0.025599999999999956,
+            0.027599999999999958,
+            0.031000000000000028,
+            0.041000000000000036,
+            0.06640000000000001,
+            0.9502
+          ],
+          "type_i_error": 0.0528
+        },
+        {
+          "method": "bayes_shared_dirichlet_clean",
+          "role": "point mass at rho=0, mixture prior over the Dirichlet tail concentration alpha",
+          "type_ii_error": [
+            0.0040000000000000036,
+            0.0048000000000000265,
+            0.00539999999999996,
+            0.007399999999999962,
+            0.01200000000000001,
+            0.954
+          ],
+          "type_i_error": 0.0462
+        },
+        {
+          "method": "bayes_shared_dirichlet_robust",
+          "role": "mixture prior over rho and over the Dirichlet tail concentration alpha",
+          "type_ii_error": [
+            0.0040000000000000036,
+            0.0048000000000000265,
+            0.00539999999999996,
+            0.007399999999999962,
+            0.01200000000000001,
+            0.9548
+          ],
+          "type_i_error": 0.0454
+        },
+        {
+          "method": "bayes_shared_uniontail_clean",
+          "role": "point mass at rho=0, mixture prior over the number of live tail coordinates J",
+          "type_ii_error": [
+            0.0038000000000000256,
+            0.0046000000000000485,
+            0.00539999999999996,
+            0.008000000000000007,
+            0.012800000000000034,
+            0.9506
+          ],
+          "type_i_error": 0.051
+        },
+        {
+          "method": "bayes_shared_uniontail_robust",
+          "role": "mixture prior over rho and over the number of live tail coordinates J",
+          "type_ii_error": [
+            0.0036000000000000476,
+            0.0048000000000000265,
+            0.005800000000000027,
+            0.008199999999999985,
+            0.013000000000000012,
+            0.9516
+          ],
+          "type_i_error": 0.0518
+        }
+      ]
+    },
+    {
+      "scheme": "gumbel",
+      "horizon": 700,
+      "rho_true_grid": [
+        0.0,
+        0.1,
+        0.25,
+        0.4,
+        0.6,
+        1.0
+      ],
+      "rows": [
+        {
+          "method": "bayes_shared_robust",
+          "role": "mixture prior over rho (manuscript robust rule)",
+          "type_ii_error": [
+            0.0013999999999999568,
+            0.0016000000000000458,
+            0.0020000000000000018,
+            0.0028000000000000247,
+            0.005600000000000049,
+            0.9548
+          ],
+          "type_i_error": 0.0518
+        },
+        {
+          "method": "bayes_shared_rho0_0.1",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.0013999999999999568,
+            0.0016000000000000458,
+            0.0020000000000000018,
+            0.0028000000000000247,
+            0.005199999999999982,
+            0.9556
+          ],
+          "type_i_error": 0.0488
+        },
+        {
+          "method": "bayes_shared_rho0_0.15",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.0013999999999999568,
+            0.0016000000000000458,
+            0.0020000000000000018,
+            0.0028000000000000247,
+            0.005199999999999982,
+            0.955
+          ],
+          "type_i_error": 0.0488
+        },
+        {
+          "method": "bayes_shared_rho0_0.25",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.0013999999999999568,
+            0.0016000000000000458,
+            0.0020000000000000018,
+            0.0028000000000000247,
+            0.005199999999999982,
+            0.9542
+          ],
+          "type_i_error": 0.0502
+        },
+        {
+          "method": "bayes_shared_rho0_0.4",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.0013999999999999568,
+            0.0016000000000000458,
+            0.0020000000000000018,
+            0.0028000000000000247,
+            0.005600000000000049,
+            0.9552
+          ],
+          "type_i_error": 0.0532
+        },
+        {
+          "method": "bayes_shared_rho0_0.5",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.0013999999999999568,
+            0.0016000000000000458,
+            0.0020000000000000018,
+            0.0028000000000000247,
+            0.005600000000000049,
+            0.9544
+          ],
+          "type_i_error": 0.0502
+        },
+        {
+          "method": "bayes_shared_rho0_0.6",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.0013999999999999568,
+            0.0016000000000000458,
+            0.0020000000000000018,
+            0.0028000000000000247,
+            0.005600000000000049,
+            0.955
+          ],
+          "type_i_error": 0.0492
+        },
+        {
+          "method": "bayes_shared_clean",
+          "role": "point mass at rho=0 (manuscript clean rule)",
+          "type_ii_error": [
+            0.0013999999999999568,
+            0.0016000000000000458,
+            0.0020000000000000018,
+            0.0028000000000000247,
+            0.0050000000000000044,
+            0.957
+          ],
+          "type_i_error": 0.0488
+        },
+        {
+          "method": "h_gum_star_0.005",
+          "role": "prespecified reference score",
+          "type_ii_error": [
+            0.006199999999999983,
+            0.008399999999999963,
+            0.009199999999999986,
+            0.013000000000000012,
+            0.01880000000000004,
+            0.952
+          ],
+          "type_i_error": 0.0524
+        },
+        {
+          "method": "trgof_s2",
+          "role": "Tr-GoF robust competitor, Higher Criticism index s=2",
+          "type_ii_error": [
+            0.010000000000000009,
+            0.011600000000000055,
+            0.013599999999999945,
+            0.018000000000000016,
+            0.027000000000000024,
+            0.9524
+          ],
+          "type_i_error": 0.0514
+        },
+        {
+          "method": "bayes_shared_dirichlet_clean",
+          "role": "point mass at rho=0, mixture prior over the Dirichlet tail concentration alpha",
+          "type_ii_error": [
+            0.0013999999999999568,
+            0.0016000000000000458,
+            0.0020000000000000018,
+            0.0028000000000000247,
+            0.005800000000000027,
+            0.9562
+          ],
+          "type_i_error": 0.0502
+        },
+        {
+          "method": "bayes_shared_dirichlet_robust",
+          "role": "mixture prior over rho and over the Dirichlet tail concentration alpha",
+          "type_ii_error": [
+            0.0013999999999999568,
+            0.0016000000000000458,
+            0.0020000000000000018,
+            0.0028000000000000247,
+            0.005800000000000027,
+            0.9554
+          ],
+          "type_i_error": 0.0492
+        },
+        {
+          "method": "bayes_shared_uniontail_clean",
+          "role": "point mass at rho=0, mixture prior over the number of live tail coordinates J",
+          "type_ii_error": [
+            0.0013999999999999568,
+            0.0016000000000000458,
+            0.0023999999999999577,
+            0.0038000000000000256,
+            0.006399999999999961,
+            0.947
+          ],
+          "type_i_error": 0.0588
+        },
+        {
+          "method": "bayes_shared_uniontail_robust",
+          "role": "mixture prior over rho and over the number of live tail coordinates J",
+          "type_ii_error": [
+            0.0013999999999999568,
+            0.0016000000000000458,
+            0.0023999999999999577,
+            0.0040000000000000036,
+            0.00660000000000005,
+            0.9476
+          ],
+          "type_i_error": 0.0538
+        }
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 100,
+      "rho_true_grid": [
+        0.0,
+        0.1,
+        0.25,
+        0.4,
+        0.6,
+        1.0
+      ],
+      "rows": [
+        {
+          "method": "bayes_shared_robust",
+          "role": "mixture prior over rho (manuscript robust rule)",
+          "type_ii_error": [
+            0.15680000000000005,
+            0.18679999999999997,
+            0.24460000000000004,
+            0.33499999999999996,
+            0.5596,
+            0.947
+          ],
+          "type_i_error": 0.056
+        },
+        {
+          "method": "bayes_shared_rho0_0.1",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.15039999999999998,
+            0.1846,
+            0.253,
+            0.3832,
+            0.6432,
+            0.9488
+          ],
+          "type_i_error": 0.0562
+        },
+        {
+          "method": "bayes_shared_rho0_0.15",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.15359999999999996,
+            0.1834,
+            0.246,
+            0.3608,
+            0.6204000000000001,
+            0.947
+          ],
+          "type_i_error": 0.057
+        },
+        {
+          "method": "bayes_shared_rho0_0.25",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.1592,
+            0.18400000000000005,
+            0.24080000000000001,
+            0.33620000000000005,
+            0.575,
+            0.9456
+          ],
+          "type_i_error": 0.0578
+        },
+        {
+          "method": "bayes_shared_rho0_0.4",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.16959999999999997,
+            0.1926,
+            0.24539999999999995,
+            0.31899999999999995,
+            0.5354,
+            0.9452
+          ],
+          "type_i_error": 0.057
+        },
+        {
+          "method": "bayes_shared_rho0_0.5",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.17959999999999998,
+            0.20279999999999998,
+            0.249,
+            0.3234,
+            0.523,
+            0.9418
+          ],
+          "type_i_error": 0.0574
+        },
+        {
+          "method": "bayes_shared_rho0_0.6",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.18979999999999997,
+            0.2126,
+            0.26239999999999997,
+            0.33320000000000005,
+            0.5222,
+            0.9394
+          ],
+          "type_i_error": 0.0554
+        },
+        {
+          "method": "bayes_shared_clean",
+          "role": "point mass at rho=0 (manuscript clean rule)",
+          "type_ii_error": [
+            0.14859999999999995,
+            0.23260000000000003,
+            0.37460000000000004,
+            0.5196000000000001,
+            0.726,
+            0.9524
+          ],
+          "type_i_error": 0.0544
+        },
+        {
+          "method": "h_dif_star_0.01",
+          "role": "prespecified reference score",
+          "type_ii_error": [
+            0.15100000000000002,
+            0.19540000000000002,
+            0.2794,
+            0.4094,
+            0.642,
+            0.949
+          ],
+          "type_i_error": 0.054
+        },
+        {
+          "method": "trgof_s2",
+          "role": "Tr-GoF robust competitor, Higher Criticism index s=2",
+          "type_ii_error": [
+            0.29359999999999997,
+            0.33199999999999996,
+            0.4044,
+            0.5067999999999999,
+            0.7050000000000001,
+            0.955
+          ],
+          "type_i_error": 0.053
+        }
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 300,
+      "rho_true_grid": [
+        0.0,
+        0.1,
+        0.25,
+        0.4,
+        0.6,
+        1.0
+      ],
+      "rows": [
+        {
+          "method": "bayes_shared_robust",
+          "role": "mixture prior over rho (manuscript robust rule)",
+          "type_ii_error": [
+            0.0806,
+            0.09199999999999997,
+            0.12219999999999998,
+            0.1644,
+            0.30279999999999996,
+            0.9436
+          ],
+          "type_i_error": 0.0608
+        },
+        {
+          "method": "bayes_shared_rho0_0.1",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.07620000000000005,
+            0.08940000000000003,
+            0.12280000000000002,
+            0.18999999999999995,
+            0.42100000000000004,
+            0.9464
+          ],
+          "type_i_error": 0.0586
+        },
+        {
+          "method": "bayes_shared_rho0_0.15",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.07779999999999998,
+            0.08979999999999999,
+            0.12319999999999998,
+            0.17800000000000005,
+            0.3954,
+            0.9474
+          ],
+          "type_i_error": 0.059
+        },
+        {
+          "method": "bayes_shared_rho0_0.25",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.0816,
+            0.0928,
+            0.12239999999999995,
+            0.16920000000000002,
+            0.351,
+            0.9474
+          ],
+          "type_i_error": 0.0572
+        },
+        {
+          "method": "bayes_shared_rho0_0.4",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.08620000000000005,
+            0.0988,
+            0.12639999999999996,
+            0.1652,
+            0.30800000000000005,
+            0.9466
+          ],
+          "type_i_error": 0.0596
+        },
+        {
+          "method": "bayes_shared_rho0_0.5",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.09179999999999999,
+            0.1018,
+            0.13,
+            0.16779999999999995,
+            0.29079999999999995,
+            0.9472
+          ],
+          "type_i_error": 0.0608
+        },
+        {
+          "method": "bayes_shared_rho0_0.6",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.09719999999999995,
+            0.10799999999999998,
+            0.136,
+            0.1724,
+            0.28159999999999996,
+            0.9448
+          ],
+          "type_i_error": 0.0602
+        },
+        {
+          "method": "bayes_shared_clean",
+          "role": "point mass at rho=0 (manuscript clean rule)",
+          "type_ii_error": [
+            0.07540000000000002,
+            0.11780000000000002,
+            0.20699999999999996,
+            0.3288,
+            0.5478000000000001,
+            0.947
+          ],
+          "type_i_error": 0.0576
+        },
+        {
+          "method": "h_dif_star_0.01",
+          "role": "prespecified reference score",
+          "type_ii_error": [
+            0.07840000000000003,
+            0.1008,
+            0.1502,
+            0.2268,
+            0.43320000000000003,
+            0.9454
+          ],
+          "type_i_error": 0.0588
+        },
+        {
+          "method": "trgof_s2",
+          "role": "Tr-GoF robust competitor, Higher Criticism index s=2",
+          "type_ii_error": [
+            0.15900000000000003,
+            0.18079999999999996,
+            0.2238,
+            0.28800000000000003,
+            0.45220000000000005,
+            0.9438
+          ],
+          "type_i_error": 0.0556
+        }
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 700,
+      "rho_true_grid": [
+        0.0,
+        0.1,
+        0.25,
+        0.4,
+        0.6,
+        1.0
+      ],
+      "rows": [
+        {
+          "method": "bayes_shared_robust",
+          "role": "mixture prior over rho (manuscript robust rule)",
+          "type_ii_error": [
+            0.047799999999999954,
+            0.05520000000000003,
+            0.07379999999999998,
+            0.09860000000000002,
+            0.17559999999999998,
+            0.9478
+          ],
+          "type_i_error": 0.0562
+        },
+        {
+          "method": "bayes_shared_rho0_0.1",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.04679999999999995,
+            0.05459999999999998,
+            0.07699999999999996,
+            0.10919999999999996,
+            0.25439999999999996,
+            0.9466
+          ],
+          "type_i_error": 0.056
+        },
+        {
+          "method": "bayes_shared_rho0_0.15",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.047799999999999954,
+            0.054200000000000026,
+            0.07379999999999998,
+            0.10360000000000003,
+            0.23160000000000003,
+            0.946
+          ],
+          "type_i_error": 0.0562
+        },
+        {
+          "method": "bayes_shared_rho0_0.25",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.04800000000000004,
+            0.054400000000000004,
+            0.07299999999999995,
+            0.09960000000000002,
+            0.20240000000000002,
+            0.9488
+          ],
+          "type_i_error": 0.0558
+        },
+        {
+          "method": "bayes_shared_rho0_0.4",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.050000000000000044,
+            0.05800000000000005,
+            0.07479999999999998,
+            0.09760000000000002,
+            0.17879999999999996,
+            0.9492
+          ],
+          "type_i_error": 0.0548
+        },
+        {
+          "method": "bayes_shared_rho0_0.5",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.05159999999999998,
+            0.05920000000000003,
+            0.07540000000000002,
+            0.09699999999999998,
+            0.17020000000000002,
+            0.9486
+          ],
+          "type_i_error": 0.0552
+        },
+        {
+          "method": "bayes_shared_rho0_0.6",
+          "role": "diagnostic point mass at rho_0",
+          "type_ii_error": [
+            0.055400000000000005,
+            0.06279999999999997,
+            0.07920000000000005,
+            0.10019999999999996,
+            0.1674,
+            0.9502
+          ],
+          "type_i_error": 0.052
+        },
+        {
+          "method": "bayes_shared_clean",
+          "role": "point mass at rho=0 (manuscript clean rule)",
+          "type_ii_error": [
+            0.04520000000000002,
+            0.07399999999999995,
+            0.14139999999999997,
+            0.22199999999999998,
+            0.4082,
+            0.9452
+          ],
+          "type_i_error": 0.058
+        },
+        {
+          "method": "h_dif_star_0.01",
+          "role": "prespecified reference score",
+          "type_ii_error": [
+            0.04720000000000002,
+            0.06259999999999999,
+            0.10160000000000002,
+            0.15259999999999996,
+            0.2924,
+            0.9466
+          ],
+          "type_i_error": 0.0558
+        },
+        {
+          "method": "trgof_s2",
+          "role": "Tr-GoF robust competitor, Higher Criticism index s=2",
+          "type_ii_error": [
+            0.1008,
+            0.10840000000000005,
+            0.13339999999999996,
+            0.1714,
+            0.28879999999999995,
+            0.9502
+          ],
+          "type_i_error": 0.052
+        }
+      ]
+    }
+  ],
+  "oracle_reading": {
+    "definition": "rho_0 chosen with hindsight separately at each rho_true; an upper bound on what any fixed rho_0 could achieve.",
+    "records": [
+      {
+        "scheme": "gumbel",
+        "horizon": 100,
+        "rho_true": 0.0,
+        "best_point_mass": "bayes_shared_rho0_0.1",
+        "best_point_mass_type_ii": 0.01759999999999995,
+        "robust_type_ii": 0.018000000000000016,
+        "robust_minus_oracle_point_mass": 0.00040000000000006697
+      },
+      {
+        "scheme": "gumbel",
+        "horizon": 100,
+        "rho_true": 0.1,
+        "best_point_mass": "bayes_shared_rho0_0.1",
+        "best_point_mass_type_ii": 0.01859999999999995,
+        "robust_type_ii": 0.019000000000000017,
+        "robust_minus_oracle_point_mass": 0.00040000000000006697
+      },
+      {
+        "scheme": "gumbel",
+        "horizon": 100,
+        "rho_true": 0.25,
+        "best_point_mass": "bayes_shared_rho0_0.1",
+        "best_point_mass_type_ii": 0.021599999999999953,
+        "robust_type_ii": 0.022199999999999998,
+        "robust_minus_oracle_point_mass": 0.0006000000000000449
+      },
+      {
+        "scheme": "gumbel",
+        "horizon": 100,
+        "rho_true": 0.4,
+        "best_point_mass": "bayes_shared_rho0_0.1",
+        "best_point_mass_type_ii": 0.028200000000000003,
+        "robust_type_ii": 0.02859999999999996,
+        "robust_minus_oracle_point_mass": 0.00039999999999995595
+      },
+      {
+        "scheme": "gumbel",
+        "horizon": 100,
+        "rho_true": 0.6,
+        "best_point_mass": "bayes_shared_rho0_0.6",
+        "best_point_mass_type_ii": 0.04279999999999995,
+        "robust_type_ii": 0.04379999999999995,
+        "robust_minus_oracle_point_mass": 0.0010000000000000009
+      },
+      {
+        "scheme": "gumbel",
+        "horizon": 100,
+        "rho_true": 1.0,
+        "best_point_mass": "bayes_shared_rho0_0.1",
+        "best_point_mass_type_ii": 0.9526,
+        "robust_type_ii": 0.9538,
+        "robust_minus_oracle_point_mass": 0.0011999999999999789
+      },
+      {
+        "scheme": "gumbel",
+        "horizon": 300,
+        "rho_true": 0.0,
+        "best_point_mass": "bayes_shared_rho0_0.1",
+        "best_point_mass_type_ii": 0.0038000000000000256,
+        "robust_type_ii": 0.0040000000000000036,
+        "robust_minus_oracle_point_mass": 0.00019999999999997797
+      },
+      {
+        "scheme": "gumbel",
+        "horizon": 300,
+        "rho_true": 0.1,
+        "best_point_mass": "bayes_shared_rho0_0.1",
+        "best_point_mass_type_ii": 0.0046000000000000485,
+        "robust_type_ii": 0.0048000000000000265,
+        "robust_minus_oracle_point_mass": 0.00019999999999997797
+      },
+      {
+        "scheme": "gumbel",
+        "horizon": 300,
+        "rho_true": 0.25,
+        "best_point_mass": "bayes_shared_rho0_0.1",
+        "best_point_mass_type_ii": 0.00539999999999996,
+        "robust_type_ii": 0.00539999999999996,
+        "robust_minus_oracle_point_mass": 0.0
+      },
+      {
+        "scheme": "gumbel",
+        "horizon": 300,
+        "rho_true": 0.4,
+        "best_point_mass": "bayes_shared_rho0_0.1",
+        "best_point_mass_type_ii": 0.007399999999999962,
+        "robust_type_ii": 0.007399999999999962,
+        "robust_minus_oracle_point_mass": 0.0
+      },
+      {
+        "scheme": "gumbel",
+        "horizon": 300,
+        "rho_true": 0.6,
+        "best_point_mass": "bayes_shared_rho0_0.25",
+        "best_point_mass_type_ii": 0.011800000000000033,
+        "robust_type_ii": 0.01200000000000001,
+        "robust_minus_oracle_point_mass": 0.00019999999999997797
+      },
+      {
+        "scheme": "gumbel",
+        "horizon": 300,
+        "rho_true": 1.0,
+        "best_point_mass": "bayes_shared_rho0_0.1",
+        "best_point_mass_type_ii": 0.9524,
+        "robust_type_ii": 0.9554,
+        "robust_minus_oracle_point_mass": 0.0030000000000000027
+      },
+      {
+        "scheme": "gumbel",
+        "horizon": 700,
+        "rho_true": 0.0,
+        "best_point_mass": "bayes_shared_rho0_0.1",
+        "best_point_mass_type_ii": 0.0013999999999999568,
+        "robust_type_ii": 0.0013999999999999568,
+        "robust_minus_oracle_point_mass": 0.0
+      },
+      {
+        "scheme": "gumbel",
+        "horizon": 700,
+        "rho_true": 0.1,
+        "best_point_mass": "bayes_shared_rho0_0.1",
+        "best_point_mass_type_ii": 0.0016000000000000458,
+        "robust_type_ii": 0.0016000000000000458,
+        "robust_minus_oracle_point_mass": 0.0
+      },
+      {
+        "scheme": "gumbel",
+        "horizon": 700,
+        "rho_true": 0.25,
+        "best_point_mass": "bayes_shared_rho0_0.1",
+        "best_point_mass_type_ii": 0.0020000000000000018,
+        "robust_type_ii": 0.0020000000000000018,
+        "robust_minus_oracle_point_mass": 0.0
+      },
+      {
+        "scheme": "gumbel",
+        "horizon": 700,
+        "rho_true": 0.4,
+        "best_point_mass": "bayes_shared_rho0_0.1",
+        "best_point_mass_type_ii": 0.0028000000000000247,
+        "robust_type_ii": 0.0028000000000000247,
+        "robust_minus_oracle_point_mass": 0.0
+      },
+      {
+        "scheme": "gumbel",
+        "horizon": 700,
+        "rho_true": 0.6,
+        "best_point_mass": "bayes_shared_rho0_0.1",
+        "best_point_mass_type_ii": 0.005199999999999982,
+        "robust_type_ii": 0.005600000000000049,
+        "robust_minus_oracle_point_mass": 0.00040000000000006697
+      },
+      {
+        "scheme": "gumbel",
+        "horizon": 700,
+        "rho_true": 1.0,
+        "best_point_mass": "bayes_shared_rho0_0.25",
+        "best_point_mass_type_ii": 0.9542,
+        "robust_type_ii": 0.9548,
+        "robust_minus_oracle_point_mass": 0.0005999999999999339
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 100,
+        "rho_true": 0.0,
+        "best_point_mass": "bayes_shared_rho0_0.1",
+        "best_point_mass_type_ii": 0.15039999999999998,
+        "robust_type_ii": 0.15680000000000005,
+        "robust_minus_oracle_point_mass": 0.006400000000000072
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 100,
+        "rho_true": 0.1,
+        "best_point_mass": "bayes_shared_rho0_0.15",
+        "best_point_mass_type_ii": 0.1834,
+        "robust_type_ii": 0.18679999999999997,
+        "robust_minus_oracle_point_mass": 0.0033999999999999586
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 100,
+        "rho_true": 0.25,
+        "best_point_mass": "bayes_shared_rho0_0.25",
+        "best_point_mass_type_ii": 0.24080000000000001,
+        "robust_type_ii": 0.24460000000000004,
+        "robust_minus_oracle_point_mass": 0.0038000000000000256
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 100,
+        "rho_true": 0.4,
+        "best_point_mass": "bayes_shared_rho0_0.4",
+        "best_point_mass_type_ii": 0.31899999999999995,
+        "robust_type_ii": 0.33499999999999996,
+        "robust_minus_oracle_point_mass": 0.016000000000000014
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 100,
+        "rho_true": 0.6,
+        "best_point_mass": "bayes_shared_rho0_0.6",
+        "best_point_mass_type_ii": 0.5222,
+        "robust_type_ii": 0.5596,
+        "robust_minus_oracle_point_mass": 0.03739999999999999
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 100,
+        "rho_true": 1.0,
+        "best_point_mass": "bayes_shared_rho0_0.6",
+        "best_point_mass_type_ii": 0.9394,
+        "robust_type_ii": 0.947,
+        "robust_minus_oracle_point_mass": 0.00759999999999994
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 300,
+        "rho_true": 0.0,
+        "best_point_mass": "bayes_shared_rho0_0.1",
+        "best_point_mass_type_ii": 0.07620000000000005,
+        "robust_type_ii": 0.0806,
+        "robust_minus_oracle_point_mass": 0.0043999999999999595
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 300,
+        "rho_true": 0.1,
+        "best_point_mass": "bayes_shared_rho0_0.1",
+        "best_point_mass_type_ii": 0.08940000000000003,
+        "robust_type_ii": 0.09199999999999997,
+        "robust_minus_oracle_point_mass": 0.0025999999999999357
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 300,
+        "rho_true": 0.25,
+        "best_point_mass": "bayes_shared_rho0_0.25",
+        "best_point_mass_type_ii": 0.12239999999999995,
+        "robust_type_ii": 0.12219999999999998,
+        "robust_minus_oracle_point_mass": -0.00019999999999997797
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 300,
+        "rho_true": 0.4,
+        "best_point_mass": "bayes_shared_rho0_0.4",
+        "best_point_mass_type_ii": 0.1652,
+        "robust_type_ii": 0.1644,
+        "robust_minus_oracle_point_mass": -0.0008000000000000229
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 300,
+        "rho_true": 0.6,
+        "best_point_mass": "bayes_shared_rho0_0.6",
+        "best_point_mass_type_ii": 0.28159999999999996,
+        "robust_type_ii": 0.30279999999999996,
+        "robust_minus_oracle_point_mass": 0.021199999999999997
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 300,
+        "rho_true": 1.0,
+        "best_point_mass": "bayes_shared_rho0_0.6",
+        "best_point_mass_type_ii": 0.9448,
+        "robust_type_ii": 0.9436,
+        "robust_minus_oracle_point_mass": -0.0011999999999999789
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 700,
+        "rho_true": 0.0,
+        "best_point_mass": "bayes_shared_rho0_0.1",
+        "best_point_mass_type_ii": 0.04679999999999995,
+        "robust_type_ii": 0.047799999999999954,
+        "robust_minus_oracle_point_mass": 0.0010000000000000009
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 700,
+        "rho_true": 0.1,
+        "best_point_mass": "bayes_shared_rho0_0.15",
+        "best_point_mass_type_ii": 0.054200000000000026,
+        "robust_type_ii": 0.05520000000000003,
+        "robust_minus_oracle_point_mass": 0.0010000000000000009
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 700,
+        "rho_true": 0.25,
+        "best_point_mass": "bayes_shared_rho0_0.25",
+        "best_point_mass_type_ii": 0.07299999999999995,
+        "robust_type_ii": 0.07379999999999998,
+        "robust_minus_oracle_point_mass": 0.0008000000000000229
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 700,
+        "rho_true": 0.4,
+        "best_point_mass": "bayes_shared_rho0_0.5",
+        "best_point_mass_type_ii": 0.09699999999999998,
+        "robust_type_ii": 0.09860000000000002,
+        "robust_minus_oracle_point_mass": 0.0016000000000000458
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 700,
+        "rho_true": 0.6,
+        "best_point_mass": "bayes_shared_rho0_0.6",
+        "best_point_mass_type_ii": 0.1674,
+        "robust_type_ii": 0.17559999999999998,
+        "robust_minus_oracle_point_mass": 0.008199999999999985
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 700,
+        "rho_true": 1.0,
+        "best_point_mass": "bayes_shared_rho0_0.15",
+        "best_point_mass_type_ii": 0.946,
+        "robust_type_ii": 0.9478,
+        "robust_minus_oracle_point_mass": 0.0018000000000000238
+      }
+    ]
+  },
+  "single_fixed_reading": {
+    "definition": "One rho_0 held across the whole rho_true sweep, selected by lowest mean Type II over rho_true<1; this is what an analyst could actually do.",
+    "records": [
+      {
+        "scheme": "gumbel",
+        "horizon": 100,
+        "sweep_rho_true": [
+          0.0,
+          0.1,
+          0.25,
+          0.4,
+          0.6
+        ],
+        "per_point_mass": {
+          "bayes_shared_rho0_0.1": {
+            "mean_type_ii_over_sweep": 0.026119999999999966,
+            "max_type_ii_over_sweep": 0.04459999999999997
+          },
+          "bayes_shared_rho0_0.15": {
+            "mean_type_ii_over_sweep": 0.02607999999999997,
+            "max_type_ii_over_sweep": 0.04420000000000002
+          },
+          "bayes_shared_rho0_0.25": {
+            "mean_type_ii_over_sweep": 0.02612000000000001,
+            "max_type_ii_over_sweep": 0.04400000000000004
+          },
+          "bayes_shared_rho0_0.4": {
+            "mean_type_ii_over_sweep": 0.026360000000000005,
+            "max_type_ii_over_sweep": 0.04400000000000004
+          },
+          "bayes_shared_rho0_0.5": {
+            "mean_type_ii_over_sweep": 0.026479999999999993,
+            "max_type_ii_over_sweep": 0.043399999999999994
+          },
+          "bayes_shared_rho0_0.6": {
+            "mean_type_ii_over_sweep": 0.026600000000000002,
+            "max_type_ii_over_sweep": 0.04279999999999995
+          }
+        },
+        "best_by_mean": "bayes_shared_rho0_0.15",
+        "best_by_max": "bayes_shared_rho0_0.6",
+        "robust_mean_type_ii_over_sweep": 0.02631999999999999,
+        "robust_max_type_ii_over_sweep": 0.04379999999999995,
+        "robust_minus_best_single_fixed_by_rho": {
+          "0": 0.00040000000000006697,
+          "0.1": 0.00040000000000006697,
+          "0.25": 0.0006000000000000449,
+          "0.4": 0.00019999999999997797,
+          "0.6": -0.00040000000000006697,
+          "1": -0.00019999999999997797
+        }
+      },
+      {
+        "scheme": "gumbel",
+        "horizon": 300,
+        "sweep_rho_true": [
+          0.0,
+          0.1,
+          0.25,
+          0.4,
+          0.6
+        ],
+        "per_point_mass": {
+          "bayes_shared_rho0_0.1": {
+            "mean_type_ii_over_sweep": 0.006640000000000002,
+            "max_type_ii_over_sweep": 0.01200000000000001
+          },
+          "bayes_shared_rho0_0.15": {
+            "mean_type_ii_over_sweep": 0.006640000000000002,
+            "max_type_ii_over_sweep": 0.01200000000000001
+          },
+          "bayes_shared_rho0_0.25": {
+            "mean_type_ii_over_sweep": 0.006640000000000002,
+            "max_type_ii_over_sweep": 0.011800000000000033
+          },
+          "bayes_shared_rho0_0.4": {
+            "mean_type_ii_over_sweep": 0.006679999999999997,
+            "max_type_ii_over_sweep": 0.011800000000000033
+          },
+          "bayes_shared_rho0_0.5": {
+            "mean_type_ii_over_sweep": 0.006759999999999988,
+            "max_type_ii_over_sweep": 0.012199999999999989
+          },
+          "bayes_shared_rho0_0.6": {
+            "mean_type_ii_over_sweep": 0.0067199999999999925,
+            "max_type_ii_over_sweep": 0.01200000000000001
+          }
+        },
+        "best_by_mean": "bayes_shared_rho0_0.1",
+        "best_by_max": "bayes_shared_rho0_0.25",
+        "robust_mean_type_ii_over_sweep": 0.0067199999999999925,
+        "robust_max_type_ii_over_sweep": 0.01200000000000001,
+        "robust_minus_best_single_fixed_by_rho": {
+          "0": 0.00019999999999997797,
+          "0.1": 0.00019999999999997797,
+          "0.25": 0.0,
+          "0.4": 0.0,
+          "0.6": 0.0,
+          "1": 0.0030000000000000027
+        }
+      },
+      {
+        "scheme": "gumbel",
+        "horizon": 700,
+        "sweep_rho_true": [
+          0.0,
+          0.1,
+          0.25,
+          0.4,
+          0.6
+        ],
+        "per_point_mass": {
+          "bayes_shared_rho0_0.1": {
+            "mean_type_ii_over_sweep": 0.0026000000000000025,
+            "max_type_ii_over_sweep": 0.005199999999999982
+          },
+          "bayes_shared_rho0_0.15": {
+            "mean_type_ii_over_sweep": 0.0026000000000000025,
+            "max_type_ii_over_sweep": 0.005199999999999982
+          },
+          "bayes_shared_rho0_0.25": {
+            "mean_type_ii_over_sweep": 0.0026000000000000025,
+            "max_type_ii_over_sweep": 0.005199999999999982
+          },
+          "bayes_shared_rho0_0.4": {
+            "mean_type_ii_over_sweep": 0.0026800000000000157,
+            "max_type_ii_over_sweep": 0.005600000000000049
+          },
+          "bayes_shared_rho0_0.5": {
+            "mean_type_ii_over_sweep": 0.0026800000000000157,
+            "max_type_ii_over_sweep": 0.005600000000000049
+          },
+          "bayes_shared_rho0_0.6": {
+            "mean_type_ii_over_sweep": 0.0026800000000000157,
+            "max_type_ii_over_sweep": 0.005600000000000049
+          }
+        },
+        "best_by_mean": "bayes_shared_rho0_0.1",
+        "best_by_max": "bayes_shared_rho0_0.1",
+        "robust_mean_type_ii_over_sweep": 0.0026800000000000157,
+        "robust_max_type_ii_over_sweep": 0.005600000000000049,
+        "robust_minus_best_single_fixed_by_rho": {
+          "0": 0.0,
+          "0.1": 0.0,
+          "0.25": 0.0,
+          "0.4": 0.0,
+          "0.6": 0.00040000000000006697,
+          "1": -0.0008000000000000229
+        }
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 100,
+        "sweep_rho_true": [
+          0.0,
+          0.1,
+          0.25,
+          0.4,
+          0.6
+        ],
+        "per_point_mass": {
+          "bayes_shared_rho0_0.1": {
+            "mean_type_ii_over_sweep": 0.32287999999999994,
+            "max_type_ii_over_sweep": 0.6432
+          },
+          "bayes_shared_rho0_0.15": {
+            "mean_type_ii_over_sweep": 0.31284,
+            "max_type_ii_over_sweep": 0.6204000000000001
+          },
+          "bayes_shared_rho0_0.25": {
+            "mean_type_ii_over_sweep": 0.29904000000000003,
+            "max_type_ii_over_sweep": 0.575
+          },
+          "bayes_shared_rho0_0.4": {
+            "mean_type_ii_over_sweep": 0.29239999999999994,
+            "max_type_ii_over_sweep": 0.5354
+          },
+          "bayes_shared_rho0_0.5": {
+            "mean_type_ii_over_sweep": 0.29556,
+            "max_type_ii_over_sweep": 0.523
+          },
+          "bayes_shared_rho0_0.6": {
+            "mean_type_ii_over_sweep": 0.30404,
+            "max_type_ii_over_sweep": 0.5222
+          }
+        },
+        "best_by_mean": "bayes_shared_rho0_0.4",
+        "best_by_max": "bayes_shared_rho0_0.6",
+        "robust_mean_type_ii_over_sweep": 0.29656000000000005,
+        "robust_max_type_ii_over_sweep": 0.5596,
+        "robust_minus_best_single_fixed_by_rho": {
+          "0": -0.012799999999999923,
+          "0.1": -0.005800000000000027,
+          "0.25": -0.0007999999999999119,
+          "0.4": 0.016000000000000014,
+          "0.6": 0.0242,
+          "1": 0.0017999999999999128
+        }
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 300,
+        "sweep_rho_true": [
+          0.0,
+          0.1,
+          0.25,
+          0.4,
+          0.6
+        ],
+        "per_point_mass": {
+          "bayes_shared_rho0_0.1": {
+            "mean_type_ii_over_sweep": 0.17988,
+            "max_type_ii_over_sweep": 0.42100000000000004
+          },
+          "bayes_shared_rho0_0.15": {
+            "mean_type_ii_over_sweep": 0.17284,
+            "max_type_ii_over_sweep": 0.3954
+          },
+          "bayes_shared_rho0_0.25": {
+            "mean_type_ii_over_sweep": 0.1634,
+            "max_type_ii_over_sweep": 0.351
+          },
+          "bayes_shared_rho0_0.4": {
+            "mean_type_ii_over_sweep": 0.15692,
+            "max_type_ii_over_sweep": 0.30800000000000005
+          },
+          "bayes_shared_rho0_0.5": {
+            "mean_type_ii_over_sweep": 0.15643999999999997,
+            "max_type_ii_over_sweep": 0.29079999999999995
+          },
+          "bayes_shared_rho0_0.6": {
+            "mean_type_ii_over_sweep": 0.15904,
+            "max_type_ii_over_sweep": 0.28159999999999996
+          }
+        },
+        "best_by_mean": "bayes_shared_rho0_0.5",
+        "best_by_max": "bayes_shared_rho0_0.6",
+        "robust_mean_type_ii_over_sweep": 0.15239999999999998,
+        "robust_max_type_ii_over_sweep": 0.30279999999999996,
+        "robust_minus_best_single_fixed_by_rho": {
+          "0": -0.011199999999999988,
+          "0.1": -0.009800000000000031,
+          "0.25": -0.007800000000000029,
+          "0.4": -0.0033999999999999586,
+          "0.6": 0.01200000000000001,
+          "1": -0.0036000000000000476
+        }
+      },
+      {
+        "scheme": "inverse",
+        "horizon": 700,
+        "sweep_rho_true": [
+          0.0,
+          0.1,
+          0.25,
+          0.4,
+          0.6
+        ],
+        "per_point_mass": {
+          "bayes_shared_rho0_0.1": {
+            "mean_type_ii_over_sweep": 0.10839999999999997,
+            "max_type_ii_over_sweep": 0.25439999999999996
+          },
+          "bayes_shared_rho0_0.15": {
+            "mean_type_ii_over_sweep": 0.1022,
+            "max_type_ii_over_sweep": 0.23160000000000003
+          },
+          "bayes_shared_rho0_0.25": {
+            "mean_type_ii_over_sweep": 0.09548000000000001,
+            "max_type_ii_over_sweep": 0.20240000000000002
+          },
+          "bayes_shared_rho0_0.4": {
+            "mean_type_ii_over_sweep": 0.09184,
+            "max_type_ii_over_sweep": 0.17879999999999996
+          },
+          "bayes_shared_rho0_0.5": {
+            "mean_type_ii_over_sweep": 0.09068000000000001,
+            "max_type_ii_over_sweep": 0.17020000000000002
+          },
+          "bayes_shared_rho0_0.6": {
+            "mean_type_ii_over_sweep": 0.093,
+            "max_type_ii_over_sweep": 0.1674
+          }
+        },
+        "best_by_mean": "bayes_shared_rho0_0.5",
+        "best_by_max": "bayes_shared_rho0_0.6",
+        "robust_mean_type_ii_over_sweep": 0.09019999999999999,
+        "robust_max_type_ii_over_sweep": 0.17559999999999998,
+        "robust_minus_best_single_fixed_by_rho": {
+          "0": -0.0038000000000000256,
+          "0.1": -0.0040000000000000036,
+          "0.25": -0.0016000000000000458,
+          "0.4": 0.0016000000000000458,
+          "0.6": 0.00539999999999996,
+          "1": -0.0008000000000000229
+        }
+      }
+    ]
+  },
+  "readings_by_point_mass_family": {
+    "note": "The requested grid stops at rho_0=0.4, below the top of both the prior's support and the contamination sweep, so it understates a fixed rho_0 at large rho_true. Both families are reported.",
+    "families": {
+      "all_point_masses": {
+        "point_mass_methods": [
+          "bayes_shared_rho0_0.1",
+          "bayes_shared_rho0_0.15",
+          "bayes_shared_rho0_0.25",
+          "bayes_shared_rho0_0.4",
+          "bayes_shared_rho0_0.5",
+          "bayes_shared_rho0_0.6"
+        ],
+        "oracle_records": [
+          {
+            "scheme": "gumbel",
+            "horizon": 100,
+            "rho_true": 0.0,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.01759999999999995,
+            "robust_type_ii": 0.018000000000000016,
+            "robust_minus_oracle_point_mass": 0.00040000000000006697
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 100,
+            "rho_true": 0.1,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.01859999999999995,
+            "robust_type_ii": 0.019000000000000017,
+            "robust_minus_oracle_point_mass": 0.00040000000000006697
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 100,
+            "rho_true": 0.25,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.021599999999999953,
+            "robust_type_ii": 0.022199999999999998,
+            "robust_minus_oracle_point_mass": 0.0006000000000000449
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 100,
+            "rho_true": 0.4,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.028200000000000003,
+            "robust_type_ii": 0.02859999999999996,
+            "robust_minus_oracle_point_mass": 0.00039999999999995595
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 100,
+            "rho_true": 0.6,
+            "best_point_mass": "bayes_shared_rho0_0.6",
+            "best_point_mass_type_ii": 0.04279999999999995,
+            "robust_type_ii": 0.04379999999999995,
+            "robust_minus_oracle_point_mass": 0.0010000000000000009
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 100,
+            "rho_true": 1.0,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.9526,
+            "robust_type_ii": 0.9538,
+            "robust_minus_oracle_point_mass": 0.0011999999999999789
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 300,
+            "rho_true": 0.0,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.0038000000000000256,
+            "robust_type_ii": 0.0040000000000000036,
+            "robust_minus_oracle_point_mass": 0.00019999999999997797
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 300,
+            "rho_true": 0.1,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.0046000000000000485,
+            "robust_type_ii": 0.0048000000000000265,
+            "robust_minus_oracle_point_mass": 0.00019999999999997797
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 300,
+            "rho_true": 0.25,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.00539999999999996,
+            "robust_type_ii": 0.00539999999999996,
+            "robust_minus_oracle_point_mass": 0.0
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 300,
+            "rho_true": 0.4,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.007399999999999962,
+            "robust_type_ii": 0.007399999999999962,
+            "robust_minus_oracle_point_mass": 0.0
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 300,
+            "rho_true": 0.6,
+            "best_point_mass": "bayes_shared_rho0_0.25",
+            "best_point_mass_type_ii": 0.011800000000000033,
+            "robust_type_ii": 0.01200000000000001,
+            "robust_minus_oracle_point_mass": 0.00019999999999997797
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 300,
+            "rho_true": 1.0,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.9524,
+            "robust_type_ii": 0.9554,
+            "robust_minus_oracle_point_mass": 0.0030000000000000027
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 700,
+            "rho_true": 0.0,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.0013999999999999568,
+            "robust_type_ii": 0.0013999999999999568,
+            "robust_minus_oracle_point_mass": 0.0
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 700,
+            "rho_true": 0.1,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.0016000000000000458,
+            "robust_type_ii": 0.0016000000000000458,
+            "robust_minus_oracle_point_mass": 0.0
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 700,
+            "rho_true": 0.25,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.0020000000000000018,
+            "robust_type_ii": 0.0020000000000000018,
+            "robust_minus_oracle_point_mass": 0.0
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 700,
+            "rho_true": 0.4,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.0028000000000000247,
+            "robust_type_ii": 0.0028000000000000247,
+            "robust_minus_oracle_point_mass": 0.0
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 700,
+            "rho_true": 0.6,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.005199999999999982,
+            "robust_type_ii": 0.005600000000000049,
+            "robust_minus_oracle_point_mass": 0.00040000000000006697
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 700,
+            "rho_true": 1.0,
+            "best_point_mass": "bayes_shared_rho0_0.25",
+            "best_point_mass_type_ii": 0.9542,
+            "robust_type_ii": 0.9548,
+            "robust_minus_oracle_point_mass": 0.0005999999999999339
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 100,
+            "rho_true": 0.0,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.15039999999999998,
+            "robust_type_ii": 0.15680000000000005,
+            "robust_minus_oracle_point_mass": 0.006400000000000072
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 100,
+            "rho_true": 0.1,
+            "best_point_mass": "bayes_shared_rho0_0.15",
+            "best_point_mass_type_ii": 0.1834,
+            "robust_type_ii": 0.18679999999999997,
+            "robust_minus_oracle_point_mass": 0.0033999999999999586
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 100,
+            "rho_true": 0.25,
+            "best_point_mass": "bayes_shared_rho0_0.25",
+            "best_point_mass_type_ii": 0.24080000000000001,
+            "robust_type_ii": 0.24460000000000004,
+            "robust_minus_oracle_point_mass": 0.0038000000000000256
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 100,
+            "rho_true": 0.4,
+            "best_point_mass": "bayes_shared_rho0_0.4",
+            "best_point_mass_type_ii": 0.31899999999999995,
+            "robust_type_ii": 0.33499999999999996,
+            "robust_minus_oracle_point_mass": 0.016000000000000014
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 100,
+            "rho_true": 0.6,
+            "best_point_mass": "bayes_shared_rho0_0.6",
+            "best_point_mass_type_ii": 0.5222,
+            "robust_type_ii": 0.5596,
+            "robust_minus_oracle_point_mass": 0.03739999999999999
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 100,
+            "rho_true": 1.0,
+            "best_point_mass": "bayes_shared_rho0_0.6",
+            "best_point_mass_type_ii": 0.9394,
+            "robust_type_ii": 0.947,
+            "robust_minus_oracle_point_mass": 0.00759999999999994
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 300,
+            "rho_true": 0.0,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.07620000000000005,
+            "robust_type_ii": 0.0806,
+            "robust_minus_oracle_point_mass": 0.0043999999999999595
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 300,
+            "rho_true": 0.1,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.08940000000000003,
+            "robust_type_ii": 0.09199999999999997,
+            "robust_minus_oracle_point_mass": 0.0025999999999999357
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 300,
+            "rho_true": 0.25,
+            "best_point_mass": "bayes_shared_rho0_0.25",
+            "best_point_mass_type_ii": 0.12239999999999995,
+            "robust_type_ii": 0.12219999999999998,
+            "robust_minus_oracle_point_mass": -0.00019999999999997797
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 300,
+            "rho_true": 0.4,
+            "best_point_mass": "bayes_shared_rho0_0.4",
+            "best_point_mass_type_ii": 0.1652,
+            "robust_type_ii": 0.1644,
+            "robust_minus_oracle_point_mass": -0.0008000000000000229
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 300,
+            "rho_true": 0.6,
+            "best_point_mass": "bayes_shared_rho0_0.6",
+            "best_point_mass_type_ii": 0.28159999999999996,
+            "robust_type_ii": 0.30279999999999996,
+            "robust_minus_oracle_point_mass": 0.021199999999999997
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 300,
+            "rho_true": 1.0,
+            "best_point_mass": "bayes_shared_rho0_0.6",
+            "best_point_mass_type_ii": 0.9448,
+            "robust_type_ii": 0.9436,
+            "robust_minus_oracle_point_mass": -0.0011999999999999789
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 700,
+            "rho_true": 0.0,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.04679999999999995,
+            "robust_type_ii": 0.047799999999999954,
+            "robust_minus_oracle_point_mass": 0.0010000000000000009
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 700,
+            "rho_true": 0.1,
+            "best_point_mass": "bayes_shared_rho0_0.15",
+            "best_point_mass_type_ii": 0.054200000000000026,
+            "robust_type_ii": 0.05520000000000003,
+            "robust_minus_oracle_point_mass": 0.0010000000000000009
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 700,
+            "rho_true": 0.25,
+            "best_point_mass": "bayes_shared_rho0_0.25",
+            "best_point_mass_type_ii": 0.07299999999999995,
+            "robust_type_ii": 0.07379999999999998,
+            "robust_minus_oracle_point_mass": 0.0008000000000000229
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 700,
+            "rho_true": 0.4,
+            "best_point_mass": "bayes_shared_rho0_0.5",
+            "best_point_mass_type_ii": 0.09699999999999998,
+            "robust_type_ii": 0.09860000000000002,
+            "robust_minus_oracle_point_mass": 0.0016000000000000458
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 700,
+            "rho_true": 0.6,
+            "best_point_mass": "bayes_shared_rho0_0.6",
+            "best_point_mass_type_ii": 0.1674,
+            "robust_type_ii": 0.17559999999999998,
+            "robust_minus_oracle_point_mass": 0.008199999999999985
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 700,
+            "rho_true": 1.0,
+            "best_point_mass": "bayes_shared_rho0_0.15",
+            "best_point_mass_type_ii": 0.946,
+            "robust_type_ii": 0.9478,
+            "robust_minus_oracle_point_mass": 0.0018000000000000238
+          }
+        ],
+        "single_fixed_records": [
+          {
+            "scheme": "gumbel",
+            "horizon": 100,
+            "sweep_rho_true": [
+              0.0,
+              0.1,
+              0.25,
+              0.4,
+              0.6
+            ],
+            "per_point_mass": {
+              "bayes_shared_rho0_0.1": {
+                "mean_type_ii_over_sweep": 0.026119999999999966,
+                "max_type_ii_over_sweep": 0.04459999999999997
+              },
+              "bayes_shared_rho0_0.15": {
+                "mean_type_ii_over_sweep": 0.02607999999999997,
+                "max_type_ii_over_sweep": 0.04420000000000002
+              },
+              "bayes_shared_rho0_0.25": {
+                "mean_type_ii_over_sweep": 0.02612000000000001,
+                "max_type_ii_over_sweep": 0.04400000000000004
+              },
+              "bayes_shared_rho0_0.4": {
+                "mean_type_ii_over_sweep": 0.026360000000000005,
+                "max_type_ii_over_sweep": 0.04400000000000004
+              },
+              "bayes_shared_rho0_0.5": {
+                "mean_type_ii_over_sweep": 0.026479999999999993,
+                "max_type_ii_over_sweep": 0.043399999999999994
+              },
+              "bayes_shared_rho0_0.6": {
+                "mean_type_ii_over_sweep": 0.026600000000000002,
+                "max_type_ii_over_sweep": 0.04279999999999995
+              }
+            },
+            "best_by_mean": "bayes_shared_rho0_0.15",
+            "best_by_max": "bayes_shared_rho0_0.6",
+            "robust_mean_type_ii_over_sweep": 0.02631999999999999,
+            "robust_max_type_ii_over_sweep": 0.04379999999999995,
+            "robust_minus_best_single_fixed_by_rho": {
+              "0": 0.00040000000000006697,
+              "0.1": 0.00040000000000006697,
+              "0.25": 0.0006000000000000449,
+              "0.4": 0.00019999999999997797,
+              "0.6": -0.00040000000000006697,
+              "1": -0.00019999999999997797
+            }
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 300,
+            "sweep_rho_true": [
+              0.0,
+              0.1,
+              0.25,
+              0.4,
+              0.6
+            ],
+            "per_point_mass": {
+              "bayes_shared_rho0_0.1": {
+                "mean_type_ii_over_sweep": 0.006640000000000002,
+                "max_type_ii_over_sweep": 0.01200000000000001
+              },
+              "bayes_shared_rho0_0.15": {
+                "mean_type_ii_over_sweep": 0.006640000000000002,
+                "max_type_ii_over_sweep": 0.01200000000000001
+              },
+              "bayes_shared_rho0_0.25": {
+                "mean_type_ii_over_sweep": 0.006640000000000002,
+                "max_type_ii_over_sweep": 0.011800000000000033
+              },
+              "bayes_shared_rho0_0.4": {
+                "mean_type_ii_over_sweep": 0.006679999999999997,
+                "max_type_ii_over_sweep": 0.011800000000000033
+              },
+              "bayes_shared_rho0_0.5": {
+                "mean_type_ii_over_sweep": 0.006759999999999988,
+                "max_type_ii_over_sweep": 0.012199999999999989
+              },
+              "bayes_shared_rho0_0.6": {
+                "mean_type_ii_over_sweep": 0.0067199999999999925,
+                "max_type_ii_over_sweep": 0.01200000000000001
+              }
+            },
+            "best_by_mean": "bayes_shared_rho0_0.1",
+            "best_by_max": "bayes_shared_rho0_0.25",
+            "robust_mean_type_ii_over_sweep": 0.0067199999999999925,
+            "robust_max_type_ii_over_sweep": 0.01200000000000001,
+            "robust_minus_best_single_fixed_by_rho": {
+              "0": 0.00019999999999997797,
+              "0.1": 0.00019999999999997797,
+              "0.25": 0.0,
+              "0.4": 0.0,
+              "0.6": 0.0,
+              "1": 0.0030000000000000027
+            }
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 700,
+            "sweep_rho_true": [
+              0.0,
+              0.1,
+              0.25,
+              0.4,
+              0.6
+            ],
+            "per_point_mass": {
+              "bayes_shared_rho0_0.1": {
+                "mean_type_ii_over_sweep": 0.0026000000000000025,
+                "max_type_ii_over_sweep": 0.005199999999999982
+              },
+              "bayes_shared_rho0_0.15": {
+                "mean_type_ii_over_sweep": 0.0026000000000000025,
+                "max_type_ii_over_sweep": 0.005199999999999982
+              },
+              "bayes_shared_rho0_0.25": {
+                "mean_type_ii_over_sweep": 0.0026000000000000025,
+                "max_type_ii_over_sweep": 0.005199999999999982
+              },
+              "bayes_shared_rho0_0.4": {
+                "mean_type_ii_over_sweep": 0.0026800000000000157,
+                "max_type_ii_over_sweep": 0.005600000000000049
+              },
+              "bayes_shared_rho0_0.5": {
+                "mean_type_ii_over_sweep": 0.0026800000000000157,
+                "max_type_ii_over_sweep": 0.005600000000000049
+              },
+              "bayes_shared_rho0_0.6": {
+                "mean_type_ii_over_sweep": 0.0026800000000000157,
+                "max_type_ii_over_sweep": 0.005600000000000049
+              }
+            },
+            "best_by_mean": "bayes_shared_rho0_0.1",
+            "best_by_max": "bayes_shared_rho0_0.1",
+            "robust_mean_type_ii_over_sweep": 0.0026800000000000157,
+            "robust_max_type_ii_over_sweep": 0.005600000000000049,
+            "robust_minus_best_single_fixed_by_rho": {
+              "0": 0.0,
+              "0.1": 0.0,
+              "0.25": 0.0,
+              "0.4": 0.0,
+              "0.6": 0.00040000000000006697,
+              "1": -0.0008000000000000229
+            }
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 100,
+            "sweep_rho_true": [
+              0.0,
+              0.1,
+              0.25,
+              0.4,
+              0.6
+            ],
+            "per_point_mass": {
+              "bayes_shared_rho0_0.1": {
+                "mean_type_ii_over_sweep": 0.32287999999999994,
+                "max_type_ii_over_sweep": 0.6432
+              },
+              "bayes_shared_rho0_0.15": {
+                "mean_type_ii_over_sweep": 0.31284,
+                "max_type_ii_over_sweep": 0.6204000000000001
+              },
+              "bayes_shared_rho0_0.25": {
+                "mean_type_ii_over_sweep": 0.29904000000000003,
+                "max_type_ii_over_sweep": 0.575
+              },
+              "bayes_shared_rho0_0.4": {
+                "mean_type_ii_over_sweep": 0.29239999999999994,
+                "max_type_ii_over_sweep": 0.5354
+              },
+              "bayes_shared_rho0_0.5": {
+                "mean_type_ii_over_sweep": 0.29556,
+                "max_type_ii_over_sweep": 0.523
+              },
+              "bayes_shared_rho0_0.6": {
+                "mean_type_ii_over_sweep": 0.30404,
+                "max_type_ii_over_sweep": 0.5222
+              }
+            },
+            "best_by_mean": "bayes_shared_rho0_0.4",
+            "best_by_max": "bayes_shared_rho0_0.6",
+            "robust_mean_type_ii_over_sweep": 0.29656000000000005,
+            "robust_max_type_ii_over_sweep": 0.5596,
+            "robust_minus_best_single_fixed_by_rho": {
+              "0": -0.012799999999999923,
+              "0.1": -0.005800000000000027,
+              "0.25": -0.0007999999999999119,
+              "0.4": 0.016000000000000014,
+              "0.6": 0.0242,
+              "1": 0.0017999999999999128
+            }
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 300,
+            "sweep_rho_true": [
+              0.0,
+              0.1,
+              0.25,
+              0.4,
+              0.6
+            ],
+            "per_point_mass": {
+              "bayes_shared_rho0_0.1": {
+                "mean_type_ii_over_sweep": 0.17988,
+                "max_type_ii_over_sweep": 0.42100000000000004
+              },
+              "bayes_shared_rho0_0.15": {
+                "mean_type_ii_over_sweep": 0.17284,
+                "max_type_ii_over_sweep": 0.3954
+              },
+              "bayes_shared_rho0_0.25": {
+                "mean_type_ii_over_sweep": 0.1634,
+                "max_type_ii_over_sweep": 0.351
+              },
+              "bayes_shared_rho0_0.4": {
+                "mean_type_ii_over_sweep": 0.15692,
+                "max_type_ii_over_sweep": 0.30800000000000005
+              },
+              "bayes_shared_rho0_0.5": {
+                "mean_type_ii_over_sweep": 0.15643999999999997,
+                "max_type_ii_over_sweep": 0.29079999999999995
+              },
+              "bayes_shared_rho0_0.6": {
+                "mean_type_ii_over_sweep": 0.15904,
+                "max_type_ii_over_sweep": 0.28159999999999996
+              }
+            },
+            "best_by_mean": "bayes_shared_rho0_0.5",
+            "best_by_max": "bayes_shared_rho0_0.6",
+            "robust_mean_type_ii_over_sweep": 0.15239999999999998,
+            "robust_max_type_ii_over_sweep": 0.30279999999999996,
+            "robust_minus_best_single_fixed_by_rho": {
+              "0": -0.011199999999999988,
+              "0.1": -0.009800000000000031,
+              "0.25": -0.007800000000000029,
+              "0.4": -0.0033999999999999586,
+              "0.6": 0.01200000000000001,
+              "1": -0.0036000000000000476
+            }
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 700,
+            "sweep_rho_true": [
+              0.0,
+              0.1,
+              0.25,
+              0.4,
+              0.6
+            ],
+            "per_point_mass": {
+              "bayes_shared_rho0_0.1": {
+                "mean_type_ii_over_sweep": 0.10839999999999997,
+                "max_type_ii_over_sweep": 0.25439999999999996
+              },
+              "bayes_shared_rho0_0.15": {
+                "mean_type_ii_over_sweep": 0.1022,
+                "max_type_ii_over_sweep": 0.23160000000000003
+              },
+              "bayes_shared_rho0_0.25": {
+                "mean_type_ii_over_sweep": 0.09548000000000001,
+                "max_type_ii_over_sweep": 0.20240000000000002
+              },
+              "bayes_shared_rho0_0.4": {
+                "mean_type_ii_over_sweep": 0.09184,
+                "max_type_ii_over_sweep": 0.17879999999999996
+              },
+              "bayes_shared_rho0_0.5": {
+                "mean_type_ii_over_sweep": 0.09068000000000001,
+                "max_type_ii_over_sweep": 0.17020000000000002
+              },
+              "bayes_shared_rho0_0.6": {
+                "mean_type_ii_over_sweep": 0.093,
+                "max_type_ii_over_sweep": 0.1674
+              }
+            },
+            "best_by_mean": "bayes_shared_rho0_0.5",
+            "best_by_max": "bayes_shared_rho0_0.6",
+            "robust_mean_type_ii_over_sweep": 0.09019999999999999,
+            "robust_max_type_ii_over_sweep": 0.17559999999999998,
+            "robust_minus_best_single_fixed_by_rho": {
+              "0": -0.0038000000000000256,
+              "0.1": -0.0040000000000000036,
+              "0.25": -0.0016000000000000458,
+              "0.4": 0.0016000000000000458,
+              "0.6": 0.00539999999999996,
+              "1": -0.0008000000000000229
+            }
+          }
+        ]
+      },
+      "requested_grid_only": {
+        "point_mass_methods": [
+          "bayes_shared_rho0_0.1",
+          "bayes_shared_rho0_0.15",
+          "bayes_shared_rho0_0.25",
+          "bayes_shared_rho0_0.4"
+        ],
+        "oracle_records": [
+          {
+            "scheme": "gumbel",
+            "horizon": 100,
+            "rho_true": 0.0,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.01759999999999995,
+            "robust_type_ii": 0.018000000000000016,
+            "robust_minus_oracle_point_mass": 0.00040000000000006697
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 100,
+            "rho_true": 0.1,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.01859999999999995,
+            "robust_type_ii": 0.019000000000000017,
+            "robust_minus_oracle_point_mass": 0.00040000000000006697
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 100,
+            "rho_true": 0.25,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.021599999999999953,
+            "robust_type_ii": 0.022199999999999998,
+            "robust_minus_oracle_point_mass": 0.0006000000000000449
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 100,
+            "rho_true": 0.4,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.028200000000000003,
+            "robust_type_ii": 0.02859999999999996,
+            "robust_minus_oracle_point_mass": 0.00039999999999995595
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 100,
+            "rho_true": 0.6,
+            "best_point_mass": "bayes_shared_rho0_0.25",
+            "best_point_mass_type_ii": 0.04400000000000004,
+            "robust_type_ii": 0.04379999999999995,
+            "robust_minus_oracle_point_mass": -0.000200000000000089
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 100,
+            "rho_true": 1.0,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.9526,
+            "robust_type_ii": 0.9538,
+            "robust_minus_oracle_point_mass": 0.0011999999999999789
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 300,
+            "rho_true": 0.0,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.0038000000000000256,
+            "robust_type_ii": 0.0040000000000000036,
+            "robust_minus_oracle_point_mass": 0.00019999999999997797
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 300,
+            "rho_true": 0.1,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.0046000000000000485,
+            "robust_type_ii": 0.0048000000000000265,
+            "robust_minus_oracle_point_mass": 0.00019999999999997797
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 300,
+            "rho_true": 0.25,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.00539999999999996,
+            "robust_type_ii": 0.00539999999999996,
+            "robust_minus_oracle_point_mass": 0.0
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 300,
+            "rho_true": 0.4,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.007399999999999962,
+            "robust_type_ii": 0.007399999999999962,
+            "robust_minus_oracle_point_mass": 0.0
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 300,
+            "rho_true": 0.6,
+            "best_point_mass": "bayes_shared_rho0_0.25",
+            "best_point_mass_type_ii": 0.011800000000000033,
+            "robust_type_ii": 0.01200000000000001,
+            "robust_minus_oracle_point_mass": 0.00019999999999997797
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 300,
+            "rho_true": 1.0,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.9524,
+            "robust_type_ii": 0.9554,
+            "robust_minus_oracle_point_mass": 0.0030000000000000027
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 700,
+            "rho_true": 0.0,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.0013999999999999568,
+            "robust_type_ii": 0.0013999999999999568,
+            "robust_minus_oracle_point_mass": 0.0
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 700,
+            "rho_true": 0.1,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.0016000000000000458,
+            "robust_type_ii": 0.0016000000000000458,
+            "robust_minus_oracle_point_mass": 0.0
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 700,
+            "rho_true": 0.25,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.0020000000000000018,
+            "robust_type_ii": 0.0020000000000000018,
+            "robust_minus_oracle_point_mass": 0.0
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 700,
+            "rho_true": 0.4,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.0028000000000000247,
+            "robust_type_ii": 0.0028000000000000247,
+            "robust_minus_oracle_point_mass": 0.0
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 700,
+            "rho_true": 0.6,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.005199999999999982,
+            "robust_type_ii": 0.005600000000000049,
+            "robust_minus_oracle_point_mass": 0.00040000000000006697
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 700,
+            "rho_true": 1.0,
+            "best_point_mass": "bayes_shared_rho0_0.25",
+            "best_point_mass_type_ii": 0.9542,
+            "robust_type_ii": 0.9548,
+            "robust_minus_oracle_point_mass": 0.0005999999999999339
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 100,
+            "rho_true": 0.0,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.15039999999999998,
+            "robust_type_ii": 0.15680000000000005,
+            "robust_minus_oracle_point_mass": 0.006400000000000072
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 100,
+            "rho_true": 0.1,
+            "best_point_mass": "bayes_shared_rho0_0.15",
+            "best_point_mass_type_ii": 0.1834,
+            "robust_type_ii": 0.18679999999999997,
+            "robust_minus_oracle_point_mass": 0.0033999999999999586
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 100,
+            "rho_true": 0.25,
+            "best_point_mass": "bayes_shared_rho0_0.25",
+            "best_point_mass_type_ii": 0.24080000000000001,
+            "robust_type_ii": 0.24460000000000004,
+            "robust_minus_oracle_point_mass": 0.0038000000000000256
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 100,
+            "rho_true": 0.4,
+            "best_point_mass": "bayes_shared_rho0_0.4",
+            "best_point_mass_type_ii": 0.31899999999999995,
+            "robust_type_ii": 0.33499999999999996,
+            "robust_minus_oracle_point_mass": 0.016000000000000014
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 100,
+            "rho_true": 0.6,
+            "best_point_mass": "bayes_shared_rho0_0.4",
+            "best_point_mass_type_ii": 0.5354,
+            "robust_type_ii": 0.5596,
+            "robust_minus_oracle_point_mass": 0.0242
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 100,
+            "rho_true": 1.0,
+            "best_point_mass": "bayes_shared_rho0_0.4",
+            "best_point_mass_type_ii": 0.9452,
+            "robust_type_ii": 0.947,
+            "robust_minus_oracle_point_mass": 0.0017999999999999128
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 300,
+            "rho_true": 0.0,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.07620000000000005,
+            "robust_type_ii": 0.0806,
+            "robust_minus_oracle_point_mass": 0.0043999999999999595
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 300,
+            "rho_true": 0.1,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.08940000000000003,
+            "robust_type_ii": 0.09199999999999997,
+            "robust_minus_oracle_point_mass": 0.0025999999999999357
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 300,
+            "rho_true": 0.25,
+            "best_point_mass": "bayes_shared_rho0_0.25",
+            "best_point_mass_type_ii": 0.12239999999999995,
+            "robust_type_ii": 0.12219999999999998,
+            "robust_minus_oracle_point_mass": -0.00019999999999997797
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 300,
+            "rho_true": 0.4,
+            "best_point_mass": "bayes_shared_rho0_0.4",
+            "best_point_mass_type_ii": 0.1652,
+            "robust_type_ii": 0.1644,
+            "robust_minus_oracle_point_mass": -0.0008000000000000229
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 300,
+            "rho_true": 0.6,
+            "best_point_mass": "bayes_shared_rho0_0.4",
+            "best_point_mass_type_ii": 0.30800000000000005,
+            "robust_type_ii": 0.30279999999999996,
+            "robust_minus_oracle_point_mass": -0.0052000000000000934
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 300,
+            "rho_true": 1.0,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.9464,
+            "robust_type_ii": 0.9436,
+            "robust_minus_oracle_point_mass": -0.0028000000000000247
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 700,
+            "rho_true": 0.0,
+            "best_point_mass": "bayes_shared_rho0_0.1",
+            "best_point_mass_type_ii": 0.04679999999999995,
+            "robust_type_ii": 0.047799999999999954,
+            "robust_minus_oracle_point_mass": 0.0010000000000000009
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 700,
+            "rho_true": 0.1,
+            "best_point_mass": "bayes_shared_rho0_0.15",
+            "best_point_mass_type_ii": 0.054200000000000026,
+            "robust_type_ii": 0.05520000000000003,
+            "robust_minus_oracle_point_mass": 0.0010000000000000009
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 700,
+            "rho_true": 0.25,
+            "best_point_mass": "bayes_shared_rho0_0.25",
+            "best_point_mass_type_ii": 0.07299999999999995,
+            "robust_type_ii": 0.07379999999999998,
+            "robust_minus_oracle_point_mass": 0.0008000000000000229
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 700,
+            "rho_true": 0.4,
+            "best_point_mass": "bayes_shared_rho0_0.4",
+            "best_point_mass_type_ii": 0.09760000000000002,
+            "robust_type_ii": 0.09860000000000002,
+            "robust_minus_oracle_point_mass": 0.0010000000000000009
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 700,
+            "rho_true": 0.6,
+            "best_point_mass": "bayes_shared_rho0_0.4",
+            "best_point_mass_type_ii": 0.17879999999999996,
+            "robust_type_ii": 0.17559999999999998,
+            "robust_minus_oracle_point_mass": -0.0031999999999999806
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 700,
+            "rho_true": 1.0,
+            "best_point_mass": "bayes_shared_rho0_0.15",
+            "best_point_mass_type_ii": 0.946,
+            "robust_type_ii": 0.9478,
+            "robust_minus_oracle_point_mass": 0.0018000000000000238
+          }
+        ],
+        "single_fixed_records": [
+          {
+            "scheme": "gumbel",
+            "horizon": 100,
+            "sweep_rho_true": [
+              0.0,
+              0.1,
+              0.25,
+              0.4,
+              0.6
+            ],
+            "per_point_mass": {
+              "bayes_shared_rho0_0.1": {
+                "mean_type_ii_over_sweep": 0.026119999999999966,
+                "max_type_ii_over_sweep": 0.04459999999999997
+              },
+              "bayes_shared_rho0_0.15": {
+                "mean_type_ii_over_sweep": 0.02607999999999997,
+                "max_type_ii_over_sweep": 0.04420000000000002
+              },
+              "bayes_shared_rho0_0.25": {
+                "mean_type_ii_over_sweep": 0.02612000000000001,
+                "max_type_ii_over_sweep": 0.04400000000000004
+              },
+              "bayes_shared_rho0_0.4": {
+                "mean_type_ii_over_sweep": 0.026360000000000005,
+                "max_type_ii_over_sweep": 0.04400000000000004
+              }
+            },
+            "best_by_mean": "bayes_shared_rho0_0.15",
+            "best_by_max": "bayes_shared_rho0_0.25",
+            "robust_mean_type_ii_over_sweep": 0.02631999999999999,
+            "robust_max_type_ii_over_sweep": 0.04379999999999995,
+            "robust_minus_best_single_fixed_by_rho": {
+              "0": 0.00040000000000006697,
+              "0.1": 0.00040000000000006697,
+              "0.25": 0.0006000000000000449,
+              "0.4": 0.00019999999999997797,
+              "0.6": -0.00040000000000006697,
+              "1": -0.00019999999999997797
+            }
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 300,
+            "sweep_rho_true": [
+              0.0,
+              0.1,
+              0.25,
+              0.4,
+              0.6
+            ],
+            "per_point_mass": {
+              "bayes_shared_rho0_0.1": {
+                "mean_type_ii_over_sweep": 0.006640000000000002,
+                "max_type_ii_over_sweep": 0.01200000000000001
+              },
+              "bayes_shared_rho0_0.15": {
+                "mean_type_ii_over_sweep": 0.006640000000000002,
+                "max_type_ii_over_sweep": 0.01200000000000001
+              },
+              "bayes_shared_rho0_0.25": {
+                "mean_type_ii_over_sweep": 0.006640000000000002,
+                "max_type_ii_over_sweep": 0.011800000000000033
+              },
+              "bayes_shared_rho0_0.4": {
+                "mean_type_ii_over_sweep": 0.006679999999999997,
+                "max_type_ii_over_sweep": 0.011800000000000033
+              }
+            },
+            "best_by_mean": "bayes_shared_rho0_0.1",
+            "best_by_max": "bayes_shared_rho0_0.25",
+            "robust_mean_type_ii_over_sweep": 0.0067199999999999925,
+            "robust_max_type_ii_over_sweep": 0.01200000000000001,
+            "robust_minus_best_single_fixed_by_rho": {
+              "0": 0.00019999999999997797,
+              "0.1": 0.00019999999999997797,
+              "0.25": 0.0,
+              "0.4": 0.0,
+              "0.6": 0.0,
+              "1": 0.0030000000000000027
+            }
+          },
+          {
+            "scheme": "gumbel",
+            "horizon": 700,
+            "sweep_rho_true": [
+              0.0,
+              0.1,
+              0.25,
+              0.4,
+              0.6
+            ],
+            "per_point_mass": {
+              "bayes_shared_rho0_0.1": {
+                "mean_type_ii_over_sweep": 0.0026000000000000025,
+                "max_type_ii_over_sweep": 0.005199999999999982
+              },
+              "bayes_shared_rho0_0.15": {
+                "mean_type_ii_over_sweep": 0.0026000000000000025,
+                "max_type_ii_over_sweep": 0.005199999999999982
+              },
+              "bayes_shared_rho0_0.25": {
+                "mean_type_ii_over_sweep": 0.0026000000000000025,
+                "max_type_ii_over_sweep": 0.005199999999999982
+              },
+              "bayes_shared_rho0_0.4": {
+                "mean_type_ii_over_sweep": 0.0026800000000000157,
+                "max_type_ii_over_sweep": 0.005600000000000049
+              }
+            },
+            "best_by_mean": "bayes_shared_rho0_0.1",
+            "best_by_max": "bayes_shared_rho0_0.1",
+            "robust_mean_type_ii_over_sweep": 0.0026800000000000157,
+            "robust_max_type_ii_over_sweep": 0.005600000000000049,
+            "robust_minus_best_single_fixed_by_rho": {
+              "0": 0.0,
+              "0.1": 0.0,
+              "0.25": 0.0,
+              "0.4": 0.0,
+              "0.6": 0.00040000000000006697,
+              "1": -0.0008000000000000229
+            }
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 100,
+            "sweep_rho_true": [
+              0.0,
+              0.1,
+              0.25,
+              0.4,
+              0.6
+            ],
+            "per_point_mass": {
+              "bayes_shared_rho0_0.1": {
+                "mean_type_ii_over_sweep": 0.32287999999999994,
+                "max_type_ii_over_sweep": 0.6432
+              },
+              "bayes_shared_rho0_0.15": {
+                "mean_type_ii_over_sweep": 0.31284,
+                "max_type_ii_over_sweep": 0.6204000000000001
+              },
+              "bayes_shared_rho0_0.25": {
+                "mean_type_ii_over_sweep": 0.29904000000000003,
+                "max_type_ii_over_sweep": 0.575
+              },
+              "bayes_shared_rho0_0.4": {
+                "mean_type_ii_over_sweep": 0.29239999999999994,
+                "max_type_ii_over_sweep": 0.5354
+              }
+            },
+            "best_by_mean": "bayes_shared_rho0_0.4",
+            "best_by_max": "bayes_shared_rho0_0.4",
+            "robust_mean_type_ii_over_sweep": 0.29656000000000005,
+            "robust_max_type_ii_over_sweep": 0.5596,
+            "robust_minus_best_single_fixed_by_rho": {
+              "0": -0.012799999999999923,
+              "0.1": -0.005800000000000027,
+              "0.25": -0.0007999999999999119,
+              "0.4": 0.016000000000000014,
+              "0.6": 0.0242,
+              "1": 0.0017999999999999128
+            }
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 300,
+            "sweep_rho_true": [
+              0.0,
+              0.1,
+              0.25,
+              0.4,
+              0.6
+            ],
+            "per_point_mass": {
+              "bayes_shared_rho0_0.1": {
+                "mean_type_ii_over_sweep": 0.17988,
+                "max_type_ii_over_sweep": 0.42100000000000004
+              },
+              "bayes_shared_rho0_0.15": {
+                "mean_type_ii_over_sweep": 0.17284,
+                "max_type_ii_over_sweep": 0.3954
+              },
+              "bayes_shared_rho0_0.25": {
+                "mean_type_ii_over_sweep": 0.1634,
+                "max_type_ii_over_sweep": 0.351
+              },
+              "bayes_shared_rho0_0.4": {
+                "mean_type_ii_over_sweep": 0.15692,
+                "max_type_ii_over_sweep": 0.30800000000000005
+              }
+            },
+            "best_by_mean": "bayes_shared_rho0_0.4",
+            "best_by_max": "bayes_shared_rho0_0.4",
+            "robust_mean_type_ii_over_sweep": 0.15239999999999998,
+            "robust_max_type_ii_over_sweep": 0.30279999999999996,
+            "robust_minus_best_single_fixed_by_rho": {
+              "0": -0.005600000000000049,
+              "0.1": -0.006800000000000028,
+              "0.25": -0.0041999999999999815,
+              "0.4": -0.0008000000000000229,
+              "0.6": -0.0052000000000000934,
+              "1": -0.0030000000000000027
+            }
+          },
+          {
+            "scheme": "inverse",
+            "horizon": 700,
+            "sweep_rho_true": [
+              0.0,
+              0.1,
+              0.25,
+              0.4,
+              0.6
+            ],
+            "per_point_mass": {
+              "bayes_shared_rho0_0.1": {
+                "mean_type_ii_over_sweep": 0.10839999999999997,
+                "max_type_ii_over_sweep": 0.25439999999999996
+              },
+              "bayes_shared_rho0_0.15": {
+                "mean_type_ii_over_sweep": 0.1022,
+                "max_type_ii_over_sweep": 0.23160000000000003
+              },
+              "bayes_shared_rho0_0.25": {
+                "mean_type_ii_over_sweep": 0.09548000000000001,
+                "max_type_ii_over_sweep": 0.20240000000000002
+              },
+              "bayes_shared_rho0_0.4": {
+                "mean_type_ii_over_sweep": 0.09184,
+                "max_type_ii_over_sweep": 0.17879999999999996
+              }
+            },
+            "best_by_mean": "bayes_shared_rho0_0.4",
+            "best_by_max": "bayes_shared_rho0_0.4",
+            "robust_mean_type_ii_over_sweep": 0.09019999999999999,
+            "robust_max_type_ii_over_sweep": 0.17559999999999998,
+            "robust_minus_best_single_fixed_by_rho": {
+              "0": -0.0022000000000000908,
+              "0.1": -0.0028000000000000247,
+              "0.25": -0.0010000000000000009,
+              "0.4": 0.0010000000000000009,
+              "0.6": -0.0031999999999999806,
+              "1": -0.0014000000000000679
+            }
+          }
+        ]
+      }
+    }
+  },
+  "mcnemar_robust_vs_point_mass": [
+    {
+      "scheme": "gumbel",
+      "horizon": 700,
+      "rho_true": 0.25,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.1",
+      "comparator_is_best_point_mass_at_this_rho": true,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": true,
+      "n_documents": 5000,
+      "b_robust_only_miss": 0,
+      "c_point_mass_only_miss": 0,
+      "discordant_total": 0,
+      "p_value": 1.0,
+      "p_value_status": "no_discordant_pairs_p_equals_one",
+      "robust_n_missed": 10,
+      "robust_type_ii_randomized_realization": 0.002,
+      "robust_type_ii_rao_blackwellized": 0.0020000000000000018,
+      "robust_wilson95": [
+        0.0010867468609438852,
+        0.0036778842763330096
+      ],
+      "comparator_n_missed": 10,
+      "comparator_type_ii_randomized_realization": 0.002,
+      "comparator_type_ii_rao_blackwellized": 0.0020000000000000018,
+      "comparator_wilson95": [
+        0.0010867468609438852,
+        0.0036778842763330096
+      ]
+    },
+    {
+      "scheme": "gumbel",
+      "horizon": 700,
+      "rho_true": 0.25,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.15",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 0,
+      "c_point_mass_only_miss": 0,
+      "discordant_total": 0,
+      "p_value": 1.0,
+      "p_value_status": "no_discordant_pairs_p_equals_one",
+      "robust_n_missed": 10,
+      "robust_type_ii_randomized_realization": 0.002,
+      "robust_type_ii_rao_blackwellized": 0.0020000000000000018,
+      "robust_wilson95": [
+        0.0010867468609438852,
+        0.0036778842763330096
+      ],
+      "comparator_n_missed": 10,
+      "comparator_type_ii_randomized_realization": 0.002,
+      "comparator_type_ii_rao_blackwellized": 0.0020000000000000018,
+      "comparator_wilson95": [
+        0.0010867468609438852,
+        0.0036778842763330096
+      ]
+    },
+    {
+      "scheme": "gumbel",
+      "horizon": 700,
+      "rho_true": 0.25,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.25",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 0,
+      "c_point_mass_only_miss": 0,
+      "discordant_total": 0,
+      "p_value": 1.0,
+      "p_value_status": "no_discordant_pairs_p_equals_one",
+      "robust_n_missed": 10,
+      "robust_type_ii_randomized_realization": 0.002,
+      "robust_type_ii_rao_blackwellized": 0.0020000000000000018,
+      "robust_wilson95": [
+        0.0010867468609438852,
+        0.0036778842763330096
+      ],
+      "comparator_n_missed": 10,
+      "comparator_type_ii_randomized_realization": 0.002,
+      "comparator_type_ii_rao_blackwellized": 0.0020000000000000018,
+      "comparator_wilson95": [
+        0.0010867468609438852,
+        0.0036778842763330096
+      ]
+    },
+    {
+      "scheme": "gumbel",
+      "horizon": 700,
+      "rho_true": 0.25,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.4",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 0,
+      "c_point_mass_only_miss": 0,
+      "discordant_total": 0,
+      "p_value": 1.0,
+      "p_value_status": "no_discordant_pairs_p_equals_one",
+      "robust_n_missed": 10,
+      "robust_type_ii_randomized_realization": 0.002,
+      "robust_type_ii_rao_blackwellized": 0.0020000000000000018,
+      "robust_wilson95": [
+        0.0010867468609438852,
+        0.0036778842763330096
+      ],
+      "comparator_n_missed": 10,
+      "comparator_type_ii_randomized_realization": 0.002,
+      "comparator_type_ii_rao_blackwellized": 0.0020000000000000018,
+      "comparator_wilson95": [
+        0.0010867468609438852,
+        0.0036778842763330096
+      ]
+    },
+    {
+      "scheme": "gumbel",
+      "horizon": 700,
+      "rho_true": 0.25,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.5",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 0,
+      "c_point_mass_only_miss": 0,
+      "discordant_total": 0,
+      "p_value": 1.0,
+      "p_value_status": "no_discordant_pairs_p_equals_one",
+      "robust_n_missed": 10,
+      "robust_type_ii_randomized_realization": 0.002,
+      "robust_type_ii_rao_blackwellized": 0.0020000000000000018,
+      "robust_wilson95": [
+        0.0010867468609438852,
+        0.0036778842763330096
+      ],
+      "comparator_n_missed": 10,
+      "comparator_type_ii_randomized_realization": 0.002,
+      "comparator_type_ii_rao_blackwellized": 0.0020000000000000018,
+      "comparator_wilson95": [
+        0.0010867468609438852,
+        0.0036778842763330096
+      ]
+    },
+    {
+      "scheme": "gumbel",
+      "horizon": 700,
+      "rho_true": 0.25,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.6",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 0,
+      "c_point_mass_only_miss": 0,
+      "discordant_total": 0,
+      "p_value": 1.0,
+      "p_value_status": "no_discordant_pairs_p_equals_one",
+      "robust_n_missed": 10,
+      "robust_type_ii_randomized_realization": 0.002,
+      "robust_type_ii_rao_blackwellized": 0.0020000000000000018,
+      "robust_wilson95": [
+        0.0010867468609438852,
+        0.0036778842763330096
+      ],
+      "comparator_n_missed": 10,
+      "comparator_type_ii_randomized_realization": 0.002,
+      "comparator_type_ii_rao_blackwellized": 0.0020000000000000018,
+      "comparator_wilson95": [
+        0.0010867468609438852,
+        0.0036778842763330096
+      ]
+    },
+    {
+      "scheme": "gumbel",
+      "horizon": 700,
+      "rho_true": 0.4,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.1",
+      "comparator_is_best_point_mass_at_this_rho": true,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": true,
+      "n_documents": 5000,
+      "b_robust_only_miss": 0,
+      "c_point_mass_only_miss": 0,
+      "discordant_total": 0,
+      "p_value": 1.0,
+      "p_value_status": "no_discordant_pairs_p_equals_one",
+      "robust_n_missed": 14,
+      "robust_type_ii_randomized_realization": 0.0028,
+      "robust_type_ii_rao_blackwellized": 0.0028000000000000247,
+      "robust_wilson95": [
+        0.0016686770757911359,
+        0.004694725738373668
+      ],
+      "comparator_n_missed": 14,
+      "comparator_type_ii_randomized_realization": 0.0028,
+      "comparator_type_ii_rao_blackwellized": 0.0028000000000000247,
+      "comparator_wilson95": [
+        0.0016686770757911359,
+        0.004694725738373668
+      ]
+    },
+    {
+      "scheme": "gumbel",
+      "horizon": 700,
+      "rho_true": 0.4,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.15",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 0,
+      "c_point_mass_only_miss": 0,
+      "discordant_total": 0,
+      "p_value": 1.0,
+      "p_value_status": "no_discordant_pairs_p_equals_one",
+      "robust_n_missed": 14,
+      "robust_type_ii_randomized_realization": 0.0028,
+      "robust_type_ii_rao_blackwellized": 0.0028000000000000247,
+      "robust_wilson95": [
+        0.0016686770757911359,
+        0.004694725738373668
+      ],
+      "comparator_n_missed": 14,
+      "comparator_type_ii_randomized_realization": 0.0028,
+      "comparator_type_ii_rao_blackwellized": 0.0028000000000000247,
+      "comparator_wilson95": [
+        0.0016686770757911359,
+        0.004694725738373668
+      ]
+    },
+    {
+      "scheme": "gumbel",
+      "horizon": 700,
+      "rho_true": 0.4,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.25",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 0,
+      "c_point_mass_only_miss": 0,
+      "discordant_total": 0,
+      "p_value": 1.0,
+      "p_value_status": "no_discordant_pairs_p_equals_one",
+      "robust_n_missed": 14,
+      "robust_type_ii_randomized_realization": 0.0028,
+      "robust_type_ii_rao_blackwellized": 0.0028000000000000247,
+      "robust_wilson95": [
+        0.0016686770757911359,
+        0.004694725738373668
+      ],
+      "comparator_n_missed": 14,
+      "comparator_type_ii_randomized_realization": 0.0028,
+      "comparator_type_ii_rao_blackwellized": 0.0028000000000000247,
+      "comparator_wilson95": [
+        0.0016686770757911359,
+        0.004694725738373668
+      ]
+    },
+    {
+      "scheme": "gumbel",
+      "horizon": 700,
+      "rho_true": 0.4,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.4",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 0,
+      "c_point_mass_only_miss": 0,
+      "discordant_total": 0,
+      "p_value": 1.0,
+      "p_value_status": "no_discordant_pairs_p_equals_one",
+      "robust_n_missed": 14,
+      "robust_type_ii_randomized_realization": 0.0028,
+      "robust_type_ii_rao_blackwellized": 0.0028000000000000247,
+      "robust_wilson95": [
+        0.0016686770757911359,
+        0.004694725738373668
+      ],
+      "comparator_n_missed": 14,
+      "comparator_type_ii_randomized_realization": 0.0028,
+      "comparator_type_ii_rao_blackwellized": 0.0028000000000000247,
+      "comparator_wilson95": [
+        0.0016686770757911359,
+        0.004694725738373668
+      ]
+    },
+    {
+      "scheme": "gumbel",
+      "horizon": 700,
+      "rho_true": 0.4,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.5",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 0,
+      "c_point_mass_only_miss": 0,
+      "discordant_total": 0,
+      "p_value": 1.0,
+      "p_value_status": "no_discordant_pairs_p_equals_one",
+      "robust_n_missed": 14,
+      "robust_type_ii_randomized_realization": 0.0028,
+      "robust_type_ii_rao_blackwellized": 0.0028000000000000247,
+      "robust_wilson95": [
+        0.0016686770757911359,
+        0.004694725738373668
+      ],
+      "comparator_n_missed": 14,
+      "comparator_type_ii_randomized_realization": 0.0028,
+      "comparator_type_ii_rao_blackwellized": 0.0028000000000000247,
+      "comparator_wilson95": [
+        0.0016686770757911359,
+        0.004694725738373668
+      ]
+    },
+    {
+      "scheme": "gumbel",
+      "horizon": 700,
+      "rho_true": 0.4,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.6",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 0,
+      "c_point_mass_only_miss": 0,
+      "discordant_total": 0,
+      "p_value": 1.0,
+      "p_value_status": "no_discordant_pairs_p_equals_one",
+      "robust_n_missed": 14,
+      "robust_type_ii_randomized_realization": 0.0028,
+      "robust_type_ii_rao_blackwellized": 0.0028000000000000247,
+      "robust_wilson95": [
+        0.0016686770757911359,
+        0.004694725738373668
+      ],
+      "comparator_n_missed": 14,
+      "comparator_type_ii_randomized_realization": 0.0028,
+      "comparator_type_ii_rao_blackwellized": 0.0028000000000000247,
+      "comparator_wilson95": [
+        0.0016686770757911359,
+        0.004694725738373668
+      ]
+    },
+    {
+      "scheme": "gumbel",
+      "horizon": 700,
+      "rho_true": 0.6,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.1",
+      "comparator_is_best_point_mass_at_this_rho": true,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": true,
+      "n_documents": 5000,
+      "b_robust_only_miss": 3,
+      "c_point_mass_only_miss": 1,
+      "discordant_total": 4,
+      "p_value": 0.625,
+      "p_value_status": "defined",
+      "robust_n_missed": 28,
+      "robust_type_ii_randomized_realization": 0.0056,
+      "robust_type_ii_rao_blackwellized": 0.005600000000000049,
+      "robust_wilson95": [
+        0.00387738263821508,
+        0.008081721045057404
+      ],
+      "comparator_n_missed": 26,
+      "comparator_type_ii_randomized_realization": 0.0052,
+      "comparator_type_ii_rao_blackwellized": 0.005199999999999982,
+      "comparator_wilson95": [
+        0.0035511686418045253,
+        0.007608549203024005
+      ]
+    },
+    {
+      "scheme": "gumbel",
+      "horizon": 700,
+      "rho_true": 0.6,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.15",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 3,
+      "c_point_mass_only_miss": 1,
+      "discordant_total": 4,
+      "p_value": 0.625,
+      "p_value_status": "defined",
+      "robust_n_missed": 28,
+      "robust_type_ii_randomized_realization": 0.0056,
+      "robust_type_ii_rao_blackwellized": 0.005600000000000049,
+      "robust_wilson95": [
+        0.00387738263821508,
+        0.008081721045057404
+      ],
+      "comparator_n_missed": 26,
+      "comparator_type_ii_randomized_realization": 0.0052,
+      "comparator_type_ii_rao_blackwellized": 0.005199999999999982,
+      "comparator_wilson95": [
+        0.0035511686418045253,
+        0.007608549203024005
+      ]
+    },
+    {
+      "scheme": "gumbel",
+      "horizon": 700,
+      "rho_true": 0.6,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.25",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 3,
+      "c_point_mass_only_miss": 1,
+      "discordant_total": 4,
+      "p_value": 0.625,
+      "p_value_status": "defined",
+      "robust_n_missed": 28,
+      "robust_type_ii_randomized_realization": 0.0056,
+      "robust_type_ii_rao_blackwellized": 0.005600000000000049,
+      "robust_wilson95": [
+        0.00387738263821508,
+        0.008081721045057404
+      ],
+      "comparator_n_missed": 26,
+      "comparator_type_ii_randomized_realization": 0.0052,
+      "comparator_type_ii_rao_blackwellized": 0.005199999999999982,
+      "comparator_wilson95": [
+        0.0035511686418045253,
+        0.007608549203024005
+      ]
+    },
+    {
+      "scheme": "gumbel",
+      "horizon": 700,
+      "rho_true": 0.6,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.4",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 1,
+      "c_point_mass_only_miss": 1,
+      "discordant_total": 2,
+      "p_value": 1.0,
+      "p_value_status": "defined",
+      "robust_n_missed": 28,
+      "robust_type_ii_randomized_realization": 0.0056,
+      "robust_type_ii_rao_blackwellized": 0.005600000000000049,
+      "robust_wilson95": [
+        0.00387738263821508,
+        0.008081721045057404
+      ],
+      "comparator_n_missed": 28,
+      "comparator_type_ii_randomized_realization": 0.0056,
+      "comparator_type_ii_rao_blackwellized": 0.005600000000000049,
+      "comparator_wilson95": [
+        0.00387738263821508,
+        0.008081721045057404
+      ]
+    },
+    {
+      "scheme": "gumbel",
+      "horizon": 700,
+      "rho_true": 0.6,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.5",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 0,
+      "c_point_mass_only_miss": 0,
+      "discordant_total": 0,
+      "p_value": 1.0,
+      "p_value_status": "no_discordant_pairs_p_equals_one",
+      "robust_n_missed": 28,
+      "robust_type_ii_randomized_realization": 0.0056,
+      "robust_type_ii_rao_blackwellized": 0.005600000000000049,
+      "robust_wilson95": [
+        0.00387738263821508,
+        0.008081721045057404
+      ],
+      "comparator_n_missed": 28,
+      "comparator_type_ii_randomized_realization": 0.0056,
+      "comparator_type_ii_rao_blackwellized": 0.005600000000000049,
+      "comparator_wilson95": [
+        0.00387738263821508,
+        0.008081721045057404
+      ]
+    },
+    {
+      "scheme": "gumbel",
+      "horizon": 700,
+      "rho_true": 0.6,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.6",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 0,
+      "c_point_mass_only_miss": 0,
+      "discordant_total": 0,
+      "p_value": 1.0,
+      "p_value_status": "no_discordant_pairs_p_equals_one",
+      "robust_n_missed": 28,
+      "robust_type_ii_randomized_realization": 0.0056,
+      "robust_type_ii_rao_blackwellized": 0.005600000000000049,
+      "robust_wilson95": [
+        0.00387738263821508,
+        0.008081721045057404
+      ],
+      "comparator_n_missed": 28,
+      "comparator_type_ii_randomized_realization": 0.0056,
+      "comparator_type_ii_rao_blackwellized": 0.005600000000000049,
+      "comparator_wilson95": [
+        0.00387738263821508,
+        0.008081721045057404
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 700,
+      "rho_true": 0.25,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.1",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 18,
+      "c_point_mass_only_miss": 34,
+      "discordant_total": 52,
+      "p_value": 0.03648340000835981,
+      "p_value_status": "defined",
+      "robust_n_missed": 369,
+      "robust_type_ii_randomized_realization": 0.0738,
+      "robust_type_ii_rao_blackwellized": 0.07379999999999998,
+      "robust_wilson95": [
+        0.0668758348861686,
+        0.08137855425179807
+      ],
+      "comparator_n_missed": 385,
+      "comparator_type_ii_randomized_realization": 0.077,
+      "comparator_type_ii_rao_blackwellized": 0.07699999999999996,
+      "comparator_wilson95": [
+        0.06993103792508326,
+        0.08471843792043507
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 700,
+      "rho_true": 0.25,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.15",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 17,
+      "c_point_mass_only_miss": 17,
+      "discordant_total": 34,
+      "p_value": 1.0,
+      "p_value_status": "defined",
+      "robust_n_missed": 369,
+      "robust_type_ii_randomized_realization": 0.0738,
+      "robust_type_ii_rao_blackwellized": 0.07379999999999998,
+      "robust_wilson95": [
+        0.0668758348861686,
+        0.08137855425179807
+      ],
+      "comparator_n_missed": 369,
+      "comparator_type_ii_randomized_realization": 0.0738,
+      "comparator_type_ii_rao_blackwellized": 0.07379999999999998,
+      "comparator_wilson95": [
+        0.0668758348861686,
+        0.08137855425179807
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 700,
+      "rho_true": 0.25,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.25",
+      "comparator_is_best_point_mass_at_this_rho": true,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": true,
+      "n_documents": 5000,
+      "b_robust_only_miss": 15,
+      "c_point_mass_only_miss": 11,
+      "discordant_total": 26,
+      "p_value": 0.557197093963623,
+      "p_value_status": "defined",
+      "robust_n_missed": 369,
+      "robust_type_ii_randomized_realization": 0.0738,
+      "robust_type_ii_rao_blackwellized": 0.07379999999999998,
+      "robust_wilson95": [
+        0.0668758348861686,
+        0.08137855425179807
+      ],
+      "comparator_n_missed": 365,
+      "comparator_type_ii_randomized_realization": 0.073,
+      "comparator_type_ii_rao_blackwellized": 0.07299999999999995,
+      "comparator_wilson95": [
+        0.06611264297445461,
+        0.08054297448662416
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 700,
+      "rho_true": 0.25,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.4",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 16,
+      "c_point_mass_only_miss": 21,
+      "discordant_total": 37,
+      "p_value": 0.5113757815852296,
+      "p_value_status": "defined",
+      "robust_n_missed": 369,
+      "robust_type_ii_randomized_realization": 0.0738,
+      "robust_type_ii_rao_blackwellized": 0.07379999999999998,
+      "robust_wilson95": [
+        0.0668758348861686,
+        0.08137855425179807
+      ],
+      "comparator_n_missed": 374,
+      "comparator_type_ii_randomized_realization": 0.0748,
+      "comparator_type_ii_rao_blackwellized": 0.07479999999999998,
+      "comparator_wilson95": [
+        0.067830171875666,
+        0.08242268185841056
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 700,
+      "rho_true": 0.25,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.5",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 21,
+      "c_point_mass_only_miss": 29,
+      "discordant_total": 50,
+      "p_value": 0.3222363203575469,
+      "p_value_status": "defined",
+      "robust_n_missed": 369,
+      "robust_type_ii_randomized_realization": 0.0738,
+      "robust_type_ii_rao_blackwellized": 0.07379999999999998,
+      "robust_wilson95": [
+        0.0668758348861686,
+        0.08137855425179807
+      ],
+      "comparator_n_missed": 377,
+      "comparator_type_ii_randomized_realization": 0.0754,
+      "comparator_type_ii_rao_blackwellized": 0.07540000000000002,
+      "comparator_wilson95": [
+        0.0684029564643133,
+        0.08304897602742922
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 700,
+      "rho_true": 0.25,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.6",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 23,
+      "c_point_mass_only_miss": 50,
+      "discordant_total": 73,
+      "p_value": 0.002118172746400632,
+      "p_value_status": "defined",
+      "robust_n_missed": 369,
+      "robust_type_ii_randomized_realization": 0.0738,
+      "robust_type_ii_rao_blackwellized": 0.07379999999999998,
+      "robust_wilson95": [
+        0.0668758348861686,
+        0.08137855425179807
+      ],
+      "comparator_n_missed": 396,
+      "comparator_type_ii_randomized_realization": 0.0792,
+      "comparator_type_ii_rao_blackwellized": 0.07920000000000005,
+      "comparator_wilson95": [
+        0.0720336673776816,
+        0.08701243057927846
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 700,
+      "rho_true": 0.4,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.1",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 16,
+      "c_point_mass_only_miss": 69,
+      "discordant_total": 85,
+      "p_value": 5.240266679443081e-09,
+      "p_value_status": "defined",
+      "robust_n_missed": 493,
+      "robust_type_ii_randomized_realization": 0.0986,
+      "robust_type_ii_rao_blackwellized": 0.09860000000000002,
+      "robust_wilson95": [
+        0.09064215265544258,
+        0.10717415846604929
+      ],
+      "comparator_n_missed": 546,
+      "comparator_type_ii_randomized_realization": 0.1092,
+      "comparator_type_ii_rao_blackwellized": 0.10919999999999996,
+      "comparator_wilson95": [
+        0.10085314022754296,
+        0.11814689561271366
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 700,
+      "rho_true": 0.4,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.15",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 16,
+      "c_point_mass_only_miss": 41,
+      "discordant_total": 57,
+      "p_value": 0.0012635594724354632,
+      "p_value_status": "defined",
+      "robust_n_missed": 493,
+      "robust_type_ii_randomized_realization": 0.0986,
+      "robust_type_ii_rao_blackwellized": 0.09860000000000002,
+      "robust_wilson95": [
+        0.09064215265544258,
+        0.10717415846604929
+      ],
+      "comparator_n_missed": 518,
+      "comparator_type_ii_randomized_realization": 0.1036,
+      "comparator_type_ii_rao_blackwellized": 0.10360000000000003,
+      "comparator_wilson95": [
+        0.0954552451429801,
+        0.11235338895906116
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 700,
+      "rho_true": 0.4,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.25",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 14,
+      "c_point_mass_only_miss": 19,
+      "discordant_total": 33,
+      "p_value": 0.48685024166479707,
+      "p_value_status": "defined",
+      "robust_n_missed": 493,
+      "robust_type_ii_randomized_realization": 0.0986,
+      "robust_type_ii_rao_blackwellized": 0.09860000000000002,
+      "robust_wilson95": [
+        0.09064215265544258,
+        0.10717415846604929
+      ],
+      "comparator_n_missed": 498,
+      "comparator_type_ii_randomized_realization": 0.0996,
+      "comparator_type_ii_rao_blackwellized": 0.09960000000000002,
+      "comparator_wilson95": [
+        0.09160426345312382,
+        0.1082105122644779
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 700,
+      "rho_true": 0.4,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.4",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": true,
+      "n_documents": 5000,
+      "b_robust_only_miss": 20,
+      "c_point_mass_only_miss": 15,
+      "discordant_total": 35,
+      "p_value": 0.49955983320251107,
+      "p_value_status": "defined",
+      "robust_n_missed": 493,
+      "robust_type_ii_randomized_realization": 0.0986,
+      "robust_type_ii_rao_blackwellized": 0.09860000000000002,
+      "robust_wilson95": [
+        0.09064215265544258,
+        0.10717415846604929
+      ],
+      "comparator_n_missed": 488,
+      "comparator_type_ii_randomized_realization": 0.0976,
+      "comparator_type_ii_rao_blackwellized": 0.09760000000000002,
+      "comparator_wilson95": [
+        0.08968030254353887,
+        0.10613754398184311
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 700,
+      "rho_true": 0.4,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.5",
+      "comparator_is_best_point_mass_at_this_rho": true,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 28,
+      "c_point_mass_only_miss": 20,
+      "discordant_total": 48,
+      "p_value": 0.31232680747326924,
+      "p_value_status": "defined",
+      "robust_n_missed": 493,
+      "robust_type_ii_randomized_realization": 0.0986,
+      "robust_type_ii_rao_blackwellized": 0.09860000000000002,
+      "robust_wilson95": [
+        0.09064215265544258,
+        0.10717415846604929
+      ],
+      "comparator_n_missed": 485,
+      "comparator_type_ii_randomized_realization": 0.097,
+      "comparator_type_ii_rao_blackwellized": 0.09699999999999998,
+      "comparator_wilson95": [
+        0.08910331908658219,
+        0.10551544868113384
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 700,
+      "rho_true": 0.4,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.6",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 34,
+      "c_point_mass_only_miss": 42,
+      "discordant_total": 76,
+      "p_value": 0.4221911049923154,
+      "p_value_status": "defined",
+      "robust_n_missed": 493,
+      "robust_type_ii_randomized_realization": 0.0986,
+      "robust_type_ii_rao_blackwellized": 0.09860000000000002,
+      "robust_wilson95": [
+        0.09064215265544258,
+        0.10717415846604929
+      ],
+      "comparator_n_missed": 501,
+      "comparator_type_ii_randomized_realization": 0.1002,
+      "comparator_type_ii_rao_blackwellized": 0.10019999999999996,
+      "comparator_wilson95": [
+        0.09218165360924936,
+        0.10883220086601832
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 700,
+      "rho_true": 0.6,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.1",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 23,
+      "c_point_mass_only_miss": 417,
+      "discordant_total": 440,
+      "p_value": 1.011982724619887e-94,
+      "p_value_status": "defined",
+      "robust_n_missed": 878,
+      "robust_type_ii_randomized_realization": 0.1756,
+      "robust_type_ii_rao_blackwellized": 0.17559999999999998,
+      "robust_wilson95": [
+        0.16530399069148471,
+        0.18639409433046833
+      ],
+      "comparator_n_missed": 1272,
+      "comparator_type_ii_randomized_realization": 0.2544,
+      "comparator_type_ii_rao_blackwellized": 0.25439999999999996,
+      "comparator_wilson95": [
+        0.24251983820256853,
+        0.2666572569928436
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 700,
+      "rho_true": 0.6,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.15",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 24,
+      "c_point_mass_only_miss": 304,
+      "discordant_total": 328,
+      "p_value": 6.492527166776093e-63,
+      "p_value_status": "defined",
+      "robust_n_missed": 878,
+      "robust_type_ii_randomized_realization": 0.1756,
+      "robust_type_ii_rao_blackwellized": 0.17559999999999998,
+      "robust_wilson95": [
+        0.16530399069148471,
+        0.18639409433046833
+      ],
+      "comparator_n_missed": 1158,
+      "comparator_type_ii_randomized_realization": 0.2316,
+      "comparator_type_ii_rao_blackwellized": 0.23160000000000003,
+      "comparator_wilson95": [
+        0.22011572183410846,
+        0.2434963805699982
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 700,
+      "rho_true": 0.6,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.25",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 21,
+      "c_point_mass_only_miss": 155,
+      "discordant_total": 176,
+      "p_value": 1.94912731703798e-26,
+      "p_value_status": "defined",
+      "robust_n_missed": 878,
+      "robust_type_ii_randomized_realization": 0.1756,
+      "robust_type_ii_rao_blackwellized": 0.17559999999999998,
+      "robust_wilson95": [
+        0.16530399069148471,
+        0.18639409433046833
+      ],
+      "comparator_n_missed": 1012,
+      "comparator_type_ii_randomized_realization": 0.2024,
+      "comparator_type_ii_rao_blackwellized": 0.20240000000000002,
+      "comparator_wilson95": [
+        0.1914935869715531,
+        0.21376334922614487
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 700,
+      "rho_true": 0.6,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.4",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": true,
+      "n_documents": 5000,
+      "b_robust_only_miss": 41,
+      "c_point_mass_only_miss": 57,
+      "discordant_total": 98,
+      "p_value": 0.12929258395357324,
+      "p_value_status": "defined",
+      "robust_n_missed": 878,
+      "robust_type_ii_randomized_realization": 0.1756,
+      "robust_type_ii_rao_blackwellized": 0.17559999999999998,
+      "robust_wilson95": [
+        0.16530399069148471,
+        0.18639409433046833
+      ],
+      "comparator_n_missed": 894,
+      "comparator_type_ii_randomized_realization": 0.1788,
+      "comparator_type_ii_rao_blackwellized": 0.17879999999999996,
+      "comparator_wilson95": [
+        0.16842665596411163,
+        0.18966651576539303
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 700,
+      "rho_true": 0.6,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.5",
+      "comparator_is_best_point_mass_at_this_rho": false,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 69,
+      "c_point_mass_only_miss": 42,
+      "discordant_total": 111,
+      "p_value": 0.013233607758826317,
+      "p_value_status": "defined",
+      "robust_n_missed": 878,
+      "robust_type_ii_randomized_realization": 0.1756,
+      "robust_type_ii_rao_blackwellized": 0.17559999999999998,
+      "robust_wilson95": [
+        0.16530399069148471,
+        0.18639409433046833
+      ],
+      "comparator_n_missed": 851,
+      "comparator_type_ii_randomized_realization": 0.1702,
+      "comparator_type_ii_rao_blackwellized": 0.17020000000000002,
+      "comparator_wilson95": [
+        0.16003742338586913,
+        0.18086895281709053
+      ]
+    },
+    {
+      "scheme": "inverse",
+      "horizon": 700,
+      "rho_true": 0.6,
+      "reference": "bayes_shared_robust",
+      "comparator": "bayes_shared_rho0_0.6",
+      "comparator_is_best_point_mass_at_this_rho": true,
+      "comparator_is_best_requested_grid_point_mass_at_this_rho": false,
+      "n_documents": 5000,
+      "b_robust_only_miss": 97,
+      "c_point_mass_only_miss": 56,
+      "discordant_total": 153,
+      "p_value": 0.0011504552032125664,
+      "p_value_status": "defined",
+      "robust_n_missed": 878,
+      "robust_type_ii_randomized_realization": 0.1756,
+      "robust_type_ii_rao_blackwellized": 0.17559999999999998,
+      "robust_wilson95": [
+        0.16530399069148471,
+        0.18639409433046833
+      ],
+      "comparator_n_missed": 837,
+      "comparator_type_ii_randomized_realization": 0.1674,
+      "comparator_type_ii_rao_blackwellized": 0.1674,
+      "comparator_wilson95": [
+        0.15730809766928194,
+        0.17800257766457
+      ]
+    }
+  ],
+  "mcnemar_note": "Indicators realize score > c or (score == c and U_i < gamma), with the same reproducible auxiliary U_i for every method in a scheme/rho_true/horizon/document cell. The aggregate Type-II rows remain the Rao-Blackwellized expectation greater + gamma*equal, whereas McNemar and Wilson summaries use this one randomized realization. b counts documents missed by the robust rule but caught by the point mass, c the reverse. p is the exact two-sided McNemar binomial p-value. When b+c=0, the directional effect is not estimable; p=1 is retained as the conservative exact-test bookkeeping value so the cell can be retained if these prespecified comparisons are multiplicity-adjusted."
+}

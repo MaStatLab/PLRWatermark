@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Please cite the included technical report when using these supporting materials. The repository URL was supplied by the author; this local export does not verify public availability. No DOI has been assigned in this export."
+type: dataset
+title: "Predictive Likelihood Ratios for Language Model Watermark Detection — supporting materials"
+repository-code: "https://github.com/MaStatLab/PLRWatermark/"
+license: MIT
+authors:
+  - family-names: "Ma"
+    given-names: "Li"
+    affiliation: "Department of Statistics and Data Science Institute, University of Chicago"
+    email: "li.ma@uchicago.edu"
+version: "technical-report-2026-09-12"
+date-released: 2026-09-12
+preferred-citation:
+  type: report
+  title: "Predictive Likelihood Ratios for Language Model Watermark Detection"
+  authors:
+    - family-names: "Ma"
+      given-names: "Li"
+      affiliation: "Department of Statistics and Data Science Institute, University of Chicago"
+      email: "li.ma@uchicago.edu"
+  year: 2026
+  date-released: 2026-09-12
+  url: "https://github.com/MaStatLab/PLRWatermark/blob/main/output/pdf/bayesian_pivot_watermark_gumbel.pdf"

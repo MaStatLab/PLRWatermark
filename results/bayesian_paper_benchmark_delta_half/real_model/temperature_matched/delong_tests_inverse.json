@@ -1,0 +1,329 @@
+{
+  "_inference_status": {
+    "status": "historical_non_inferential",
+    "valid_for_current_inference": false,
+    "scope": "Archived inverse-pivot analysis, outside the current Gumbel manuscript.",
+    "reason": "The historical DeLong calculation treated the watermarked and unwatermarked class samples as independent although they are paired by prompt. The sign test also treated model-temperature cells as independent although each model's temperatures reuse its model-specific prompt set. These uncertainty and significance fields must not support current claims.",
+    "historical_fields": [
+      "tests.*.p",
+      "tests.*.se",
+      "tests.*.z",
+      "summary.*.sign_test_p",
+      "summary.*.significant",
+      "sign_test_p"
+    ],
+    "retained_for": "Audit history; AUC point estimates and differences remain descriptive.",
+    "current_artifact": null,
+    "current_section": "No current inverse inferential replacement is supplied. The Gumbel bootstrap does not support inference for these inverse contrasts."
+  },
+  "1p3B_T0.2": {
+    "auc": {
+      "bayes_shared_inv": 0.69069224,
+      "h_dif_star_0.001": 0.71556424,
+      "h_dif_star_0.01": 0.71338568,
+      "h_neg": 0.74909176,
+      "trgof_s2_inv": 0.68358464
+    },
+    "n": 2500,
+    "tests": {
+      "h_dif_star_0.001_vs_bayes_shared_inv": {
+        "dauc": 0.024872000000000005,
+        "p": 1.3349267637057777e-37,
+        "se": 0.0019407066430838498,
+        "z": 12.815950359441002
+      },
+      "h_dif_star_0.001_vs_trgof_s2_inv": {
+        "dauc": 0.0319796,
+        "p": 9.245840613960703e-06,
+        "se": 0.007212199039035425,
+        "z": 4.43409836956982
+      },
+      "h_neg_vs_bayes_shared_inv": {
+        "dauc": 0.05839952000000004,
+        "p": 3.1787903717443023e-19,
+        "se": 0.006516106620522081,
+        "z": 8.962333399529454
+      },
+      "h_neg_vs_h_dif_star_0.001": {
+        "dauc": 0.03352752000000003,
+        "p": 2.697945310317636e-10,
+        "se": 0.005309010941652987,
+        "z": 6.31521019046178
+      }
+    }
+  },
+  "1p3B_T0.3": {
+    "auc": {
+      "bayes_shared_inv": 0.78689792,
+      "h_dif_star_0.001": 0.81872576,
+      "h_dif_star_0.01": 0.81582128,
+      "h_neg": 0.85328224,
+      "trgof_s2_inv": 0.78355104
+    },
+    "n": 2500,
+    "tests": {
+      "h_dif_star_0.001_vs_bayes_shared_inv": {
+        "dauc": 0.03182783999999994,
+        "p": 2.2566195372167223e-60,
+        "se": 0.0019419129805315941,
+        "z": 16.389941423269722
+      },
+      "h_dif_star_0.001_vs_trgof_s2_inv": {
+        "dauc": 0.03517471999999999,
+        "p": 2.1704768190507904e-08,
+        "se": 0.006283631547035904,
+        "z": 5.597832994614795
+      },
+      "h_neg_vs_bayes_shared_inv": {
+        "dauc": 0.06638431999999994,
+        "p": 3.457177763499676e-32,
+        "se": 0.005620928731093295,
+        "z": 11.810204892437392
+      },
+      "h_neg_vs_h_dif_star_0.001": {
+        "dauc": 0.03455648,
+        "p": 2.475140246793064e-15,
+        "se": 0.004366020587940168,
+        "z": 7.914868769847763
+      }
+    }
+  },
+  "1p3B_T0.4": {
+    "auc": {
+      "bayes_shared_inv": 0.8631192,
+      "h_dif_star_0.001": 0.89991072,
+      "h_dif_star_0.01": 0.8967192,
+      "h_neg": 0.93250112,
+      "trgof_s2_inv": 0.88341736
+    },
+    "n": 2500,
+    "tests": {
+      "h_dif_star_0.001_vs_bayes_shared_inv": {
+        "dauc": 0.03679152000000008,
+        "p": 4.0022431189063684e-86,
+        "se": 0.0018705657403436202,
+        "z": 19.668659168985705
+      },
+      "h_dif_star_0.001_vs_trgof_s2_inv": {
+        "dauc": 0.016493360000000012,
+        "p": 0.0011138059777928066,
+        "se": 0.00505918796071633,
+        "z": 3.2600804967255494
+      },
+      "h_neg_vs_bayes_shared_inv": {
+        "dauc": 0.06938191999999999,
+        "p": 6.910895580771121e-52,
+        "se": 0.004577838525059124,
+        "z": 15.1560435389328
+      },
+      "h_neg_vs_h_dif_star_0.001": {
+        "dauc": 0.03259039999999991,
+        "p": 1.2706705347437446e-22,
+        "se": 0.003329706272663834,
+        "z": 9.787770250955774
+      }
+    }
+  },
+  "1p3B_T0.5": {
+    "auc": {
+      "bayes_shared_inv": 0.91197496,
+      "h_dif_star_0.001": 0.948954,
+      "h_dif_star_0.01": 0.94641688,
+      "h_neg": 0.97619144,
+      "trgof_s2_inv": 0.94921992
+    },
+    "n": 2500,
+    "tests": {
+      "h_dif_star_0.001_vs_bayes_shared_inv": {
+        "dauc": 0.03697903999999996,
+        "p": 9.577387057535918e-90,
+        "se": 0.0018409386980175798,
+        "z": 20.087056695489615
+      },
+      "h_dif_star_0.001_vs_trgof_s2_inv": {
+        "dauc": -0.0002659200000000306,
+        "p": 0.9428472987245624,
+        "se": 0.0037092184031825197,
+        "z": -0.07169165336068388
+      },
+      "h_neg_vs_bayes_shared_inv": {
+        "dauc": 0.06421648000000002,
+        "p": 2.376164588438211e-65,
+        "se": 0.003761389056636103,
+        "z": 17.07254395466081
+      },
+      "h_neg_vs_h_dif_star_0.001": {
+        "dauc": 0.027237440000000057,
+        "p": 1.4842048204547611e-27,
+        "se": 0.0025041393960087326,
+        "z": 10.876966371525858
+      }
+    }
+  },
+  "2p7B_T0.2": {
+    "auc": {
+      "bayes_shared_inv": 0.70515352,
+      "h_dif_star_0.001": 0.73256968,
+      "h_dif_star_0.01": 0.72819144,
+      "h_neg": 0.77619272,
+      "trgof_s2_inv": 0.69540984
+    },
+    "n": 2500,
+    "tests": {
+      "h_dif_star_0.001_vs_bayes_shared_inv": {
+        "dauc": 0.027416160000000023,
+        "p": 1.996840372497063e-53,
+        "se": 0.0017817587497695904,
+        "z": 15.387133641715169
+      },
+      "h_dif_star_0.001_vs_trgof_s2_inv": {
+        "dauc": 0.037159840000000055,
+        "p": 2.0887319780432607e-06,
+        "se": 0.007831955117524915,
+        "z": 4.7446441459873245
+      },
+      "h_neg_vs_bayes_shared_inv": {
+        "dauc": 0.07103919999999997,
+        "p": 4.38785996813927e-27,
+        "se": 0.0065913222299462506,
+        "z": 10.777685799861018
+      },
+      "h_neg_vs_h_dif_star_0.001": {
+        "dauc": 0.043623039999999946,
+        "p": 1.5401621643304604e-15,
+        "se": 0.00547087819987229,
+        "z": 7.973681446795556
+      }
+    }
+  },
+  "2p7B_T0.3": {
+    "auc": {
+      "bayes_shared_inv": 0.79359104,
+      "h_dif_star_0.001": 0.83260624,
+      "h_dif_star_0.01": 0.82726736,
+      "h_neg": 0.88691856,
+      "trgof_s2_inv": 0.80351432
+    },
+    "n": 2500,
+    "tests": {
+      "h_dif_star_0.001_vs_bayes_shared_inv": {
+        "dauc": 0.03901520000000003,
+        "p": 3.932378018618759e-90,
+        "se": 0.0019380450195408453,
+        "z": 20.13121450049874
+      },
+      "h_dif_star_0.001_vs_trgof_s2_inv": {
+        "dauc": 0.02909192000000005,
+        "p": 9.872788632572169e-06,
+        "se": 0.006581970323201487,
+        "z": 4.419940925204546
+      },
+      "h_neg_vs_bayes_shared_inv": {
+        "dauc": 0.09332752,
+        "p": 1.4956260437274491e-61,
+        "se": 0.005637728606065914,
+        "z": 16.5540994469979
+      },
+      "h_neg_vs_h_dif_star_0.001": {
+        "dauc": 0.05431231999999997,
+        "p": 1.123556944168907e-34,
+        "se": 0.004421897969247397,
+        "z": 12.282581004293023
+      }
+    }
+  },
+  "2p7B_T0.4": {
+    "auc": {
+      "bayes_shared_inv": 0.86986424,
+      "h_dif_star_0.001": 0.9097452,
+      "h_dif_star_0.01": 0.90422824,
+      "h_neg": 0.95519656,
+      "trgof_s2_inv": 0.8943008
+    },
+    "n": 2500,
+    "tests": {
+      "h_dif_star_0.001_vs_bayes_shared_inv": {
+        "dauc": 0.039880960000000076,
+        "p": 4.257139275556283e-102,
+        "se": 0.001858969400736835,
+        "z": 21.453263288891446
+      },
+      "h_dif_star_0.001_vs_trgof_s2_inv": {
+        "dauc": 0.015444400000000025,
+        "p": 0.0021118654148412188,
+        "se": 0.005024150144171696,
+        "z": 3.0740323351833783
+      },
+      "h_neg_vs_bayes_shared_inv": {
+        "dauc": 0.08533232000000002,
+        "p": 4.826697710442293e-75,
+        "se": 0.0046555026057063685,
+        "z": 18.32934641587484
+      },
+      "h_neg_vs_h_dif_star_0.001": {
+        "dauc": 0.04545135999999994,
+        "p": 2.0225107273990996e-39,
+        "se": 0.0034598143089682337,
+        "z": 13.136936246024773
+      }
+    }
+  },
+  "2p7B_T0.5": {
+    "auc": {
+      "bayes_shared_inv": 0.888378,
+      "h_dif_star_0.001": 0.93308168,
+      "h_dif_star_0.01": 0.9278084,
+      "h_neg": 0.9804444,
+      "trgof_s2_inv": 0.95061304
+    },
+    "n": 2500,
+    "tests": {
+      "h_dif_star_0.001_vs_bayes_shared_inv": {
+        "dauc": 0.04470368000000002,
+        "p": 1.6772872336403585e-104,
+        "se": 0.0020591985003276317,
+        "z": 21.70926211964868
+      },
+      "h_dif_star_0.001_vs_trgof_s2_inv": {
+        "dauc": -0.017531359999999996,
+        "p": 1.3731361928280351e-05,
+        "se": 0.004031946382219381,
+        "z": -4.34811337703104
+      },
+      "h_neg_vs_bayes_shared_inv": {
+        "dauc": 0.09206639999999999,
+        "p": 1.028182484974309e-91,
+        "se": 0.004532837419063148,
+        "z": 20.31098658266644
+      },
+      "h_neg_vs_h_dif_star_0.001": {
+        "dauc": 0.04736271999999997,
+        "p": 5.237037048106526e-47,
+        "se": 0.003289267889342615,
+        "z": 14.39916771554468
+      }
+    }
+  },
+  "summary": {
+    "h_dif_star_0.001_vs_bayes_shared_inv": {
+      "positive": 8,
+      "sign_test_p": 0.0078125,
+      "significant": 8
+    },
+    "h_dif_star_0.001_vs_trgof_s2_inv": {
+      "positive": 6,
+      "sign_test_p": 0.2890625,
+      "significant": 7
+    },
+    "h_neg_vs_bayes_shared_inv": {
+      "positive": 8,
+      "sign_test_p": 0.0078125,
+      "significant": 8
+    },
+    "h_neg_vs_h_dif_star_0.001": {
+      "positive": 8,
+      "sign_test_p": 0.0078125,
+      "significant": 8
+    }
+  }
+}

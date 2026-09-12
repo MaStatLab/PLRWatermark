@@ -1,0 +1,329 @@
+{
+  "_inference_status": {
+    "status": "historical_non_inferential",
+    "valid_for_current_inference": false,
+    "reason": "The historical DeLong calculation treated the watermarked and unwatermarked class samples as independent although they are paired by prompt. The sign test also treated model-temperature cells as independent although each model's temperatures reuse its model-specific prompt set. These uncertainty and significance fields must not support current claims.",
+    "historical_fields": [
+      "tests.*.p",
+      "tests.*.se",
+      "tests.*.z",
+      "summary.*.sign_test_p",
+      "summary.*.significant",
+      "sign_test_p"
+    ],
+    "retained_for": "Audit history; AUC point estimates and differences remain descriptive.",
+    "current_artifact": "delong_tests_bootstrap.json",
+    "current_section": "cells.*.tests (paired prompt-cluster bootstrap with Holm adjustment)",
+    "holdout_artifact": "delong_tests_holdout.json"
+  },
+  "1p3B_T0.2": {
+    "auc": {
+      "bayes_shared": 0.7827952,
+      "bayes_uniontail_w0": 0.83783392,
+      "bayes_uniontail_w0.5": 0.8383144,
+      "bayes_uniontail_w1": 0.79034928,
+      "h_ars": 0.8498736
+    },
+    "n": 2500,
+    "tests": {
+      "bayes_uniontail_w0_vs_bayes_shared": {
+        "dauc": 0.055038719999999985,
+        "p": 3.566246151381111e-27,
+        "se": 0.005097714402265009,
+        "z": 10.796744512706569
+      },
+      "bayes_uniontail_w0_vs_bayes_uniontail_w0.5": {
+        "dauc": -0.00048048000000000535,
+        "p": 0.05026717920568535,
+        "se": 0.0002454329491096559,
+        "z": -1.9576833580944089
+      },
+      "bayes_uniontail_w0_vs_bayes_uniontail_w1": {
+        "dauc": 0.04748463999999997,
+        "p": 1.453238942267747e-22,
+        "se": 0.004858169327364131,
+        "z": 9.774183812930916
+      },
+      "bayes_uniontail_w1_vs_bayes_shared": {
+        "dauc": 0.0075540800000000186,
+        "p": 1.6162676213880934e-06,
+        "se": 0.0015749821768597518,
+        "z": 4.796295546062354
+      }
+    }
+  },
+  "1p3B_T0.3": {
+    "auc": {
+      "bayes_shared": 0.89063952,
+      "bayes_uniontail_w0": 0.93821872,
+      "bayes_uniontail_w0.5": 0.93850496,
+      "bayes_uniontail_w1": 0.89130048,
+      "h_ars": 0.94651264
+    },
+    "n": 2500,
+    "tests": {
+      "bayes_uniontail_w0_vs_bayes_shared": {
+        "dauc": 0.04757919999999993,
+        "p": 3.855757181675221e-40,
+        "se": 0.003587690371529961,
+        "z": 13.261791033463657
+      },
+      "bayes_uniontail_w0_vs_bayes_uniontail_w0.5": {
+        "dauc": -0.0002862400000001042,
+        "p": 0.04670016515645136,
+        "se": 0.00014391083302195163,
+        "z": -1.9890094024849554
+      },
+      "bayes_uniontail_w0_vs_bayes_uniontail_w1": {
+        "dauc": 0.04691824,
+        "p": 1.4843029198439538e-40,
+        "se": 0.0035189080961453897,
+        "z": 13.333181406867153
+      },
+      "bayes_uniontail_w1_vs_bayes_shared": {
+        "dauc": 0.0006609599999999327,
+        "p": 0.6069850561769066,
+        "se": 0.0012849598371217409,
+        "z": 0.5143818358404547
+      }
+    }
+  },
+  "1p3B_T0.4": {
+    "auc": {
+      "bayes_shared": 0.95941656,
+      "bayes_uniontail_w0": 0.97967368,
+      "bayes_uniontail_w0.5": 0.97988248,
+      "bayes_uniontail_w1": 0.95993864,
+      "h_ars": 0.98242648
+    },
+    "n": 2500,
+    "tests": {
+      "bayes_uniontail_w0_vs_bayes_shared": {
+        "dauc": 0.020257120000000017,
+        "p": 3.489707145367671e-21,
+        "se": 0.002144311063306574,
+        "z": 9.446912972021467
+      },
+      "bayes_uniontail_w0_vs_bayes_uniontail_w0.5": {
+        "dauc": -0.00020880000000000898,
+        "p": 0.04497914622184308,
+        "se": 0.00010414747201141786,
+        "z": -2.004849430979159
+      },
+      "bayes_uniontail_w0_vs_bayes_uniontail_w1": {
+        "dauc": 0.019735040000000037,
+        "p": 1.9715656477894004e-20,
+        "se": 0.002130323848441457,
+        "z": 9.263868502640186
+      },
+      "bayes_uniontail_w1_vs_bayes_shared": {
+        "dauc": 0.0005220799999999803,
+        "p": 0.6510320817864648,
+        "se": 0.0011542044652304475,
+        "z": 0.4523288686946314
+      }
+    }
+  },
+  "1p3B_T0.5": {
+    "auc": {
+      "bayes_shared": 0.98714688,
+      "bayes_uniontail_w0": 0.99621024,
+      "bayes_uniontail_w0.5": 0.99630976,
+      "bayes_uniontail_w1": 0.98706384,
+      "h_ars": 0.99627904
+    },
+    "n": 2500,
+    "tests": {
+      "bayes_uniontail_w0_vs_bayes_shared": {
+        "dauc": 0.009063360000000076,
+        "p": 1.6246305621073534e-12,
+        "se": 0.0012831419076900377,
+        "z": 7.063412040150953
+      },
+      "bayes_uniontail_w0_vs_bayes_uniontail_w0.5": {
+        "dauc": -9.952000000001959e-05,
+        "p": 0.08533684352450793,
+        "se": 5.78427707681108e-05,
+        "z": -1.7205261552734226
+      },
+      "bayes_uniontail_w0_vs_bayes_uniontail_w1": {
+        "dauc": 0.009146399999999999,
+        "p": 3.7806340826617506e-11,
+        "se": 0.0013832132534044622,
+        "z": 6.612429412086844
+      },
+      "bayes_uniontail_w1_vs_bayes_shared": {
+        "dauc": -8.303999999992318e-05,
+        "p": 0.924611949414627,
+        "se": 0.0008775606849608959,
+        "z": -0.09462593461969349
+      }
+    }
+  },
+  "2p7B_T0.2": {
+    "auc": {
+      "bayes_shared": 0.78144432,
+      "bayes_uniontail_w0": 0.83252944,
+      "bayes_uniontail_w0.5": 0.83341888,
+      "bayes_uniontail_w1": 0.78749808,
+      "h_ars": 0.84666496
+    },
+    "n": 2500,
+    "tests": {
+      "bayes_uniontail_w0_vs_bayes_shared": {
+        "dauc": 0.051085119999999984,
+        "p": 1.8739049381776256e-21,
+        "se": 0.005370709742904142,
+        "z": 9.511800571143203
+      },
+      "bayes_uniontail_w0_vs_bayes_uniontail_w0.5": {
+        "dauc": -0.0008894400000000191,
+        "p": 0.0021097350482509776,
+        "se": 0.00028931149587559145,
+        "z": -3.0743334180626283
+      },
+      "bayes_uniontail_w0_vs_bayes_uniontail_w1": {
+        "dauc": 0.045031359999999965,
+        "p": 1.4210468794163977e-18,
+        "se": 0.005119676728658041,
+        "z": 8.795742853827313
+      },
+      "bayes_uniontail_w1_vs_bayes_shared": {
+        "dauc": 0.006053760000000019,
+        "p": 0.00026792405144940496,
+        "se": 0.0016610725756361542,
+        "z": 3.644488560460137
+      }
+    }
+  },
+  "2p7B_T0.3": {
+    "auc": {
+      "bayes_shared": 0.89032688,
+      "bayes_uniontail_w0": 0.93210336,
+      "bayes_uniontail_w0.5": 0.93267552,
+      "bayes_uniontail_w1": 0.89511616,
+      "h_ars": 0.93725536
+    },
+    "n": 2500,
+    "tests": {
+      "bayes_uniontail_w0_vs_bayes_shared": {
+        "dauc": 0.041776480000000005,
+        "p": 1.2559098343145305e-30,
+        "se": 0.0036313985562090654,
+        "z": 11.504239855074411
+      },
+      "bayes_uniontail_w0_vs_bayes_uniontail_w0.5": {
+        "dauc": -0.0005721599999999327,
+        "p": 0.002617926995883805,
+        "se": 0.00019012636419301346,
+        "z": -3.009366967219151
+      },
+      "bayes_uniontail_w0_vs_bayes_uniontail_w1": {
+        "dauc": 0.0369872,
+        "p": 4.601227349500199e-26,
+        "se": 0.0035028108546253708,
+        "z": 10.559291247815839
+      },
+      "bayes_uniontail_w1_vs_bayes_shared": {
+        "dauc": 0.004789280000000007,
+        "p": 0.0027761501425897215,
+        "se": 0.001600965362305443,
+        "z": 2.9914950771347644
+      }
+    }
+  },
+  "2p7B_T0.4": {
+    "auc": {
+      "bayes_shared": 0.95533872,
+      "bayes_uniontail_w0": 0.97966016,
+      "bayes_uniontail_w0.5": 0.9797944,
+      "bayes_uniontail_w1": 0.95602992,
+      "h_ars": 0.982932
+    },
+    "n": 2500,
+    "tests": {
+      "bayes_uniontail_w0_vs_bayes_shared": {
+        "dauc": 0.024321440000000027,
+        "p": 1.2565494197234378e-27,
+        "se": 0.0022329353130590324,
+        "z": 10.89213819037177
+      },
+      "bayes_uniontail_w0_vs_bayes_uniontail_w0.5": {
+        "dauc": -0.00013423999999995218,
+        "p": 0.0908580880137921,
+        "se": 7.93902111104732e-05,
+        "z": -1.6908885632405524
+      },
+      "bayes_uniontail_w0_vs_bayes_uniontail_w1": {
+        "dauc": 0.023630240000000025,
+        "p": 1.787581914220769e-25,
+        "se": 0.0022653586118515623,
+        "z": 10.431125507623777
+      },
+      "bayes_uniontail_w1_vs_bayes_shared": {
+        "dauc": 0.0006912000000000029,
+        "p": 0.6062399676117661,
+        "se": 0.0013409692965574266,
+        "z": 0.5154480432732282
+      }
+    }
+  },
+  "2p7B_T0.5": {
+    "auc": {
+      "bayes_shared": 0.98240512,
+      "bayes_uniontail_w0": 0.99268464,
+      "bayes_uniontail_w0.5": 0.992788,
+      "bayes_uniontail_w1": 0.9825288,
+      "h_ars": 0.99313584
+    },
+    "n": 2500,
+    "tests": {
+      "bayes_uniontail_w0_vs_bayes_shared": {
+        "dauc": 0.010279519999999986,
+        "p": 6.904701517776383e-12,
+        "se": 0.0014985566945973207,
+        "z": 6.859613678321467
+      },
+      "bayes_uniontail_w0_vs_bayes_uniontail_w0.5": {
+        "dauc": -0.00010335999999999679,
+        "p": 0.08331602775391556,
+        "se": 5.9684891579310834e-05,
+        "z": -1.7317615440860663
+      },
+      "bayes_uniontail_w0_vs_bayes_uniontail_w1": {
+        "dauc": 0.010155840000000027,
+        "p": 2.9627339241016453e-10,
+        "se": 0.001611854850021718,
+        "z": 6.300716221354043
+      },
+      "bayes_uniontail_w1_vs_bayes_shared": {
+        "dauc": 0.00012367999999995938,
+        "p": 0.9124310399308887,
+        "se": 0.0011246429343120235,
+        "z": 0.10997268219678809
+      }
+    }
+  },
+  "summary": {
+    "bayes_uniontail_w0_vs_bayes_shared": {
+      "positive": 8,
+      "sign_test_p": 0.0078125,
+      "significant": 8
+    },
+    "bayes_uniontail_w0_vs_bayes_uniontail_w0.5": {
+      "positive": 0,
+      "sign_test_p": 0.0078125,
+      "significant": 4
+    },
+    "bayes_uniontail_w0_vs_bayes_uniontail_w1": {
+      "positive": 8,
+      "sign_test_p": 0.0078125,
+      "significant": 8
+    },
+    "bayes_uniontail_w1_vs_bayes_shared": {
+      "positive": 7,
+      "sign_test_p": 0.0703125,
+      "significant": 3
+    }
+  }
+}

@@ -1,0 +1,337 @@
+{
+  "_inference_status": {
+    "status": "historical_non_inferential",
+    "valid_for_current_inference": false,
+    "scope": "Archived delta-half analysis, superseded by the active bayesian_paper_benchmark artifacts.",
+    "reason": "The historical DeLong calculation treated the watermarked and unwatermarked class samples as independent although they are paired by prompt. The sign test also treated model-temperature cells as independent although each model's temperatures reuse its model-specific prompt set. These uncertainty and significance fields must not support current claims.",
+    "historical_fields": [
+      "tests.*.p",
+      "tests.*.se",
+      "tests.*.z",
+      "summary.*.sign_test_p",
+      "summary.*.significant",
+      "sign_test_p"
+    ],
+    "retained_for": "Audit history; AUC point estimates and differences remain descriptive.",
+    "current_artifact": "../../../bayesian_paper_benchmark/real_model/temperature_matched/delong_tests_bootstrap.json",
+    "current_section": "Only contrasts listed in cells.*.tests of the active Gumbel analysis support current inference (paired prompt-cluster bootstrap with Holm adjustment)."
+  },
+  "1p3B_T0.2": {
+    "auc": {
+      "bayes_shared": 0.7827952,
+      "bayes_uniontail": 0.8383144,
+      "h_ars": 0.8498736,
+      "h_gum_star_0.1": 0.84587552,
+      "h_log": 0.78248208,
+      "trgof_s2": 0.81336992
+    },
+    "n": 2500,
+    "tests": {
+      "bayes_uniontail_vs_bayes_shared": {
+        "dauc": 0.05551919999999999,
+        "p": 1.0522476395082629e-28,
+        "se": 0.004994666195738284,
+        "z": 11.11569779125018
+      },
+      "bayes_uniontail_vs_trgof_s2": {
+        "dauc": 0.024944480000000047,
+        "p": 9.46558693357874e-09,
+        "se": 0.004345700212458092,
+        "z": 5.740036997602857
+      },
+      "h_ars_vs_bayes_uniontail": {
+        "dauc": 0.011559199999999992,
+        "p": 3.212864983888186e-07,
+        "se": 0.0022618476314223987,
+        "z": 5.110512237612931
+      },
+      "h_ars_vs_h_gum_star_0.1": {
+        "dauc": 0.003998080000000015,
+        "p": 0.02247904541584741,
+        "se": 0.0017518731200696,
+        "z": 2.282174407608455
+      }
+    }
+  },
+  "1p3B_T0.3": {
+    "auc": {
+      "bayes_shared": 0.89063952,
+      "bayes_uniontail": 0.93850496,
+      "h_ars": 0.94651264,
+      "h_gum_star_0.1": 0.94395552,
+      "h_log": 0.89036352,
+      "trgof_s2": 0.92079808
+    },
+    "n": 2500,
+    "tests": {
+      "bayes_uniontail_vs_bayes_shared": {
+        "dauc": 0.04786544000000004,
+        "p": 9.894047379130332e-42,
+        "se": 0.0035367639305055646,
+        "z": 13.53368246807411
+      },
+      "bayes_uniontail_vs_trgof_s2": {
+        "dauc": 0.01770688000000009,
+        "p": 5.054912317759057e-10,
+        "se": 0.002847960168151975,
+        "z": 6.217390326596451
+      },
+      "h_ars_vs_bayes_uniontail": {
+        "dauc": 0.008007679999999961,
+        "p": 5.958585014876047e-07,
+        "se": 0.0016039243602350526,
+        "z": 4.992554635697688
+      },
+      "h_ars_vs_h_gum_star_0.1": {
+        "dauc": 0.0025571199999999683,
+        "p": 0.014141737503567316,
+        "se": 0.0010421728837253024,
+        "z": 2.4536428071889635
+      }
+    }
+  },
+  "1p3B_T0.4": {
+    "auc": {
+      "bayes_shared": 0.95941656,
+      "bayes_uniontail": 0.97988248,
+      "h_ars": 0.98242648,
+      "h_gum_star_0.1": 0.98192952,
+      "h_log": 0.95847432,
+      "trgof_s2": 0.97720856
+    },
+    "n": 2500,
+    "tests": {
+      "bayes_uniontail_vs_bayes_shared": {
+        "dauc": 0.020465920000000026,
+        "p": 3.307164010930662e-22,
+        "se": 0.002111944402513145,
+        "z": 9.690558130056004
+      },
+      "bayes_uniontail_vs_trgof_s2": {
+        "dauc": 0.0026739199999999963,
+        "p": 0.10745094186925423,
+        "se": 0.0016610707066900946,
+        "z": 1.609756881047008
+      },
+      "h_ars_vs_bayes_uniontail": {
+        "dauc": 0.0025439999999999907,
+        "p": 0.00857561664764055,
+        "se": 0.0009678433494629367,
+        "z": 2.628524545229013
+      },
+      "h_ars_vs_h_gum_star_0.1": {
+        "dauc": 0.0004969599999999907,
+        "p": 0.4879647278370321,
+        "se": 0.000716545752714377,
+        "z": 0.6935495718416246
+      }
+    }
+  },
+  "1p3B_T0.5": {
+    "auc": {
+      "bayes_shared": 0.98714688,
+      "bayes_uniontail": 0.99630976,
+      "h_ars": 0.99627904,
+      "h_gum_star_0.1": 0.99612048,
+      "h_log": 0.9871328,
+      "trgof_s2": 0.99535784
+    },
+    "n": 2500,
+    "tests": {
+      "bayes_uniontail_vs_bayes_shared": {
+        "dauc": 0.009162880000000095,
+        "p": 4.610508239541101e-13,
+        "se": 0.0012662362127751276,
+        "z": 7.2363117620198265
+      },
+      "bayes_uniontail_vs_trgof_s2": {
+        "dauc": 0.000951919999999995,
+        "p": 0.24955583420742253,
+        "se": 0.0008267292998224714,
+        "z": 1.1514288899696752
+      },
+      "h_ars_vs_bayes_uniontail": {
+        "dauc": -3.0720000000039605e-05,
+        "p": 0.9405877951941555,
+        "se": 0.00041217692627402346,
+        "z": -0.0745311007041096
+      },
+      "h_ars_vs_h_gum_star_0.1": {
+        "dauc": 0.0001585600000000298,
+        "p": 0.6730038847968698,
+        "se": 0.0003757088205355976,
+        "z": 0.4220289525648934
+      }
+    }
+  },
+  "2p7B_T0.2": {
+    "auc": {
+      "bayes_shared": 0.78144432,
+      "bayes_uniontail": 0.83341888,
+      "h_ars": 0.84666496,
+      "h_gum_star_0.1": 0.84085984,
+      "h_log": 0.78073808,
+      "trgof_s2": 0.80579008
+    },
+    "n": 2500,
+    "tests": {
+      "bayes_uniontail_vs_bayes_shared": {
+        "dauc": 0.05197456,
+        "p": 2.9907698522464464e-23,
+        "se": 0.0052325066289584336,
+        "z": 9.9330136941166
+      },
+      "bayes_uniontail_vs_trgof_s2": {
+        "dauc": 0.02762880000000001,
+        "p": 1.6219416496176617e-10,
+        "se": 0.004321429150409481,
+        "z": 6.39344046572695
+      },
+      "h_ars_vs_bayes_uniontail": {
+        "dauc": 0.013246080000000049,
+        "p": 1.8905076175278515e-07,
+        "se": 0.0025425344768425953,
+        "z": 5.209793660870816
+      },
+      "h_ars_vs_h_gum_star_0.1": {
+        "dauc": 0.005805119999999997,
+        "p": 0.0016341141003264998,
+        "se": 0.0018430427452592695,
+        "z": 3.1497478910525016
+      }
+    }
+  },
+  "2p7B_T0.3": {
+    "auc": {
+      "bayes_shared": 0.89032688,
+      "bayes_uniontail": 0.93267552,
+      "h_ars": 0.93725536,
+      "h_gum_star_0.1": 0.93305568,
+      "h_log": 0.88998736,
+      "trgof_s2": 0.9122108
+    },
+    "n": 2500,
+    "tests": {
+      "bayes_uniontail_vs_bayes_shared": {
+        "dauc": 0.04234863999999994,
+        "p": 1.2608202623956813e-32,
+        "se": 0.0035602902995861495,
+        "z": 11.8947154407388
+      },
+      "bayes_uniontail_vs_trgof_s2": {
+        "dauc": 0.020464719999999992,
+        "p": 9.741337481850726e-13,
+        "se": 0.0028685725026114267,
+        "z": 7.1341128667202165
+      },
+      "h_ars_vs_bayes_uniontail": {
+        "dauc": 0.004579840000000002,
+        "p": 0.003155351917313548,
+        "se": 0.0015513397959584913,
+        "z": 2.952183662103736
+      },
+      "h_ars_vs_h_gum_star_0.1": {
+        "dauc": 0.004199679999999928,
+        "p": 0.00040714510598418056,
+        "se": 0.0011878909924408225,
+        "z": 3.5354085742923456
+      }
+    }
+  },
+  "2p7B_T0.4": {
+    "auc": {
+      "bayes_shared": 0.95533872,
+      "bayes_uniontail": 0.9797944,
+      "h_ars": 0.982932,
+      "h_gum_star_0.1": 0.98103808,
+      "h_log": 0.95439968,
+      "trgof_s2": 0.971044
+    },
+    "n": 2500,
+    "tests": {
+      "bayes_uniontail_vs_bayes_shared": {
+        "dauc": 0.02445567999999998,
+        "p": 2.00954952360284e-28,
+        "se": 0.00221162154713169,
+        "z": 11.057805089535861
+      },
+      "bayes_uniontail_vs_trgof_s2": {
+        "dauc": 0.008750399999999936,
+        "p": 2.7220269194433896e-07,
+        "se": 0.0017018356691907628,
+        "z": 5.141742036797727
+      },
+      "h_ars_vs_bayes_uniontail": {
+        "dauc": 0.0031376000000000737,
+        "p": 0.0003989560040923885,
+        "se": 0.0008861340770069578,
+        "z": 3.5407734353222913
+      },
+      "h_ars_vs_h_gum_star_0.1": {
+        "dauc": 0.0018939199999999934,
+        "p": 0.002877284828563838,
+        "se": 0.0006354257167942647,
+        "z": 2.9805529583455597
+      }
+    }
+  },
+  "2p7B_T0.5": {
+    "auc": {
+      "bayes_shared": 0.98240512,
+      "bayes_uniontail": 0.992788,
+      "h_ars": 0.99313584,
+      "h_gum_star_0.1": 0.99223264,
+      "h_log": 0.98207456,
+      "trgof_s2": 0.99028248
+    },
+    "n": 2500,
+    "tests": {
+      "bayes_uniontail_vs_bayes_shared": {
+        "dauc": 0.010382879999999983,
+        "p": 2.6602282914879024e-12,
+        "se": 0.0014844143663845786,
+        "z": 6.994596815502668
+      },
+      "bayes_uniontail_vs_trgof_s2": {
+        "dauc": 0.002505520000000039,
+        "p": 0.003720517957457284,
+        "se": 0.0008636941353554851,
+        "z": 2.900934367197943
+      },
+      "h_ars_vs_bayes_uniontail": {
+        "dauc": 0.00034783999999998816,
+        "p": 0.48904327889998445,
+        "se": 0.0005027815318555667,
+        "z": 0.6918312984095677
+      },
+      "h_ars_vs_h_gum_star_0.1": {
+        "dauc": 0.0009031999999999929,
+        "p": 0.04652740419059701,
+        "se": 0.0004537377716194204,
+        "z": 1.9905770612316709
+      }
+    }
+  },
+  "summary": {
+    "bayes_uniontail_vs_bayes_shared": {
+      "positive": 8,
+      "sign_test_p": 0.0078125,
+      "significant": 8
+    },
+    "bayes_uniontail_vs_trgof_s2": {
+      "positive": 8,
+      "sign_test_p": 0.0078125,
+      "significant": 6
+    },
+    "h_ars_vs_bayes_uniontail": {
+      "positive": 7,
+      "sign_test_p": 0.0703125,
+      "significant": 6
+    },
+    "h_ars_vs_h_gum_star_0.1": {
+      "positive": 8,
+      "sign_test_p": 0.0078125,
+      "significant": 6
+    }
+  }
+}

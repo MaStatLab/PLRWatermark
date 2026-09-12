@@ -1,0 +1,60 @@
+{
+  "calculation": "build_uniontail_grid(BenchmarkConfig()).tokenwise_lookup(size=80001, logit_limit=30).validation_report()",
+  "certified_one_sided_bound": false,
+  "completed_at_utc": "2026-09-12 01:15:47 UTC",
+  "config": {
+    "allow_large_delta": false,
+    "alpha": 0.05,
+    "batch_size": 1000,
+    "bayes_quadrature_nodes": 96,
+    "delta_high": 0.5,
+    "delta_low": 0.001,
+    "dirichlet_c_nodes": 200001,
+    "gumbel_lookup_logit_limit": 30,
+    "gumbel_lookup_size": 80001,
+    "max_horizon": 700,
+    "n_calibration": 10000,
+    "n_evaluation_alternative": 5000,
+    "n_evaluation_null": 5000,
+    "prior_high": 0.5,
+    "prior_low": 0.001,
+    "seed": 240401245,
+    "vocabulary_size": 1000
+  },
+  "config_scope_note": "The entire default BenchmarkConfig is recorded for reproducibility. Calibration, evaluation, document horizons and RNG settings do not trigger document generation in this diagnostic.",
+  "coverage": {
+    "block_0": "Dirichlet tail-shape branch",
+    "block_1": "tail-width branch",
+    "exclusions": "No uniform interpolation bound, endpoint/extrapolation certification, inner-transform accuracy guarantee, mass-normalization check, document-path error bound or decision-level result is supplied by this diagnostic.",
+    "lookup_logit_max": 30,
+    "lookup_logit_min": -30,
+    "lookup_size": 80001,
+    "probe_logit_max": 25,
+    "probe_logit_min": -25,
+    "probe_size": 4001,
+    "quantity": "absolute error in within-branch marginal log likelihood ratio caused by outer logit-grid interpolation",
+    "reference": "direct evaluation using the same positive quadrature grid and, for the shape branch, the same tabulated transform"
+  },
+  "diagnostic_id": "union_outer_lookup_validation_2026-09-11",
+  "diagnostic_only": true,
+  "generation": false,
+  "purpose": "Fresh production-grid numerical lookup validation; no generated documents or historical experiment measurements are represented.",
+  "runtime": {
+    "numpy": "2.0.2",
+    "omp_num_threads": 1,
+    "openblas_num_threads": 1,
+    "python": "[local filesystem path omitted]",
+    "pythonpath": "code",
+    "scipy": "1.13.1"
+  },
+  "runtime_seconds": 18.3062714159023,
+  "source_sha256": {
+    "code/benchmark_paper_experiment.py": "49e53c412dd9f50a4b9edf4c545ea77951137860bad77004027101fe7da67171",
+    "code/dirichlet_detector.py": "912d03995b8764350bab571703f4ba8c925e54de761f728c5cc8f7d3d3077697",
+    "code/tail_family.py": "3563f6ab6339257964103a30d77882415982b241b8d1a895c35a6dbcbcf67897"
+  },
+  "validation_report": {
+    "block_0_max_abs_interpolation_error": 7.643892363518034e-08,
+    "block_1_max_abs_interpolation_error": 2.1613711265189295e-08
+  }
+}

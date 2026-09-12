@@ -1,0 +1,221 @@
+{
+  "description": "Does partial pooling of the deficit buy anything?",
+  "seed": 20260902,
+  "config": {
+    "vocabulary_size": 1000,
+    "horizons": [
+      100,
+      300,
+      700
+    ],
+    "delta_support": [
+      0.001,
+      0.5
+    ],
+    "alpha_level": 0.05,
+    "n_calibration": 10000,
+    "n_evaluation_null": 5000,
+    "n_evaluation_alternative": 5000
+  },
+  "pooled_prior": {
+    "kappas": [
+      2.0,
+      8.0,
+      32.0,
+      128.0,
+      "inf"
+    ],
+    "mu_nodes": 12,
+    "beta_nodes": 64,
+    "n_components": 49,
+    "delta_support": [
+      0.001,
+      0.5
+    ],
+    "tokenwise_atom": [
+      0.5,
+      2.0
+    ]
+  },
+  "regimes": {
+    "P1": {
+      "kappa": "inf",
+      "mu": null,
+      "description": "kappa = inf; Delta constant within a document -- exactly the shared-deficit design",
+      "mean_delta": 0.25355141285022115,
+      "mean_within_document_sd": 3.5047399010723624e-17,
+      "between_document_sd_of_the_document_mean": 0.14433067406206115,
+      "persistence": 1.0
+    },
+    "P2": {
+      "kappa": 32.0,
+      "mu": null,
+      "description": "kappa = 32; strongly persistent",
+      "mean_delta": 0.2501568225366684,
+      "mean_within_document_sd": 0.034270737182430545,
+      "between_document_sd_of_the_document_mean": 0.14271404744861937,
+      "persistence": 0.9454788194749429
+    },
+    "P3": {
+      "kappa": 8.0,
+      "mu": null,
+      "description": "kappa = 8; moderately persistent",
+      "mean_delta": 0.24995725511246725,
+      "mean_within_document_sd": 0.06501788054547866,
+      "between_document_sd_of_the_document_mean": 0.14505994402598169,
+      "persistence": 0.8327117948439292
+    },
+    "P4": {
+      "kappa": 2.0,
+      "mu": null,
+      "description": "kappa = 2; weakly persistent",
+      "mean_delta": 0.24712849954621913,
+      "mean_within_document_sd": 0.11201074898377762,
+      "between_document_sd_of_the_document_mean": 0.14568614019923234,
+      "persistence": 0.6284841980537332
+    },
+    "P5": {
+      "kappa": 0.5,
+      "mu": null,
+      "description": "kappa = 0.5; barely persistent, and the Beta is U-shaped so the within-document spread is near its maximum",
+      "mean_delta": 0.2537885064812457,
+      "mean_within_document_sd": 0.15948961515312682,
+      "between_document_sd_of_the_document_mean": 0.14443377834425045,
+      "persistence": 0.45058300887051295
+    },
+    "P6": {
+      "kappa": 2.0,
+      "mu": 0.5,
+      "description": "kappa = 2 at mu = 1/2, i.e. Beta(1,1); Delta_t i.i.d. uniform with no document-level component at all -- exactly the tokenwise design",
+      "mean_delta": 0.25053178224996664,
+      "mean_within_document_sd": 0.14394209736095123,
+      "between_document_sd_of_the_document_mean": 0.005434406339985086,
+      "persistence": 0.0014233443202810688
+    }
+  },
+  "type_i_error": {
+    "100": {
+      "bayes_shared": 0.0572,
+      "bayes_tokenwise": 0.0516,
+      "bayes_pooled": 0.056,
+      "h_gum_star_0.005": 0.05
+    },
+    "300": {
+      "bayes_shared": 0.0588,
+      "bayes_tokenwise": 0.054,
+      "bayes_pooled": 0.0568,
+      "h_gum_star_0.005": 0.0498
+    },
+    "700": {
+      "bayes_shared": 0.0524,
+      "bayes_tokenwise": 0.054,
+      "bayes_pooled": 0.0578,
+      "h_gum_star_0.005": 0.0534
+    }
+  },
+  "type2_error": {
+    "100": {
+      "bayes_shared": {
+        "P1": 0.0174,
+        "P2": 0.02,
+        "P3": 0.0178,
+        "P4": 0.0252,
+        "P5": 0.0258,
+        "P6": 0.0
+      },
+      "bayes_tokenwise": {
+        "P1": 0.0236,
+        "P2": 0.0248,
+        "P3": 0.0224,
+        "P4": 0.0292,
+        "P5": 0.0248,
+        "P6": 0.0
+      },
+      "bayes_pooled": {
+        "P1": 0.0174,
+        "P2": 0.0194,
+        "P3": 0.0162,
+        "P4": 0.022,
+        "P5": 0.0198,
+        "P6": 0.0
+      },
+      "h_gum_star_0.005": {
+        "P1": 0.0292,
+        "P2": 0.032,
+        "P3": 0.0276,
+        "P4": 0.0342,
+        "P5": 0.0294,
+        "P6": 0.0
+      }
+    },
+    "300": {
+      "bayes_shared": {
+        "P1": 0.0048,
+        "P2": 0.0046,
+        "P3": 0.005,
+        "P4": 0.0092,
+        "P5": 0.0126,
+        "P6": 0.0
+      },
+      "bayes_tokenwise": {
+        "P1": 0.0108,
+        "P2": 0.0094,
+        "P3": 0.0098,
+        "P4": 0.0134,
+        "P5": 0.0108,
+        "P6": 0.0
+      },
+      "bayes_pooled": {
+        "P1": 0.0048,
+        "P2": 0.0044,
+        "P3": 0.0048,
+        "P4": 0.007,
+        "P5": 0.0076,
+        "P6": 0.0
+      },
+      "h_gum_star_0.005": {
+        "P1": 0.0144,
+        "P2": 0.0138,
+        "P3": 0.0126,
+        "P4": 0.015,
+        "P5": 0.0126,
+        "P6": 0.0
+      }
+    },
+    "700": {
+      "bayes_shared": {
+        "P1": 0.002,
+        "P2": 0.0024,
+        "P3": 0.0024,
+        "P4": 0.0038,
+        "P5": 0.0054,
+        "P6": 0.0
+      },
+      "bayes_tokenwise": {
+        "P1": 0.0058,
+        "P2": 0.0048,
+        "P3": 0.005,
+        "P4": 0.0076,
+        "P5": 0.0064,
+        "P6": 0.0
+      },
+      "bayes_pooled": {
+        "P1": 0.002,
+        "P2": 0.002,
+        "P3": 0.0016,
+        "P4": 0.0026,
+        "P5": 0.0032,
+        "P6": 0.0
+      },
+      "h_gum_star_0.005": {
+        "P1": 0.008,
+        "P2": 0.0066,
+        "P3": 0.0066,
+        "P4": 0.0086,
+        "P5": 0.0072,
+        "P6": 0.0
+      }
+    }
+  },
+  "runtime_seconds": 722.90841925
+}

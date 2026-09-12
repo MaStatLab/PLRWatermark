@@ -1,0 +1,149 @@
+{
+  "question": "Does the shared hierarchy recover Delta, independently of whether recovering it improves detection power?",
+  "design": {
+    "scheme": "gumbel",
+    "gumbel_family": "spike",
+    "structure": "shared",
+    "vocabulary_size": 1000,
+    "delta_grid": "96 Gauss-Legendre nodes on (0.001, 0.5)",
+    "prior_mean": 0.2505,
+    "prior_sd": 0.14404889216281194,
+    "credible_mass": 0.9,
+    "n_documents_per_cell": 400,
+    "seed": 240401248
+  },
+  "cells": [
+    {
+      "true_delta": 0.005,
+      "horizon": 100,
+      "n_documents": 400,
+      "mean_posterior_mean": 0.012855585331604724,
+      "mean_posterior_sd": 0.010180908686693226,
+      "mean_credible_low": 0.0023969683543259967,
+      "mean_credible_high": 0.033047989336717085,
+      "credible_coverage": 0.88,
+      "posterior_sd_shrinkage_vs_prior": 14.148922910102167
+    },
+    {
+      "true_delta": 0.005,
+      "horizon": 300,
+      "n_documents": 400,
+      "mean_posterior_mean": 0.007276316221979016,
+      "mean_posterior_sd": 0.004045991890200617,
+      "mean_credible_low": 0.0026676757366137015,
+      "mean_credible_high": 0.01508805874127483,
+      "credible_coverage": 0.8875,
+      "posterior_sd_shrinkage_vs_prior": 35.60286230718802
+    },
+    {
+      "true_delta": 0.005,
+      "horizon": 700,
+      "n_documents": 400,
+      "mean_posterior_mean": 0.005918398070555653,
+      "mean_posterior_sd": 0.002242562102470511,
+      "mean_credible_low": 0.003064221271094114,
+      "mean_credible_high": 0.010065700252442276,
+      "credible_coverage": 0.87,
+      "posterior_sd_shrinkage_vs_prior": 64.23407048755571
+    },
+    {
+      "true_delta": 0.05,
+      "horizon": 100,
+      "n_documents": 400,
+      "mean_posterior_mean": 0.055317572691207746,
+      "mean_posterior_sd": 0.01732942826840432,
+      "mean_credible_low": 0.03117745409533687,
+      "mean_credible_high": 0.08692635775420836,
+      "credible_coverage": 0.9125,
+      "posterior_sd_shrinkage_vs_prior": 8.312385725122127
+    },
+    {
+      "true_delta": 0.05,
+      "horizon": 300,
+      "n_documents": 400,
+      "mean_posterior_mean": 0.051574348476906194,
+      "mean_posterior_sd": 0.009438795830175374,
+      "mean_credible_low": 0.037606352870696795,
+      "mean_credible_high": 0.068091795389587,
+      "credible_coverage": 0.915,
+      "posterior_sd_shrinkage_vs_prior": 15.261363287708226
+    },
+    {
+      "true_delta": 0.05,
+      "horizon": 700,
+      "n_documents": 400,
+      "mean_posterior_mean": 0.05098542282480892,
+      "mean_posterior_sd": 0.006090283644189578,
+      "mean_credible_low": 0.04179712938884748,
+      "mean_credible_high": 0.061279703370848766,
+      "credible_coverage": 0.8425,
+      "posterior_sd_shrinkage_vs_prior": 23.652246853927974
+    },
+    {
+      "true_delta": 0.2,
+      "horizon": 100,
+      "n_documents": 400,
+      "mean_posterior_mean": 0.20405072036929048,
+      "mean_posterior_sd": 0.029160399783324555,
+      "mean_credible_low": 0.1587743824188507,
+      "mean_credible_high": 0.2542246311046192,
+      "credible_coverage": 0.905,
+      "posterior_sd_shrinkage_vs_prior": 4.939880565189872
+    },
+    {
+      "true_delta": 0.2,
+      "horizon": 300,
+      "n_documents": 400,
+      "mean_posterior_mean": 0.20177316376687926,
+      "mean_posterior_sd": 0.016845965979074493,
+      "mean_credible_low": 0.1751977045154184,
+      "mean_credible_high": 0.22996441862962974,
+      "credible_coverage": 0.8875,
+      "posterior_sd_shrinkage_vs_prior": 8.550942839475324
+    },
+    {
+      "true_delta": 0.2,
+      "horizon": 700,
+      "n_documents": 400,
+      "mean_posterior_mean": 0.20069873045628056,
+      "mean_posterior_sd": 0.010992322546596236,
+      "mean_credible_low": 0.1834873147004657,
+      "mean_credible_high": 0.21872484148339189,
+      "credible_coverage": 0.8725,
+      "posterior_sd_shrinkage_vs_prior": 13.104500122898648
+    },
+    {
+      "true_delta": 0.4,
+      "horizon": 100,
+      "n_documents": 400,
+      "mean_posterior_mean": 0.40030837148852766,
+      "mean_posterior_sd": 0.033615758552616046,
+      "mean_credible_low": 0.34466958760787814,
+      "mean_credible_high": 0.4555118549178043,
+      "credible_coverage": 0.925,
+      "posterior_sd_shrinkage_vs_prior": 4.285159650267709
+    },
+    {
+      "true_delta": 0.4,
+      "horizon": 300,
+      "n_documents": 400,
+      "mean_posterior_mean": 0.4014710057986025,
+      "mean_posterior_sd": 0.020333669948423002,
+      "mean_credible_low": 0.3683267653589739,
+      "mean_credible_high": 0.4350826326085995,
+      "credible_coverage": 0.9075,
+      "posterior_sd_shrinkage_vs_prior": 7.084254467009473
+    },
+    {
+      "true_delta": 0.4,
+      "horizon": 700,
+      "n_documents": 400,
+      "mean_posterior_mean": 0.4013512583366631,
+      "mean_posterior_sd": 0.013359153557782793,
+      "mean_credible_low": 0.37957948629809246,
+      "mean_credible_high": 0.4231824635126912,
+      "credible_coverage": 0.9075,
+      "posterior_sd_shrinkage_vs_prior": 10.782785865867359
+    }
+  ]
+}
