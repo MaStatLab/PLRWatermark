@@ -11,7 +11,7 @@ third_party/
 tmp/
 results/bayesian_paper_benchmark/real_model/upstream_assets/
 
-# Keep only the technical report's intended source files and final PDF.
+# The manuscript is hosted on arXiv, not in this supporting repository.
 manuscript/*
 output/*
 !output/pdf/
@@ -21,10 +21,6 @@ output/pdf/*
 *.bib
 bayesian_pivot_watermark_gumbel.pdf
 predictive_likelihood_ratios_arxiv.pdf
-!manuscript/bayesian_pivot_watermark_gumbel.tex
-!manuscript/bayesian_pivot_watermark_gumbel.bbl
-!manuscript/references.bib
-!output/pdf/bayesian_pivot_watermark_gumbel.pdf
 
 # TeX intermediates from optional local author checks.
 *.aux

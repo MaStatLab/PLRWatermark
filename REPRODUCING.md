@@ -5,9 +5,9 @@ Run from the repository root with the pinned environment and verified
 external benchmark inputs described in `README.md`. Work in a separate copy
 of the repository: the principal analysis commands write to their default
 result paths and replace the corresponding outputs in that copy. Preserve
-the supplied snapshot and its checksums unchanged. The technical report,
-including its supplement, is included as a compiled PDF with matching TeX
-source and bibliography.
+the supplied snapshot and its checksums unchanged. The paper and supplement
+are hosted at [arXiv:2609.15657](https://arxiv.org/abs/2609.15657).
+Manuscript sources and the compiled article are not included here.
 
 Fresh computations may differ from historical records, particularly for
 language-model outputs whose generation provenance is incomplete. Record
@@ -90,10 +90,15 @@ integrity metadata; do not represent the old `FILE_INDEX.json` or
 
 ## Technical-report checks and compilation
 
-The included source at `manuscript/bayesian_pivot_watermark_gumbel.tex`
-matches the technical-report date in `README.md`. Its original relative
-figure paths must be preserved. The seven external figures are under
-`results/`; the three graphical-model figures are inline TikZ.
+These optional author checks require a separately obtained manuscript source;
+they do not run on this repository alone. Download the source from the arXiv
+page and work in a separate copy. The scripts expect
+`manuscript/bayesian_pivot_watermark_gumbel.tex`, whereas the arXiv package
+uses `main.tex` and rebased figure paths. Adapt the filename, bibliography
+basename, and figure paths before using the scripts. The seven external
+figures are under `results/`; the three graphical-model figures are inline
+TikZ. Exact compatibility of the arXiv source with these author checks has
+not been reverified for this repository update.
 
 The read-only 498-check manuscript audit is:
 
@@ -105,7 +110,7 @@ The full test suite additionally needs the checksum-verified benchmark
 tensors and clean pinned sampler checkout described in `README.md`. Neither
 the audit nor these tests regenerates the underlying scientific experiments.
 
-To compile the included source, use a TeX Live installation with pdfLaTeX
+To compile the separately obtained and adapted source, use a TeX Live installation with pdfLaTeX
 and the packages named in the source. Run three passes **in a separate
 working copy**. The supplied `.bbl` avoids a bibliography-generation step;
 shell execution is disabled:
@@ -119,10 +124,8 @@ cd ..
 ```
 
 The new PDF and TeX intermediates remain under `manuscript/` and are ignored
-by Git. The distributed PDF is
-`output/pdf/bayesian_pivot_watermark_gumbel.pdf`; compilation does not replace
-it automatically. Inspect the compiled output and check for unresolved
-citations or references before replacing that distribution file.
+by Git. No article PDF is distributed in this repository. Inspect the
+compiled output and check for unresolved citations or references.
 
 ## Author-only revision workflow
 

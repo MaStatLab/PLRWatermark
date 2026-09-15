@@ -1,4 +1,5 @@
 {
+  "arxiv_identifier": "2609.15657",
   "excluded": [
     "private editorial history and notes",
     "parent .git directory",
@@ -6,21 +7,21 @@
     "C4 source records",
     "external WatermarkFramework checkout and benchmark inputs",
     "quick-test outputs",
-    "other manuscript drafts, TeX build intermediates, and arXiv submission artifacts",
+    "manuscript source, bibliography, compiled article, TeX intermediates, and arXiv submission artifacts",
     "unrelated experiments outside the current production-results tree"
   ],
   "files": {
     ".gitignore": {
-      "bytes": 741,
+      "bytes": 570,
       "generated": true,
       "group": "Repository setup",
-      "sha256": "4bc3d894590fc2a31e99c7311fec640bf3f1351d389d02552bd78fcd079b8575"
+      "sha256": "6b81fa43aac5b8c6ef7b1beee81db0be52915278f5f13892a0806151d4a40f62"
     },
     "CITATION.cff": {
-      "bytes": 1143,
+      "bytes": 981,
       "generated": true,
       "group": "Citation metadata",
-      "sha256": "51262c4489542800dadee1539fe72982b446fa81a2ae5d47f74980597e239291"
+      "sha256": "5aada09d7ec9fa71460b4fe6262fc466c5d38c9d4456314ea31d567d11dc7514"
     },
     "LICENSE": {
       "bytes": 1066,
@@ -29,22 +30,22 @@
       "sha256": "c233253919e808cdefa3497cb924ac8926f8401d8be117fcaa8f9bd43c16ed27"
     },
     "LICENSING.md": {
-      "bytes": 2041,
+      "bytes": 1782,
       "generated": true,
       "group": "License scope and third-party terms",
-      "sha256": "91166f05303bade0f8294a13711268f77bf69d10dda957246995673993703e68"
+      "sha256": "c6593eea6f061d29fbbd6073919b76b774c337216f5b03f61f8c22192ac681af"
     },
     "README.md": {
-      "bytes": 43044,
+      "bytes": 41381,
       "generated": true,
       "group": "Reader guide",
-      "sha256": "2b5b7e4b0102289bc16085a2fa74e956b885c8b74cb4a920904921d1da7ac8fa"
+      "sha256": "0ee5ea9f441959f5d468bff56ae4685a422673a410c0b06462ce4a7c82fdacaa"
     },
     "REPRODUCING.md": {
-      "bytes": 10629,
+      "bytes": 10934,
       "generated": true,
       "group": "Reproduction workflows",
-      "sha256": "2ac6376912693380154a79cf1d6c8a212fc7fbff5719ed31ac57651a5f63e89d"
+      "sha256": "dc7f7c4c6a713df6871ea63e3d43a3771114d602d709924e10e50564ff59c220"
     },
     "UPSTREAM_SOURCES.json": {
       "bytes": 5393,
@@ -592,35 +593,6 @@
       "source": "results/bayesian_paper_benchmark/deficit_persistence_sweep.json",
       "source_revision": "6551ee573698eb197930399b8b97c5bbf039be85",
       "source_sha256": "f1b1ce01e0327c7130342b4cb1271776a55e90f283bf48ba6531c26adf4dfbc9"
-    },
-    "manuscript/bayesian_pivot_watermark_gumbel.bbl": {
-      "bytes": 11516,
-      "group": "Technical report",
-      "sha256": "d9e8842c4c0e81a9696d43af08fce46b9f98c55f323d9dca40f2a4cef2d92f9b",
-      "source": "manuscript/bayesian_pivot_watermark_gumbel.bbl",
-      "source_sha256": "d9e8842c4c0e81a9696d43af08fce46b9f98c55f323d9dca40f2a4cef2d92f9b"
-    },
-    "manuscript/bayesian_pivot_watermark_gumbel.tex": {
-      "bytes": 256468,
-      "group": "Technical report",
-      "sha256": "afeaf70459c42c50a97e19204b84ed8333b786fdbc4c70870a728a1dcc55ab70",
-      "source": "manuscript/bayesian_pivot_watermark_gumbel.tex",
-      "source_sha256": "e25fa16b7199006b873be902e816d634f13bf63ad3fafe7ee04e16ca405f2e9c",
-      "transformation": "Non-rendered TeX comments removed; native figure paths preserved"
-    },
-    "manuscript/references.bib": {
-      "bytes": 13004,
-      "group": "Technical report",
-      "sha256": "170014af3c5e6e71c5688a4889fe9911678abb68895add853a7a3def44bd9817",
-      "source": "manuscript/references.bib",
-      "source_sha256": "170014af3c5e6e71c5688a4889fe9911678abb68895add853a7a3def44bd9817"
-    },
-    "output/pdf/bayesian_pivot_watermark_gumbel.pdf": {
-      "bytes": 825991,
-      "group": "Technical report",
-      "sha256": "1b86c5574561a10a0a529b6dcf67359a388890b8d3a143086e261c47e58b546a",
-      "source": "output/pdf/bayesian_pivot_watermark_gumbel.pdf",
-      "source_sha256": "1b86c5574561a10a0a529b6dcf67359a388890b8d3a143086e261c47e58b546a"
     },
     "results/bayesian_paper_benchmark/bayesian_vs_paper_shared_delta.pdf": {
       "bytes": 168181,
@@ -1689,15 +1661,6 @@
     },
     {
       "files": [
-        "manuscript/bayesian_pivot_watermark_gumbel.tex",
-        "manuscript/bayesian_pivot_watermark_gumbel.bbl",
-        "manuscript/references.bib",
-        "output/pdf/bayesian_pivot_watermark_gumbel.pdf"
-      ],
-      "title": "Technical report: source, bibliography, and compiled PDF"
-    },
-    {
-      "files": [
         "results/bayesian_paper_benchmark/gumbel_only/real_model/prefix_curves/real_data_common_calibration_prefix_curves.pdf",
         "results/bayesian_paper_benchmark/gumbel_only/real_model/prefix_curves/real_data_upstream_recorded_prefix_curves.pdf",
         "results/bayesian_paper_benchmark/gumbel_only/real_model/temperature_matched/prefix_curves_matched_1p3B.pdf",
@@ -1769,12 +1732,12 @@
     }
   ],
   "inventory_note": "This index lists all export files except itself and SHA256SUMS. SHA256SUMS covers every other exported file, including this index.",
-  "license_status": "MIT for the original supporting code, data, and documentation; third-party materials retain their respective terms. No new license is assigned to the technical report or its source and bibliography files. See LICENSE and LICENSING.md.",
-  "manuscript_date": "September 12, 2026",
-  "manuscript_type": "technical report",
-  "manuscript_url": "https://github.com/MaStatLab/PLRWatermark/blob/main/output/pdf/bayesian_pivot_watermark_gumbel.pdf",
-  "publication_status": "Technical report prepared locally for the author-supplied repository URL, not an arXiv submission; public availability of this version has not been verified by this builder.",
+  "license_status": "MIT for original supporting materials; third-party terms remain separate. Consult arXiv for the paper license. See LICENSE and LICENSING.md.",
+  "manuscript_date": "September 14, 2026",
+  "manuscript_type": "arXiv preprint",
+  "manuscript_url": "https://arxiv.org/abs/2609.15657",
+  "publication_status": "Accompanying paper published as arXiv:2609.15657; manuscript files excluded from this repository.",
   "repository_url": "https://github.com/MaStatLab/PLRWatermark/",
-  "scope": "Technical report (source, bibliography, and compiled PDF), with supporting code, data, results, and figure assets; no private project history or third-party model/data redistribution.",
+  "scope": "Supporting code, data, results, and figure assets; manuscript hosted on arXiv; no private project history or third-party model/data redistribution.",
   "upstream_sources": "UPSTREAM_SOURCES.json"
 }

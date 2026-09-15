@@ -12,12 +12,10 @@ tables. Users remain responsible for complying with the terms of the source
 models, tokenizers, and datasets. Existing attribution and any applicable
 notices in individual files must be retained.
 
-The technical report is included separately from that supporting-materials
-license scope: its TeX source, `.bbl`, and bibliography database are under
-`manuscript/`, and its compiled PDF is
-`output/pdf/bayesian_pivot_watermark_gumbel.pdf`. Adding these four files to
-the repository does not assign them the MIT License or select a new report
-license. No arXiv submission license is selected by this preparation.
+The paper and its supplement are hosted at
+[arXiv:2609.15657](https://arxiv.org/abs/2609.15657), not included in this
+repository. The supporting-materials MIT License does not apply to the paper;
+consult the license displayed on its arXiv page.
 
 The external WatermarkFramework implementation and benchmark files, model
 weights and tokenizers, and source C4 records are not redistributed here.
@@ -28,7 +26,6 @@ and checksum inventory are attribution and integrity records, not permissions
 to reuse material beyond those terms.
 
 The repository URL, [MaStatLab/PLRWatermark](https://github.com/MaStatLab/PLRWatermark/),
-and the MIT license identifier are included in `CITATION.cff`. The packaging
-process does not contact that repository, verify public access, publish
-files, or assign a release DOI. Verify access when publishing an export, and
-add any subsequently assigned release DOI to the citation metadata.
+and the MIT license identifier are included in `CITATION.cff`. Its preferred
+citation identifies the accompanying paper on arXiv. The paper's DOI is not
+a DOI for this supporting-materials repository.

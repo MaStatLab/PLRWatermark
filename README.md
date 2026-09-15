@@ -1,30 +1,27 @@
 # Predictive likelihood ratios for language model watermark detection
 
-**Technical Report**, September 12, 2026, by Li Ma, Department of Statistics
+**Paper: [arXiv:2609.15657](https://arxiv.org/abs/2609.15657)**, submitted September 14, 2026,
+by Li Ma, Department of Statistics
 and Data Science Institute, University of Chicago; email: li.ma@uchicago.edu.
 
-[Read the technical report (PDF)](output/pdf/bayesian_pivot_watermark_gumbel.pdf)
-or inspect the [TeX source](manuscript/bayesian_pivot_watermark_gumbel.tex).
-The report and supplement form one document.
+[Read the paper and supplement on arXiv](https://arxiv.org/abs/2609.15657).
+The manuscript source, bibliography, and compiled article are not included
+in this repository.
 
-This repository contains the technical report, its source and bibliography,
-numerical summaries, stored generation arrays, prompt tables, analysis code,
+This repository contains numerical summaries, stored generation arrays, prompt tables, analysis code,
 regression tests, and figure assets. The author-supplied
 repository URL is [MaStatLab/PLRWatermark](https://github.com/MaStatLab/PLRWatermark/).
-This export is prepared locally for that repository; the packaging process
-does not verify its public availability or publish any files. No DOI has
-been assigned by the export process. The original supporting code, data,
+The original supporting code, data,
 documentation, and figure assets are covered by the [MIT License](LICENSE),
 subject to the scope and third-party conditions in
-[LICENSING.md](LICENSING.md). Including the technical report does not assign
-it that license. No arXiv submission is being prepared as part of this export.
+[LICENSING.md](LICENSING.md). This license does not apply to the paper on arXiv.
 
 ## Start here
 
 The report's supplementary computational-materials index explains which
 records support the reported analyses. The groups at the end of this README
-give complete paths and the matching report's section numbers. The included
-source supports the manuscript-specific checks documented below.
+give complete paths and the matching report's section numbers. Manuscript-specific
+checks require a separately obtained source copy, as documented below.
 
 Verify the supplied files before loading arrays or running code:
 
@@ -40,11 +37,6 @@ use a working copy for new analyses.
 
 ## Layout and scope
 
-- `manuscript/`: the technical report's TeX source, matching `.bbl`, and
-  `references.bib`. Non-rendered editorial comments are removed from the
-  exported TeX source.
-- `output/pdf/bayesian_pivot_watermark_gumbel.pdf`: the compiled technical
-  report, including its supplement.
 - `code/`: all current Python implementation and scientific test modules, with
   pinned dependency files and the original implementation guide.
 - `results/bayesian_paper_benchmark/`: production numerical summaries, CSV
@@ -54,7 +46,7 @@ use a working copy for new analyses.
   figure variants are included as well, including inverse-transform diagnostics,
   alternate union weights, and prior-sensitivity outputs; those records do not
   expand the main Gumbel-only claims. The three graphical-model figures are
-  drawn directly in the included manuscript source.
+  drawn directly in the manuscript source hosted on arXiv.
 - `historical/6551ee5/`: the earlier Beta-generator script and result summary,
   extracted from commit `6551ee573698eb197930399b8b97c5bbf039be85`. They are not
   the current Gaussian-copula experiment or a complete historical runtime.
@@ -96,17 +88,11 @@ python -m unittest test_matched_data_loader.MatchedLoaderTests \
 cd ..
 ```
 
-The current scientific suite comprises 604 tests. The separate 498-check
-manuscript audit uses the included source and stored results. Run it from
-the repository root:
-
-```sh
-python code/check_manuscript_tables.py
-```
-
-See [REPRODUCING.md](REPRODUCING.md) for source compilation and revision
-workflows. Only the three intended source/bibliography files and the final
-report PDF are included; TeX intermediates and working-draft PDFs are ignored.
+The source project's scientific suite comprised 604 tests, and its separate
+manuscript audit comprised 498 checks. Those counts describe the earlier
+verification, not a fresh run of this manuscript-free repository. Manuscript
+checks require a separately obtained source copy; see
+[REPRODUCING.md](REPRODUCING.md) for the required layout and limitations.
 
 The full suite also requires the external benchmark tensors described below;
 several stored-array tests fail if they are absent. Reference-comparison
@@ -209,16 +195,15 @@ not this curated repository's membership. Use `FILE_INDEX.json` and
 `SHA256SUMS` for the export. Exactly three allowlisted machine-local metadata
 paths may be omitted in public copies; the index records the actual fields
 and both original and public hashes. Numerical records are otherwise
-byte-for-byte copies. The public-file index identifies the four included
-report files; other manuscript paths in the original provenance record do
-not expand this repository's inventory.
+byte-for-byte copies. Manuscript paths in the original provenance record
+do not imply that those files are included in this repository.
 
 ## Rerun analyses
 
 `code/README.md` documents experiment and plotting entry points. Paths are
 relative to this repository's `code/` and `results/` layout; there is no `anc/`
 dependency. The original implementation guide also describes author workflows
-for the included manuscript. Commands
+that require separately obtained manuscript sources. Commands
 for results outside the explicit file inventory require additional inputs
 or a fresh computation. Use new output directories for reruns and preserve
 the supplied observations and hashes.
@@ -237,20 +222,13 @@ and C4 inputs identified in `code/generate_temperature_matched.py` and
 `code/build_prompts.py`, appropriate access, and substantial computation.
 Their respective access and reuse terms remain separate.
 
-## Publishing this prepared repository
+## Citing the paper
 
-This technical-report update is prepared locally for the author-specified
-[MaStatLab/PLRWatermark](https://github.com/MaStatLab/PLRWatermark/) repository.
-No push is part of this preparation; publication requires separate
-authorization. Review [LICENSING.md](LICENSING.md) and repository visibility
-before publication.
-Do not import the parent project's private history. The URL is already
-recorded in `CITATION.cff`; public availability still requires verification
-after publication. Confirm that the article's availability statement matches
-the actual repository access, and add any subsequently assigned release DOI
-to the citation metadata. A tagged release corresponding to the manuscript
-version makes later replication less ambiguous. No remote is created or
-contacted by these materials.
+Li Ma (2026). *Predictive Likelihood Ratios for Language Model Watermark
+Detection*. arXiv:2609.15657. https://arxiv.org/abs/2609.15657
+
+The preferred citation in `CITATION.cff` links to the paper. Cite the repository
+commit used for an analysis as well, so the supporting-file snapshot is identifiable.
 
 ## Synthetic comparisons and posterior summaries
 
@@ -432,13 +410,6 @@ Manuscript sections: A.11.
 
 - [historical/6551ee5/code/deficit_persistence_sweep.py](historical/6551ee5/code/deficit_persistence_sweep.py) (10,426 bytes).
 - [historical/6551ee5/results/bayesian_paper_benchmark/deficit_persistence_sweep.json](historical/6551ee5/results/bayesian_paper_benchmark/deficit_persistence_sweep.json) (5,315 bytes).
-
-## Technical report: source, bibliography, and compiled PDF
-
-- [manuscript/bayesian_pivot_watermark_gumbel.tex](manuscript/bayesian_pivot_watermark_gumbel.tex) (256,468 bytes).
-- [manuscript/bayesian_pivot_watermark_gumbel.bbl](manuscript/bayesian_pivot_watermark_gumbel.bbl) (11,516 bytes).
-- [manuscript/references.bib](manuscript/references.bib) (13,004 bytes).
-- [output/pdf/bayesian_pivot_watermark_gumbel.pdf](output/pdf/bayesian_pivot_watermark_gumbel.pdf) (825,991 bytes).
 
 ## External figure assets used by the technical report
 
