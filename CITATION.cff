@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Please cite the accompanying paper, arXiv:2609.15657, when using these supporting materials."
+message: "Please cite the accompanying technical report, arXiv:2609.15657, when using these supporting materials."
 type: dataset
 title: "Predictive Likelihood Ratios for Language Model Watermark Detection — supporting materials"
 repository-code: "https://github.com/MaStatLab/PLRWatermark/"

@@ -12,9 +12,9 @@ tables. Users remain responsible for complying with the terms of the source
 models, tokenizers, and datasets. Existing attribution and any applicable
 notices in individual files must be retained.
 
-The paper and its supplement are hosted at
+The technical report and its supplement are hosted at
 [arXiv:2609.15657](https://arxiv.org/abs/2609.15657), not included in this
-repository. The supporting-materials MIT License does not apply to the paper;
+repository. The supporting-materials MIT License does not apply to the technical report;
 consult the license displayed on its arXiv page.
 
 The external WatermarkFramework implementation and benchmark files, model
@@ -27,5 +27,5 @@ to reuse material beyond those terms.
 
 The repository URL, [MaStatLab/PLRWatermark](https://github.com/MaStatLab/PLRWatermark/),
 and the MIT license identifier are included in `CITATION.cff`. Its preferred
-citation identifies the accompanying paper on arXiv. The paper's DOI is not
+citation identifies the accompanying technical report on arXiv. The technical report's DOI is not
 a DOI for this supporting-materials repository.

@@ -1,10 +1,10 @@
 # Predictive likelihood ratios for language model watermark detection
 
-**Paper: [arXiv:2609.15657](https://arxiv.org/abs/2609.15657)**, submitted September 14, 2026,
+**Technical report: [arXiv:2609.15657](https://arxiv.org/abs/2609.15657)**, submitted September 14, 2026,
 by Li Ma, Department of Statistics
 and Data Science Institute, University of Chicago; email: li.ma@uchicago.edu.
 
-[Read the paper and supplement on arXiv](https://arxiv.org/abs/2609.15657).
+[Read the technical report and supplement on arXiv](https://arxiv.org/abs/2609.15657).
 The manuscript source, bibliography, and compiled article are not included
 in this repository.
 
@@ -14,7 +14,7 @@ repository URL is [MaStatLab/PLRWatermark](https://github.com/MaStatLab/PLRWater
 The original supporting code, data,
 documentation, and figure assets are covered by the [MIT License](LICENSE),
 subject to the scope and third-party conditions in
-[LICENSING.md](LICENSING.md). This license does not apply to the paper on arXiv.
+[LICENSING.md](LICENSING.md). This license does not apply to the technical report on arXiv.
 
 ## Start here
 
@@ -222,12 +222,12 @@ and C4 inputs identified in `code/generate_temperature_matched.py` and
 `code/build_prompts.py`, appropriate access, and substantial computation.
 Their respective access and reuse terms remain separate.
 
-## Citing the paper
+## Citing the technical report
 
 Li Ma (2026). *Predictive Likelihood Ratios for Language Model Watermark
 Detection*. arXiv:2609.15657. https://arxiv.org/abs/2609.15657
 
-The preferred citation in `CITATION.cff` links to the paper. Cite the repository
+The preferred citation in `CITATION.cff` links to the technical report. Cite the repository
 commit used for an analysis as well, so the supporting-file snapshot is identifiable.
 
 ## Synthetic comparisons and posterior summaries

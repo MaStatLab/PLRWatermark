@@ -18,10 +18,10 @@
       "sha256": "6b81fa43aac5b8c6ef7b1beee81db0be52915278f5f13892a0806151d4a40f62"
     },
     "CITATION.cff": {
-      "bytes": 981,
+      "bytes": 992,
       "generated": true,
       "group": "Citation metadata",
-      "sha256": "5aada09d7ec9fa71460b4fe6262fc466c5d38c9d4456314ea31d567d11dc7514"
+      "sha256": "70192ef68b4aab77f44432c94de2f7280d4c4dd92bf88b9443cc0e2a3bf095ff"
     },
     "LICENSE": {
       "bytes": 1066,
@@ -30,22 +30,22 @@
       "sha256": "c233253919e808cdefa3497cb924ac8926f8401d8be117fcaa8f9bd43c16ed27"
     },
     "LICENSING.md": {
-      "bytes": 1782,
+      "bytes": 1826,
       "generated": true,
       "group": "License scope and third-party terms",
-      "sha256": "c6593eea6f061d29fbbd6073919b76b774c337216f5b03f61f8c22192ac681af"
+      "sha256": "b3dcd1c950d7bae610e75254c101cc8b20772844463219b22e6c18b189f1b508"
     },
     "README.md": {
-      "bytes": 41381,
+      "bytes": 41436,
       "generated": true,
       "group": "Reader guide",
-      "sha256": "0ee5ea9f441959f5d468bff56ae4685a422673a410c0b06462ce4a7c82fdacaa"
+      "sha256": "66100a09e4124f3a9275287c9803204997912e0c1c001fbd0711bd2f1582d266"
     },
     "REPRODUCING.md": {
-      "bytes": 10934,
+      "bytes": 10945,
       "generated": true,
       "group": "Reproduction workflows",
-      "sha256": "dc7f7c4c6a713df6871ea63e3d43a3771114d602d709924e10e50564ff59c220"
+      "sha256": "a0b671d3b590c85cf2ac112b0bfab5aef291770f3c0ab73a1bbff013ec3a54c6"
     },
     "UPSTREAM_SOURCES.json": {
       "bytes": 5393,
@@ -1732,11 +1732,11 @@
     }
   ],
   "inventory_note": "This index lists all export files except itself and SHA256SUMS. SHA256SUMS covers every other exported file, including this index.",
-  "license_status": "MIT for original supporting materials; third-party terms remain separate. Consult arXiv for the paper license. See LICENSE and LICENSING.md.",
+  "license_status": "MIT for original supporting materials; third-party terms remain separate. Consult arXiv for the technical report license. See LICENSE and LICENSING.md.",
   "manuscript_date": "September 14, 2026",
-  "manuscript_type": "arXiv preprint",
+  "manuscript_type": "technical report",
   "manuscript_url": "https://arxiv.org/abs/2609.15657",
-  "publication_status": "Accompanying paper published as arXiv:2609.15657; manuscript files excluded from this repository.",
+  "publication_status": "Accompanying technical report available as arXiv:2609.15657; manuscript files excluded from this repository.",
   "repository_url": "https://github.com/MaStatLab/PLRWatermark/",
   "scope": "Supporting code, data, results, and figure assets; manuscript hosted on arXiv; no private project history or third-party model/data redistribution.",
   "upstream_sources": "UPSTREAM_SOURCES.json"

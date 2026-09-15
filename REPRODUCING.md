@@ -5,7 +5,7 @@ Run from the repository root with the pinned environment and verified
 external benchmark inputs described in `README.md`. Work in a separate copy
 of the repository: the principal analysis commands write to their default
 result paths and replace the corresponding outputs in that copy. Preserve
-the supplied snapshot and its checksums unchanged. The paper and supplement
+the supplied snapshot and its checksums unchanged. The technical report and supplement
 are hosted at [arXiv:2609.15657](https://arxiv.org/abs/2609.15657).
 Manuscript sources and the compiled article are not included here.
 
